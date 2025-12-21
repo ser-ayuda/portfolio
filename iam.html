@@ -3,67 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAM & Security | Jesús Contreras</title>
+    <title>IAM Architecture | Jesús Contreras</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background: #050505; color: #fff; font-family: 'Segoe UI', sans-serif; }
-        .bg-mesh { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.3;
-            background-image: radial-gradient(#1e3c72 0.5px, transparent 0.5px); background-size: 30px 30px; }
-        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px); border-radius: 25px; padding: 30px; transition: 0.4s; }
-        .glass-card:hover { border-color: #00d2ff; box-shadow: 0 0 30px rgba(0, 210, 255, 0.2); }
-        .tech-pill { background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%); color: white; border: none; }
-        .section-header { background: linear-gradient(to right, #00d2ff, #3a7bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+        body { background: #020617; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 1.5rem; transition: 0.3s; }
+        .text-gradient { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .badge-iam { background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; }
+        .nav-back { background: rgba(255,255,255,0.05); border-radius: 50px; padding: 10px 25px; text-decoration: none; color: white; transition: 0.3s; }
+        .nav-back:hover { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
     </style>
 </head>
 <body>
-<div class="bg-mesh"></div>
-<nav class="p-4"><a href="index.html" class="btn btn-outline-light rounded-pill"><i class="fas fa-chevron-left me-2"></i>Dashboard</a></nav>
 
-<div class="container pb-5">
-    <div class="text-center mb-5 animate__animated animate__fadeIn">
-        <h1 class="display-3 section-header">Identity Architecture</h1>
-        <p class="text-secondary fs-5">Protegiendo activos digitales en entornos corporativos de alta disponibilidad.</p>
-    </div>
+<nav class="container py-4">
+    <a href="index.html" class="nav-back animate__animated animate__fadeIn"><i class="fas fa-arrow-left me-2"></i> Volver al Dashboard</a>
+</nav>
+
+<main class="container py-5">
+    <header class="text-center mb-5 animate__animated animate__fadeInDown">
+        <h1 class="display-4 fw-bold text-gradient">Identity & Access Management</h1>
+        <p class="text-secondary lead">Especialista en Gobierno de Identidad y Seguridad de Cuentas Privilegiadas</p>
+    </header>
 
     
 
-    <div class="row g-4 mt-4">
-        <div class="col-lg-7">
-            <div class="glass-card mb-4 animate__animated animate__fadeInUp">
-                <h3 class="mb-4 text-info"><i class="fas fa-user-check me-2"></i>Especialista SailPoint & IBM</h3>
-                <p>Implementación técnica en <strong>SailPoint IdentityIQ</strong> (v7.1 a v8.3) y <strong>IBM Security Verify (ISVG)</strong>. Liderazgo en el ciclo de vida de identidades, reglas Java BeanShell y automatización de flujos de aprobación.</p>
-                <div class="mt-3">
-                    <span class="badge rounded-pill tech-pill px-3 py-2 m-1">Rules & APIs</span>
-                    <span class="badge rounded-pill tech-pill px-3 py-2 m-1">Custom Reports</span>
-                    <span class="badge rounded-pill tech-pill px-3 py-2 m-1">Governance</span>
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="glass-card p-4 mb-4 animate__animated animate__fadeInLeft">
+                <h3 class="h4 text-info mb-3"><i class="fas fa-shield-virus me-2"></i> Gestión IAM en Banca (Serem / Capgemini)</h3>
+                <p>Administración de <strong>IBM Security Verify Governance (ISVG)</strong> e <strong>ISIM</strong>. Control de ciclos de vida de identidades y gestión de <strong>CyberArk PAM</strong> (PVWA, CPM, PSM, PTA). Soporte de infraestructura crítica en Red Hat Linux y entornos PKI.</p>
+                <div class="d-flex flex-wrap gap-2 mt-3">
+                    <span class="badge-iam">IBM Security</span><span class="badge-iam">CyberArk</span><span class="badge-iam">Active Directory</span>
                 </div>
             </div>
 
-            <div class="glass-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                <h3 class="mb-4 text-info"><i class="fas fa-vault me-2"></i>Gestión PAM (CyberArk)</h3>
-                <p>Administración de cuentas privilegiadas, bóvedas seguras (Safes) y análisis de amenazas con PTA. Experto en componentes <strong>PVWA, CPM y PSM</strong>.</p>
+            <div class="glass-card p-4 mb-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.2s;">
+                <h3 class="h4 text-info mb-3"><i class="fas fa-project-diagram me-2"></i> Consultoría SailPoint (Logicalis / Softtek / SIA)</h3>
+                <p>Implementación técnica de <strong>SailPoint IdentityIQ</strong> y <strong>IdentityNow</strong>. Desarrollo de reglas personalizadas (BeanShell/Java), integración de APIs con Postman y cumplimiento de normativas SOX.</p>
+            </div>
+
+            <div class="glass-card p-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.4s;">
+                <h3 class="h4 text-info mb-3"><i class="fas fa-server me-2"></i> Oracle Identity Management (Grupo CMC)</h3>
+                <p>Migración crítica de OIM 11g a 12c. Diseño de roles RBAC, configuración de conectores y alta disponibilidad en clústeres distribuidos.</p>
             </div>
         </div>
 
-        <div class="col-lg-5">
-            <div class="glass-card h-100 text-center animate__animated animate__fadeInRight">
-                <h4><i class="fas fa-fingerprint fa-3x mb-3 text-info"></i></h4>
-                <h5 class="mb-4">Protocolos y Entornos</h5>
-                <div class="d-grid gap-2">
-                    <div class="p-3 bg-white bg-opacity-10 rounded-4 border border-info">Azure Entra ID / MIM</div>
-                    <div class="p-3 bg-white bg-opacity-10 rounded-4 border border-info">Active Directory / LDAP</div>
-                    <div class="p-3 bg-white bg-opacity-10 rounded-4 border border-info">SSO / OAuth / PKI</div>
-                    <div class="p-3 bg-white bg-opacity-10 rounded-4 border border-info">Radius / Kerberos</div>
+        <div class="col-lg-4">
+            <div class="glass-card p-4 h-100 animate__animated animate__fadeInRight">
+                <h4 class="mb-4"><i class="fas fa-layer-group me-2"></i> Stack de Seguridad</h4>
+                <div class="list-group list-group-flush">
+                    <div class="list-group-item bg-transparent text-secondary border-secondary px-0">
+                        <small class="d-block text-info fw-bold">PROTOCOLOS</small>
+                        SAML, OAuth 2.0, OpenID Connect, LDAP, Kerberos.
+                    </div>
+                    <div class="list-group-item bg-transparent text-secondary border-secondary px-0">
+                        <small class="d-block text-info fw-bold">SISTEMAS</small>
+                        Azure Entra ID, MIM, Linux (RHEL), Solaris, AS/400.
+                    </div>
+                    <div class="list-group-item bg-transparent text-secondary border-secondary px-0">
+                        <small class="d-block text-info fw-bold">MONITORIZACIÓN</small>
+                        QRadar, Splunk, IBM Tivoli, ServiceNow.
+                    </div>
                 </div>
-                <div class="mt-4">
-                    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJmZzZ4N3R6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKSjPKYM91hC2" width="100%" class="rounded-4" alt="Security animation">
-                </div>
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJmZzZ4N3R6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKSjPKYM91hC2" class="img-fluid rounded-4 mt-4 opacity-50" alt="Cyber Security Animation">
             </div>
         </div>
     </div>
-</div>
+</main>
 </body>
 </html>
