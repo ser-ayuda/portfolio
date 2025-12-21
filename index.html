@@ -3,82 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Contreras M. | Especialista IAM & Full Stack</title>
+    <title>Jesús Contreras M. | Portfolio Profesional</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-blue: #1e4b8a;
-            --secondary-blue: #2c5da7;
-            --light-bg: #f4f7f9;
-            --text-dark: #333;
+            --light-bg: #f8fafc;
+            --accent-blue: #38bdf8;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--light-bg); color: var(--text-dark); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: #334155; }
         
-        /* Header / Hero Section */
-        .hero { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80'); 
-                background-size: cover; background-position: center; color: white; padding: 100px 0; }
-        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 5px solid white; object-fit: cover; margin-bottom: 20px; }
+        .hero { 
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center; color: white; padding: 100px 0; 
+        }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.2); object-fit: cover; }
         
-        /* Cards Estilo Imagen Referencia */
-        .custom-card { border: none; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; background: white; transition: 0.3s; height: 100%; }
-        .custom-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-        .card-img-top { height: 200px; object-fit: cover; }
-        .card-body { padding: 25px; }
-        .btn-primary-custom { background-color: var(--primary-blue); border: none; padding: 10px 25px; border-radius: 5px; color: white; text-decoration: none; }
-        .btn-outline-custom { border: 2px solid var(--primary-blue); color: var(--primary-blue); padding: 8px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .custom-card { 
+            border: none; border-radius: 16px; background: white; 
+            transition: 0.4s; box-shadow: 0 4px 20px rgba(0,0,0,0.05); overflow: hidden;
+        }
+        .custom-card:hover { transform: translateY(-10px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+        .card-img-container { position: relative; height: 220px; }
+        .card-img-top { width: 100%; height: 100%; object-fit: cover; }
+        .card-overlay { 
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 15px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;
+        }
 
-        /* Logos Section */
-        .logo-cloud img { height: 40px; filter: grayscale(100%); opacity: 0.7; transition: 0.3s; margin: 15px; }
-        .logo-cloud img:hover { filter: grayscale(0%); opacity: 1; }
+        .btn-primary-custom { background: var(--primary-blue); color: white; border: none; padding: 10px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; }
+        .btn-outline-custom { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; padding: 8px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; }
         
-        .section-title { position: relative; display: inline-block; margin-bottom: 40px; font-weight: bold; color: var(--primary-blue); }
-        .section-title::after { content: ''; width: 50px; height: 3px; background: var(--primary-blue); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        /* Estilo para los logos reales de formación */
+        .cert-box { background: white; padding: 20px; border-radius: 15px; border: 1px solid #e2e8f0; height: 100%; transition: 0.3s; }
+        .cert-box:hover { border-color: var(--accent-blue); }
+        .cert-logo { height: 50px; margin-bottom: 15px; object-fit: contain; }
+        
+        .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 40px; position: relative; display: inline-block; }
+        .section-title::after { content: ""; width: 50px; height: 4px; background: var(--accent-blue); position: absolute; bottom: -10px; left: 0; }
     </style>
 </head>
 <body>
 
-<header class="hero text-center">
-    <div class="container">
-        <img src="https://via.placeholder.com/180" alt="Jesús Contreras M" class="profile-img shadow">
-        <h1 class="display-4 fw-bold">Especialista en IAM, Cloud y Desarrollo</h1>
-        <p class="lead mb-4">Consultor en Gestión de Identidades, Seguridad y Desarrollo Full Stack [cite: 11]</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="https://github.com/ser-ayuda" class="text-white fs-4"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/jesus-contreras-m-b3378b17" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:jcm2222@hotmail.com" class="text-white fs-4"><i class="fas fa-envelope"></i></a>
+<header class="hero">
+    <div class="container text-center text-md-start">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center">
+                <img src="https://via.placeholder.com/180" alt="Jesús Contreras M" class="profile-img shadow animate__animated animate__fadeIn">
+            </div>
+            <div class="col-md-8 animate__animated animate__fadeInRight">
+                <h1 class="display-4 fw-bold mb-2">Jesús Contreras M.</h1>
+                <p class="h4 fw-light text-info mb-4">Analista y Desarrollador | IAM | Cloud</p>
+                <div class="d-flex gap-3 mb-4 justify-content-center justify-content-md-start">
+                    <a href="https://github.com/ser-ayuda" class="text-white fs-4"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jesus-contreras-m-b3378b17" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:jcm2222@hotmail.com" class="text-white fs-4"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="lead opacity-75">Más de 15 años de experiencia en infraestructuras críticas, gestión de identidades y desarrollo full-stack (Python/Django).</p>
+            </div>
         </div>
-        <p class="mt-4 px-md-5">Experto en seguridad, cloud y desarrollo full-stack, creador de aplicaciones centradas en la privacidad y experiencia de usuario[cite: 11].</p>
     </div>
 </header>
 
-<main class="container my-5 pt-4">
+<main class="container my-5 py-4">
     
-    <section class="text-center mb-5">
+    <section id="proyectos" class="mb-5 pb-5">
         <h2 class="section-title">Proyectos Destacados</h2>
         <div class="row g-4 mt-2">
-            <div class="col-md-6 text-start">
+            <div class="col-md-6">
                 <div class="custom-card">
-                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Escritor Pro">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Escritor Pro">
+                        <div class="card-overlay"><h3 class="h5 fw-bold mb-0">Escritor Pro (PWA)</h3></div>
+                    </div>
                     <div class="card-body">
-                        <h4 class="fw-bold">Escritor Pro</h4>
-                        <p class="text-muted">Diario de voz y notas privadas con enfoque en privacidad local.</p>
+                        <p class="text-muted small">App de dictado de voz a texto con enfoque en privacidad local y seguridad de datos.</p>
                         <div class="d-flex gap-2">
-                            <a href="#" class="btn btn-primary-custom">Ver Demo</a>
-                            <a href="#" class="btn btn-outline-custom">Ver Código</a>
+                            <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-primary-custom flex-grow-1 text-center">Demo</a>
+                            <a href="https://github.com/ser-ayuda" target="_blank" class="btn btn-outline-custom">Código</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 text-start">
+            <div class="col-md-6">
                 <div class="custom-card">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Calendario Familiar">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Familia Calendario">
+                        <div class="card-overlay"><h3 class="h5 fw-bold mb-0">Familia Calendario</h3></div>
+                    </div>
                     <div class="card-body">
-                        <h4 class="fw-bold">Calendario Familiar</h4>
-                        <p class="text-muted">Desarrollo full-stack (Django/DRF) - calendario familiar de tareas y metas[cite: 27, 29].</p>
+                        <p class="text-muted small">Plataforma colaborativa Django/DRF para la gestión de tareas y metas familiares.</p>
                         <div class="d-flex gap-2">
-                            <a href="https://familia-calendario-demo.onrender.com/" class="btn btn-primary-custom">Ver Demo</a>
-                            <a href="#" class="btn btn-outline-custom">Ver Código</a>
+                            <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-primary-custom flex-grow-1 text-center">Demo</a>
+                            <a href="https://github.com/ser-ayuda" target="_blank" class="btn btn-outline-custom">Código</a>
                         </div>
                     </div>
                 </div>
@@ -86,54 +106,76 @@
         </div>
     </section>
 
-    <section class="bg-white p-5 rounded-4 shadow-sm mb-5">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h2 class="fw-bold mb-4" style="color: var(--primary-blue);">Experiencia Profesional</h2>
-                <ul class="list-unstyled">
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Consultoría IAM y Seguridad en la Nube[cite: 47, 50].</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Gestión de Identidades con SailPoint, CyberArk e IBM[cite: 32, 40, 59].</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Automatización con Python y PowerShell[cite: 50, 96].</li>
-                    <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Administración de Servidores Linux y Windows[cite: 44, 187].</li>
-                </ul>
-                <a href="iam.html" class="btn btn-primary-custom mt-3">Ver Detalle de Trayectoria</a>
+    <section class="mb-5 pb-5">
+        <h2 class="section-title">Trayectoria Profesional</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <h5 class="fw-bold text-primary"><i class="fas fa-shield-alt me-2"></i>IAM & PAM</h5>
+                    <p class="small">Especialista en IBM Security (ISVG, ISIM), SailPoint e implementación de CyberArk PAM.</p>
+                </div>
             </div>
-            <div class="col-lg-6 mt-4 mt-lg-0">
-                <div class="p-4 bg-light rounded-3 border">
-                    <h5>Último Rol: Sector Banca</h5>
-                    <p class="small text-muted">Gestión de identidades con ISIM V6.0.2 e ISVG IM V10. Control de accesos privilegiados con CyberArk (PVWA, CPM, PSM, PTA)[cite: 32, 36, 42].</p>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <h5 class="fw-bold text-primary"><i class="fas fa-code me-2"></i>Desarrollo</h5>
+                    <p class="small">Experto en Python, Django Rest Framework, Java y automatización con PowerShell/Bash.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+                    <h5 class="fw-bold text-primary"><i class="fas fa-cloud me-2"></i>Cloud & Data</h5>
+                    <p class="small">Administración en Azure y AWS. Procesamiento de datos con Cloudera CDP y Spark.</p>
                 </div>
             </div>
         </div>
+        <div class="text-center mt-4">
+            <a href="iam.html" class="btn btn-outline-custom">Ver detalles de experiencia técnica</a>
+        </div>
     </section>
 
-    <section class="text-center mb-5">
-        <h2 class="section-title">Formación y Habilidades</h2>
-        <div class="logo-cloud d-flex flex-wrap justify-content-center align-items-center mb-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python">
-            <img src="https://www.djangoproject.com/m/img/logos/django-logo-negative.png" alt="Django" style="filter: brightness(0) invert(0.2);">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_logo.svg" alt="Docker">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Azure">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
-        </div>
-        <div class="row g-3">
-            <div class="col-md-4"><div class="p-3 border rounded">Técnico Especialista FP II [cite: 292]</div></div>
-            <div class="col-md-4"><div class="p-3 border rounded">Cloudera Essentials for CDP [cite: 20]</div></div>
-            <div class="col-md-4"><div class="p-3 border rounded">Inglés (Full Professional) [cite: 16]</div></div>
+    <section class="mb-5">
+        <h2 class="section-title">Certificaciones Oficiales</h2>
+        <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+                <div class="cert-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" class="cert-logo" alt="Azure">
+                    <h6 class="fw-bold mb-1">Microsoft</h6>
+                    <p class="small text-muted mb-0">Azure AZ-900</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="cert-box">
+                    <img src="https://vsc-wp-uploads.s3.amazonaws.com/sailpoint/wp-content/uploads/2019/03/SailPoint-Logo-Blue-RGB.png" class="cert-logo" alt="SailPoint">
+                    <h6 class="fw-bold mb-1">SailPoint</h6>
+                    <p class="small text-muted mb-0">Identity Security</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="cert-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="cert-logo" alt="AWS">
+                    <h6 class="fw-bold mb-1">AWS</h6>
+                    <p class="small text-muted mb-0">Cloud Practitioner</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="cert-box">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Cloudera_Logo.png" class="cert-logo" alt="Cloudera">
+                    <h6 class="fw-bold mb-1">Cloudera</h6>
+                    <p class="small text-muted mb-0">CDP Essentials</p>
+                </div>
+            </div>
         </div>
     </section>
 
 </main>
 
-<footer class="bg-white border-top py-5 text-center">
+<footer class="bg-white border-top py-4 text-center">
     <div class="container">
-        <h3 class="fw-bold mb-4">Contacto</h3>
-        <div class="d-flex justify-content-center gap-4 mb-4">
-            <span><i class="fab fa-github me-2"></i> ser-ayuda</span>
-            <span><i class="fab fa-linkedin me-2"></i> LinkedIn</span>
-            <span><i class="fas fa-envelope me-2"></i> jcm2222@hotmail.com [cite: 3]</span>
+        <p class="mb-0 text-secondary">© 2025 Jesús Contreras M. | Madrid, España</p>
+        <div class="mt-2">
+            <a href="https://github.com/ser-ayuda" class="text-secondary mx-2"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jesus-contreras-m-b3378b17" class="text-secondary mx-2"><i class="fab fa-linkedin"></i></a>
         </div>
-        <a href="Profile.pdf" class="btn btn-primary-custom btn-lg"><i class="fas fa-download me-2"></i> Descargar CV</a>
     </div>
 </footer>
 
