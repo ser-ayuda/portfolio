@@ -15,7 +15,6 @@
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: #334155; }
         
-        /* Hero Section */
         .hero { 
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
                         url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
@@ -23,7 +22,6 @@
         }
         .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.2); object-fit: cover; }
         
-        /* Proyectos */
         .custom-card { 
             border: none; border-radius: 20px; background: white; 
             transition: 0.4s; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden;
@@ -36,15 +34,13 @@
             background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white;
         }
 
-        /* Botones */
         .btn-primary-custom { background: var(--primary-blue); color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
         .btn-primary-custom:hover { background: #153a6b; color: white; }
         .btn-outline-custom { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; padding: 10px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
         .btn-outline-custom:hover { background: var(--primary-blue); color: white; }
 
-        /* Certificaciones */
-        .cert-card { background: white; padding: 25px; border-radius: 18px; border: 1px solid #e2e8f0; transition: 0.3s; height: 100%; text-align: center; }
-        .cert-logo { height: 45px; margin-bottom: 15px; object-fit: contain; }
+        .cert-card { background: white; padding: 25px; border-radius: 18px; border: 1px solid #e2e8f0; transition: 0.3s; height: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .cert-logo { height: 45px; width: auto; max-width: 100%; margin-bottom: 15px; }
         
         .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 50px; position: relative; display: inline-block; font-size: 2.2rem; }
         .section-title::after { content: ""; width: 60px; height: 4px; background: var(--accent-blue); position: absolute; bottom: -12px; left: 0; }
@@ -62,8 +58,8 @@
                 <h1 class="display-4 fw-bold mb-2">Analista y Desarrollador</h1>
                 <p class="h3 fw-light text-info mb-4">IAM | Ciberseguridad | Cloud Specialist</p>
                 <div class="d-flex gap-4 mb-4 justify-content-center justify-content-md-start">
-                    <a href="https://github.com/ser-ayuda" class="text-white fs-3"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/jesus-contreras-m-b3378b17" class="text-white fs-3"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ser-ayuda" target="_blank" class="text-white fs-3"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jesus-contreras-m-b3378b17" target="_blank" class="text-white fs-3"><i class="fab fa-linkedin"></i></a>
                     <a href="mailto:jcm2222@hotmail.com" class="text-white fs-3"><i class="fas fa-envelope"></i></a>
                 </div>
                 <p class="lead opacity-75">Más de 15 años de experiencia técnica en entornos críticos y desarrollo de soluciones seguras.</p>
@@ -118,7 +114,7 @@
                     <i class="fas fa-user-shield fa-3x text-primary mb-3"></i>
                     <h4 class="fw-bold">IAM & PAM</h4>
                     <p class="small text-muted">IBM Security, SailPoint y CyberArk.</p>
-                    <a href="iam.html" class="btn btn-sm btn-outline-primary rounded-pill">Ver Trayectoria</a>
+                    <a href="iam.html" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Ver Trayectoria</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -126,7 +122,7 @@
                     <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
                     <h4 class="fw-bold">Desarrollo</h4>
                     <p class="small text-muted">Python, Django y Automatización.</p>
-                    <a href="dev.html" class="btn btn-sm btn-outline-primary rounded-pill">Ver Proyectos</a>
+                    <a href="dev.html" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Ver Proyectos</a>
                 </div>
             </div>
             <div class="col-md-4">
@@ -134,7 +130,7 @@
                     <i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
                     <h4 class="fw-bold">Formación</h4>
                     <p class="small text-muted">Certificaciones y Estudios.</p>
-                    <a href="formacion.html" class="btn btn-sm btn-outline-primary rounded-pill">Ver Títulos</a>
+                    <a href="formacion.html" class="btn btn-sm btn-outline-primary rounded-pill mt-2">Ver Títulos</a>
                 </div>
             </div>
         </div>
@@ -145,25 +141,25 @@
         <div class="row g-4">
             <div class="col-6 col-md-3">
                 <div class="cert-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" class="cert-logo" alt="Azure">
+                    <img src="https://cdn.worldvectorlogo.com/logos/microsoft-azure-2.svg" class="cert-logo" alt="Azure">
                     <p class="fw-bold small mb-0">Azure Fundamentals</p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="cert-card">
-                    <img src="https://www.sailpoint.com/wp-content/uploads/2019/03/SailPoint-Logo-Blue-RGB.png" class="cert-logo" alt="SailPoint">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/SailPoint_Logo.svg" class="cert-logo" alt="SailPoint" onerror="this.src='https://cdn.worldvectorlogo.com/logos/sailpoint.svg'">
                     <p class="fw-bold small mb-0">Identity Security</p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="cert-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="cert-logo" alt="AWS">
+                    <img src="https://cdn.worldvectorlogo.com/logos/aws-2.svg" class="cert-logo" alt="AWS">
                     <p class="fw-bold small mb-0">Cloud Practitioner</p>
                 </div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="cert-card">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Cloudera_Logo.png" class="cert-logo" alt="Cloudera">
+                    <img src="https://cdn.worldvectorlogo.com/logos/cloudera.svg" class="cert-logo" alt="Cloudera">
                     <p class="fw-bold small mb-0">CDP Essentials</p>
                 </div>
             </div>
