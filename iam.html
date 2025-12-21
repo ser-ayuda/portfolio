@@ -3,75 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAM Architecture | Jesús Contreras</title>
+    <title>IAM Specialist | Jesús Contreras</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { background: #020617; color: #e2e8f0; font-family: 'Inter', sans-serif; }
-        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 1.5rem; transition: 0.3s; }
-        .text-gradient { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .badge-iam { background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid #38bdf8; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; }
-        .nav-back { background: rgba(255,255,255,0.05); border-radius: 50px; padding: 10px 25px; text-decoration: none; color: white; transition: 0.3s; }
-        .nav-back:hover { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
+        :root {
+            --primary-blue: #1e4b8a;
+            --accent-blue: #38bdf8;
+            --light-bg: #f8fafc;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: #334155; }
+        
+        /* Navegación Simple */
+        .nav-back { padding: 20px 0; background: white; border-bottom: 1px solid #e2e8f0; }
+        .btn-back { color: var(--primary-blue); text-decoration: none; font-weight: 600; }
+
+        .header-iam { 
+            background: linear-gradient(135deg, #1e4b8a 0%, #0f172a 100%); 
+            color: white; padding: 60px 0; margin-bottom: 40px;
+        }
+
+        /* Estilo Timeline */
+        .timeline { border-left: 3px solid var(--accent-blue); padding-left: 30px; position: relative; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before {
+            content: ""; position: absolute; left: -41px; top: 0;
+            width: 20px; height: 20px; background: var(--accent-blue);
+            border-radius: 50%; border: 4px solid white;
+        }
+
+        .experience-card {
+            background: white; padding: 25px; border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;
+        }
+
+        .badge-tech {
+            background: #e0f2fe; color: #0369a1; padding: 5px 12px;
+            border-radius: 20px; font-size: 0.75rem; font-weight: 700;
+            margin-right: 5px; display: inline-block; margin-top: 8px;
+        }
+
+        .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 30px; }
     </style>
 </head>
 <body>
 
-<nav class="container py-4">
-    <a href="index.html" class="nav-back animate__animated animate__fadeIn"><i class="fas fa-arrow-left me-2"></i> Volver al Dashboard</a>
+<nav class="nav-back">
+    <div class="container">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left me-2"></i> Volver al Inicio</a>
+    </div>
 </nav>
 
-<main class="container py-5">
-    <header class="text-center mb-5 animate__animated animate__fadeInDown">
-        <h1 class="display-4 fw-bold text-gradient">Identity & Access Management</h1>
-        <p class="text-secondary lead">Especialista en Gobierno de Identidad y Seguridad de Cuentas Privilegiadas</p>
-    </header>
+<header class="header-iam text-center">
+    <div class="container">
+        <h1 class="display-5 fw-bold">Especialista en Identidad y Accesos (IAM)</h1>
+        <p class="lead opacity-75">Más de 15 años protegiendo activos críticos y gestionando identidades corporativas.</p>
+    </div>
+</header>
 
-    
-
-    <div class="row g-4">
+<main class="container mb-5">
+    <div class="row">
         <div class="col-lg-8">
-            <div class="glass-card p-4 mb-4 animate__animated animate__fadeInLeft">
-                <h3 class="h4 text-info mb-3"><i class="fas fa-shield-virus me-2"></i> Gestión IAM en Banca (Serem / Capgemini)</h3>
-                <p>Administración de <strong>IBM Security Verify Governance (ISVG)</strong> e <strong>ISIM</strong>. Control de ciclos de vida de identidades y gestión de <strong>CyberArk PAM</strong> (PVWA, CPM, PSM, PTA). Soporte de infraestructura crítica en Red Hat Linux y entornos PKI.</p>
-                <div class="d-flex flex-wrap gap-2 mt-3">
-                    <span class="badge-iam">IBM Security</span><span class="badge-iam">CyberArk</span><span class="badge-iam">Active Directory</span>
+            <h2 class="section-title">Trayectoria Profesional</h2>
+            
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="experience-card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h4 class="fw-bold mb-0">Senior IAM Consultant</h4>
+                            <span class="text-muted small fw-bold">Actualidad</span>
+                        </div>
+                        <p class="text-primary fw-bold mb-3">Líder Técnico en Proyectos de Identidad</p>
+                        <p>Especializado en el diseño e implementación de soluciones de gobierno de identidad y gestión de accesos privilegiados (PAM).</p>
+                        <div>
+                            <span class="badge-tech">SailPoint</span>
+                            <span class="badge-tech">IBM Security</span>
+                            <span class="badge-tech">CyberArk</span>
+                            <span class="badge-tech">PAM</span>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="glass-card p-4 mb-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.2s;">
-                <h3 class="h4 text-info mb-3"><i class="fas fa-project-diagram me-2"></i> Consultoría SailPoint (Logicalis / Softtek / SIA)</h3>
-                <p>Implementación técnica de <strong>SailPoint IdentityIQ</strong> y <strong>IdentityNow</strong>. Desarrollo de reglas personalizadas (BeanShell/Java), integración de APIs con Postman y cumplimiento de normativas SOX.</p>
-            </div>
+                <div class="timeline-item">
+                    <div class="experience-card">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h4 class="fw-bold mb-0">Especialista en Ciberseguridad</h4>
+                            <span class="text-muted small fw-bold">Etapa Consolidación</span>
+                        </div>
+                        <p class="text-primary fw-bold mb-3">Administración de Infraestructuras Críticas</p>
+                        <p>Gestión de directorios activos, políticas de grupo y auditoría de accesos en entornos híbridos (On-premise & Cloud).</p>
+                        <div>
+                            <span class="badge-tech">Active Directory</span>
+                            <span class="badge-tech">Azure AD</span>
+                            <span class="badge-tech">Red Hat</span>
+                            <span class="badge-tech">Windows Server</span>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="glass-card p-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.4s;">
-                <h3 class="h4 text-info mb-3"><i class="fas fa-server me-2"></i> Oracle Identity Management (Grupo CMC)</h3>
-                <p>Migración crítica de OIM 11g a 12c. Diseño de roles RBAC, configuración de conectores y alta disponibilidad en clústeres distribuidos.</p>
             </div>
         </div>
 
         <div class="col-lg-4">
-            <div class="glass-card p-4 h-100 animate__animated animate__fadeInRight">
-                <h4 class="mb-4"><i class="fas fa-layer-group me-2"></i> Stack de Seguridad</h4>
-                <div class="list-group list-group-flush">
-                    <div class="list-group-item bg-transparent text-secondary border-secondary px-0">
-                        <small class="d-block text-info fw-bold">PROTOCOLOS</small>
-                        SAML, OAuth 2.0, OpenID Connect, LDAP, Kerberos.
-                    </div>
-                    <div class="list-group-item bg-transparent text-secondary border-secondary px-0">
-                        <small class="d-block text-info fw-bold">SISTEMAS</small>
-                        Azure Entra ID, MIM, Linux (RHEL), Solaris, AS/400.
-                    </div>
-                    <div class="list-group-item bg-transparent text-secondary border-secondary px-0">
-                        <small class="d-block text-info fw-bold">MONITORIZACIÓN</small>
-                        QRadar, Splunk, IBM Tivoli, ServiceNow.
-                    </div>
+            <div class="p-4 bg-white rounded-12 shadow-sm border border-primary border-top-0 border-bottom-0 border-end-0 border-4 mb-4">
+                <h5 class="fw-bold"><i class="fas fa-tools me-2 text-primary"></i> Skills Clave</h5>
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Gobierno de Identidad (IGA)</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Gestión de Accesos (AM)</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Privileged Access Management</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Autenticación MFA / SSO</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Cumplimiento Normativo (GDPR)</li>
+                </ul>
+            </div>
+
+            <div class="p-4 bg-white rounded-12 shadow-sm border">
+                <h5 class="fw-bold text-primary mb-3">Certificación Destacada</h5>
+                <div class="text-center">
+                    <i class="fas fa-award fa-3x text-warning mb-2"></i>
+                    <p class="fw-bold mb-0">SailPoint Identity Security</p>
+                    <p class="text-muted small">Leader Credential</p>
                 </div>
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJmZzZ4N3R6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7TKSjPKYM91hC2" class="img-fluid rounded-4 mt-4 opacity-50" alt="Cyber Security Animation">
             </div>
         </div>
     </div>
 </main>
+
+<footer class="bg-white py-4 border-top text-center mt-5">
+    <p class="text-secondary small mb-0">Jesús Contreras | Especialista en Ciberseguridad e Identidad</p>
+</footer>
+
 </body>
 </html>
