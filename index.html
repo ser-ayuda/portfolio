@@ -22,31 +22,32 @@
         }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-blue); object-fit: cover; }
 
-        /* Estilo Proyectos (Más compactos) */
+        /* Proyectos Compactos */
         .project-card-mini {
             background: white; border: none; border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: 0.3s; height: 100%; overflow: hidden;
-            display: flex; flex-direction: column;
+            transition: 0.3s; overflow: hidden; text-align: center;
         }
-        .project-card-mini:hover { transform: translateY(-5px); }
-        .project-img-mini { height: 140px; object-fit: cover; width: 100%; }
-        .project-body { padding: 15px; text-align: center; }
+        .project-img-mini { height: 120px; object-fit: cover; width: 100%; }
 
-        /* Estilo Formación */
-        .edu-card {
-            background: #fff; padding: 15px; border-radius: 10px;
-            border-left: 4px solid var(--accent-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            margin-bottom: 10px;
+        /* Sección Formación Optimizada */
+        .edu-container {
+            background: white; padding: 30px; border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-
+        .edu-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid #edf2f7;
+        }
+        .edu-item:last-child { border-bottom: none; }
+        .edu-label { font-weight: 600; color: #4a5568; font-size: 1rem; }
+        
         .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 25px; position: relative; display: inline-block; }
         .section-title::after { content: ""; width: 30px; height: 3px; background: var(--accent-blue); position: absolute; bottom: -8px; left: 0; }
         
-        .tech-container { background: white; padding: 20px; border-radius: 15px; text-align: center; }
-        .tech-main-img { max-width: 450px; width: 100%; height: auto; }
-
-        .btn-view { background: var(--primary-blue); color: white; font-size: 0.8rem; padding: 5px 15px; border-radius: 5px; text-decoration: none; }
+        .tech-main-img { max-width: 400px; width: 100%; height: auto; margin: 40px 0; }
+        .btn-view { background: var(--primary-blue); color: white; font-size: 0.75rem; padding: 5px 15px; border-radius: 20px; text-decoration: none; transition: 0.3s; }
+        .btn-view:hover { background: var(--accent-blue); }
     </style>
 </head>
 <body>
@@ -73,36 +74,24 @@
 <main class="container my-5">
     
     <section class="mb-5">
-        <h2 class="section-title">Proyectos</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3 col-6">
                 <div class="project-card-mini">
                     <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400" class="project-img-mini" alt="IAM">
-                    <div class="project-body">
-                        <h6 class="fw-bold">Trayectoria IAM</h6>
-                        <p class="text-muted small">Especialización en SailPoint, IBM y CyberArk.</p>
-                        <a href="iam.html" class="btn-view">Ver Detalles</a>
-                    </div>
+                    <div class="p-2"><h6 class="small fw-bold mb-2">Trayectoria IAM</h6><a href="iam.html" class="btn-view">Info</a></div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3 col-6">
                 <div class="project-card-mini">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-mini" alt="Escritor Pro">
-                    <div class="project-body">
-                        <h6 class="fw-bold">Escritor Pro</h6>
-                        <p class="text-muted small">Aplicación PWA de dictado por voz.</p>
-                        <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-view">Ir a la App</a>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-mini" alt="PWA">
+                    <div class="p-2"><h6 class="small fw-bold mb-2">Escritor Pro</h6><a href="https://ser-ayuda.github.io/diario" class="btn-view">App</a></div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3 col-6">
                 <div class="project-card-mini">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-mini" alt="Calendario">
-                    <div class="project-body">
-                        <h6 class="fw-bold">Gestión Familiar</h6>
-                        <p class="text-muted small">Sistema colaborativo en Django.</p>
-                        <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-view">Ver Demo</a>
-                    </div>
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-mini" alt="Django">
+                    <div class="p-2"><h6 class="small fw-bold mb-2">Gestión Familiar</h6><a href="https://familia-calendario-demo.onrender.com/" class="btn-view">Demo</a></div>
                 </div>
             </div>
         </div>
@@ -110,40 +99,29 @@
 
     <section class="mb-5">
         <h2 class="section-title">Formación</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="edu-card">
-                    <p class="fw-bold mb-0">SailPoint Identity Security</p>
-                    <small class="text-muted">Leader Credential</small>
+        <div class="edu-container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="edu-item"><span class="edu-label">SailPoint Technologies</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">Learn.Microsoft (Azure)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">AWS (Cloud Computing)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">CyberArk (PAM)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">IBM Security</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="edu-card">
-                    <p class="fw-bold mb-0">Postgrado Cloud Computing & Big Data</p>
-                    <small class="text-muted">Especialización Técnica</small>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="edu-card">
-                    <p class="fw-bold mb-0">FP II Técnico Especialista</p>
-                    <small class="text-muted">Informática de Gestión</small>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="edu-card">
-                    <p class="fw-bold mb-0">Especialista en Ciberseguridad</p>
-                    <small class="text-muted">Formación Profesional</small>
+                <div class="col-md-6">
+                    <div class="edu-item"><span class="edu-label">Seguridad Informática</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">Lenguajes programación</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">BBDD (SQL / Oracle)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">Cloudera (Big Data)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
+                    <div class="edu-item"><span class="edu-label">Otros Certificados</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="mb-5">
-        <h2 class="section-title">Tecnologías</h2>
-        <div class="tech-container">
-            <img src="img/tech-stack.png" alt="Tecnologías" class="tech-main-img">
-        </div>
-    </section>
+    <div class="text-center">
+        <img src="img/tech-stack.png" alt="Stack Tecnológico" class="tech-main-img animate__animated animate__fadeIn">
+    </div>
 
 </main>
 
