@@ -1,26 +1,68 @@
-<body style="background: #020617; color: white;">
-<nav class="p-3"><a href="index.html" class="text-info"><i class="fas fa-arrow-left"></i> Volver</a></nav>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formación | Jesús Contreras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #0f172a; color: #f8fafc; font-family: 'Segoe UI', sans-serif; }
+        .cert-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,215,0,0.2); border-radius: 1rem; transition: 0.3s; padding: 20px; }
+        .cert-card:hover { background: rgba(255,215,0,0.05); border-color: #ffd700; }
+        .nav-back-gold { color: #ffd700; text-decoration: none; font-weight: bold; border: 1px solid #ffd700; padding: 8px 20px; border-radius: 50px; }
+        .nav-back-gold:hover { background: #ffd700; color: #0f172a; }
+        .gold-text { color: #ffd700; }
+    </style>
+</head>
+<body>
+
+<nav class="container py-4">
+    <a href="index.html" class="nav-back-gold animate__animated animate__fadeIn"><i class="fas fa-home me-2"></i> Dashboard</a>
+</nav>
 
 <div class="container py-5">
-    <h2 class="display-4 fw-bold mb-5 text-warning">Historial Formativo</h2>
+    <h2 class="display-4 fw-bold mb-5 gold-text text-center animate__animated animate__fadeInDown">Academic & Certifications</h2>
     
     <div class="row g-4">
-        <div class="col-md-6">
-            <h4 class="text-warning mb-4"><i class="fas fa-certificate me-2"></i> Certificaciones Oficiales</h4>
-            <ul class="list-group list-group-flush bg-transparent">
-                <li class="list-group-item bg-transparent text-white border-secondary">🥇 <strong>SailPoint Identity Security Leader</strong></li>
-                <li class="list-group-item bg-transparent text-white border-secondary">☁️ <strong>Microsoft Azure AZ-900</strong> (Ene 2025)</li>
-                <li class="list-group-item bg-transparent text-white border-secondary">📦 <strong>Cloudera CDP Essentials</strong></li>
-                <li class="list-group-item bg-transparent text-white border-secondary">🛡️ <strong>CyberArk University CEM</strong></li>
-            </ul>
+        <div class="col-lg-6">
+            <h4 class="mb-4 text-white"><i class="fas fa-medal me-2 gold-text"></i> Certificaciones Core</h4>
+            <div class="cert-card mb-3 animate__animated animate__fadeInUp">
+                <h5>SailPoint Identity Security Leader</h5>
+                <p class="small text-secondary mb-0">Identity IQ v8.x / Identity Now / Rules & Scripts</p>
+            </div>
+            <div class="cert-card mb-3 animate__animated animate__fadeInUp" style="animation-delay: 0.1s;">
+                <h5>Microsoft Azure Fundamentals (AZ-900)</h5>
+                <p class="small text-secondary mb-0">Preparación activa: AZ-104 Azure Administrator</p>
+            </div>
+            <div class="cert-card mb-3 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <h5>Cloudera Essentials for CDP</h5>
+                <p class="small text-secondary mb-0">Spark Big Data / Machine Learning Introduction</p>
+            </div>
+            <div class="cert-card mb-3 animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
+                <h5>AWS Certified Solutions Architect</h5>
+                <p class="small text-secondary mb-0">Amazon Web Services IAM & SysOps</p>
+            </div>
         </div>
-        <div class="col-md-6">
-            <h4 class="text-warning mb-4"><i class="fas fa-book me-2"></i> Formación Especializada</h4>
-            <p><strong>Ciberseguridad:</strong> Programación Antihacking (.NET/Java), Forense, Gestión de Riesgos.</p>
-            <p><strong>Idiomas:</strong> Inglés Alto (C2). Diplomas en UPenn, Cambridge y Perth College (UK).</p>
-            <hr class="text-secondary">
-            <p><strong>Formación Base:</strong> Técnico Especialista en Informática de Gestión (F.P. II) e Informática de Gestión (U.N.E.D.).</p>
+
+        <div class="col-lg-6">
+            <h4 class="mb-4 text-white"><i class="fas fa-graduation-cap me-2 gold-text"></i> Educación & Especialización</h4>
+            <div class="cert-card mb-4 animate__animated animate__fadeInRight">
+                <h5 class="gold-text">Formación de Base</h5>
+                <p><strong>Técnico Especialista en Informática de Gestión (FP II)</strong>. Instituto Politécnico de Segovia.</p>
+                <p><strong>Informática de Gestión (UNED)</strong>. Estudios realizados y Delegado Nacional (2000).</p>
+            </div>
+            <div class="cert-card mb-4 animate__animated animate__fadeInRight" style="animation-delay: 0.2s;">
+                <h5 class="gold-text">Idiomas & Soft Skills</h5>
+                <p><i class="fas fa-language me-2"></i> <strong>Inglés:</strong> Nivel Alto (Full Professional). University of Pennsylvania & Cambridge.</p>
+                <p><i class="fas fa-users me-2"></i> <strong>Aptitudes:</strong> Gestión de incidencias, negociación, liderazgo creativo y formación.</p>
+            </div>
+            <div class="p-3 bg-white bg-opacity-5 rounded-4 text-center">
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHRrdXoyejR6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eGZ6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26hpKz78D1E2V4Vna/giphy.gif" width="150" class="opacity-50" alt="Learning GIF">
+            </div>
         </div>
     </div>
 </div>
 </body>
+</html>
