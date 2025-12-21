@@ -22,39 +22,46 @@
         }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-blue); object-fit: cover; }
 
-        /* Proyectos Compactos */
+        /* Proyectos */
         .project-card-mini {
             background: white; border: none; border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: 0.3s; overflow: hidden; text-align: center;
+            transition: 0.3s; overflow: hidden; text-align: center; margin-bottom: 20px;
         }
         .project-img-mini { height: 120px; object-fit: cover; width: 100%; }
 
-        /* Sección Formación Optimizada */
+        /* Formación */
         .edu-container {
             background: white; padding: 30px; border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .edu-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 12px 0; border-bottom: 1px solid #edf2f7;
+        .edu-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
+        .edu-list li { 
+            width: 50%; padding: 8px 15px; position: relative; 
+            font-weight: 500; color: #4a5568;
         }
-        .edu-item:last-child { border-bottom: none; }
-        .edu-label { font-weight: 600; color: #4a5568; font-size: 1rem; }
-        
+        .edu-list li::before { content: "•"; color: var(--accent-blue); font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; }
+
         .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 25px; position: relative; display: inline-block; }
         .section-title::after { content: ""; width: 30px; height: 3px; background: var(--accent-blue); position: absolute; bottom: -8px; left: 0; }
         
         .tech-main-img { max-width: 400px; width: 100%; height: auto; margin: 40px 0; }
-        .btn-view { background: var(--primary-blue); color: white; font-size: 0.75rem; padding: 5px 15px; border-radius: 20px; text-decoration: none; transition: 0.3s; }
-        .btn-view:hover { background: var(--accent-blue); }
+        
+        .btn-custom { 
+            background: var(--primary-blue); color: white; padding: 10px 25px; 
+            border-radius: 30px; text-decoration: none; font-weight: 600; 
+            transition: 0.3s; display: inline-block; border: none;
+        }
+        .btn-custom:hover { background: var(--accent-blue); color: white; transform: translateY(-2px); }
+        
+        .btn-small { font-size: 0.75rem; padding: 5px 15px; border-radius: 20px; }
     </style>
 </head>
 <body>
 
 <header class="hero">
-    <div class="container">
-        <div class="row align-items-center text-center text-md-start">
+    <div class="container text-center text-md-start">
+        <div class="row align-items-center">
             <div class="col-md-3">
                 <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img shadow animate__animated animate__zoomIn">
             </div>
@@ -79,42 +86,43 @@
             <div class="col-md-3 col-6">
                 <div class="project-card-mini">
                     <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400" class="project-img-mini" alt="IAM">
-                    <div class="p-2"><h6 class="small fw-bold mb-2">Trayectoria IAM</h6><a href="iam.html" class="btn-view">Info</a></div>
+                    <div class="p-3"><h6 class="small fw-bold mb-2">Trayectoria IAM</h6><a href="iam.html" class="btn-custom btn-small">Detalles</a></div>
                 </div>
             </div>
             <div class="col-md-3 col-6">
                 <div class="project-card-mini">
                     <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-mini" alt="PWA">
-                    <div class="p-2"><h6 class="small fw-bold mb-2">Escritor Pro</h6><a href="https://ser-ayuda.github.io/diario" class="btn-view">App</a></div>
+                    <div class="p-3"><h6 class="small fw-bold mb-2">Escritor Pro</h6><a href="https://ser-ayuda.github.io/diario" class="btn-custom btn-small">App</a></div>
                 </div>
             </div>
             <div class="col-md-3 col-6">
                 <div class="project-card-mini">
                     <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-mini" alt="Django">
-                    <div class="p-2"><h6 class="small fw-bold mb-2">Gestión Familiar</h6><a href="https://familia-calendario-demo.onrender.com/" class="btn-view">Demo</a></div>
+                    <div class="p-3"><h6 class="small fw-bold mb-2">Gestión Familiar</h6><a href="https://familia-calendario-demo.onrender.com/" class="btn-custom btn-small">Demo</a></div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="mb-5">
-        <h2 class="section-title">Formación</h2>
+        <h2 class="section-title">Formación y Certificaciones</h2>
         <div class="edu-container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="edu-item"><span class="edu-label">SailPoint Technologies</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">Learn.Microsoft (Azure)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">AWS (Cloud Computing)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">CyberArk (PAM)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">IBM Security</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                </div>
-                <div class="col-md-6">
-                    <div class="edu-item"><span class="edu-label">Seguridad Informática</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">Lenguajes programación</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">BBDD (SQL / Oracle)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">Cloudera (Big Data)</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                    <div class="edu-item"><span class="edu-label">Otros Certificados</span><a href="formacion.html" class="btn-view">Ver Título</a></div>
-                </div>
+            <ul class="edu-list mb-4">
+                <li>SailPoint Technologies</li>
+                <li>Learn.Microsoft</li>
+                <li>AWS</li>
+                <li>CyberArk</li>
+                <li>IBM</li>
+                <li>Seguridad Informática</li>
+                <li>Lenguajes programación</li>
+                <li>BBDD</li>
+                <li>Cloudera</li>
+                <li>Otros</li>
+            </ul>
+            <div class="text-center">
+                <a href="formacion.html" class="btn-custom">
+                    <i class="fas fa-graduation-cap me-2"></i> Ver Detalles de Formación
+                </a>
             </div>
         </div>
     </section>
