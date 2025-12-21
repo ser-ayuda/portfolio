@@ -28,8 +28,28 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
             height: 100%; transition: 0.3s; text-align: center;
         }
-        
-        /* Ajuste de la Imagen de Tecnologías */
+
+        /* AJUSTE IMÁGENES PROYECTOS */
+        .project-card {
+            border: none;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            text-align: center;
+            padding: 20px;
+        }
+        .project-img-small {
+            width: 100%;
+            max-width: 280px; /* Tamaño máximo de la imagen del proyecto */
+            height: 160px;    /* Altura fija para uniformidad */
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+
+        /* AJUSTE IMAGEN TECNOLOGÍAS */
         .tech-container {
             background: white;
             padding: 30px;
@@ -38,15 +58,14 @@
             text-align: center;
         }
         .tech-main-img {
-            max-width: 600px; /* Tamaño controlado y más pequeño */
+            max-width: 500px; /* Un poco más pequeña aún */
             width: 100%;
             height: auto;
-            border-radius: 5px;
         }
 
         .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 25px; position: relative; display: inline-block; }
         .section-title::after { content: ""; width: 40px; height: 4px; background: var(--accent-blue); position: absolute; bottom: -8px; left: 0; }
-        .btn-custom { background: var(--primary-blue); color: white; border-radius: 8px; padding: 8px 20px; text-decoration: none; font-weight: 600; }
+        .btn-custom { background: var(--primary-blue); color: white; border-radius: 8px; padding: 8px 20px; text-decoration: none; font-weight: 600; display: inline-block; width: 100%; }
     </style>
 </head>
 <body>
@@ -95,7 +114,7 @@
                 <div class="spec-card">
                     <i class="fas fa-certificate fa-2x text-primary mb-3"></i>
                     <h5 class="fw-bold">Formación</h5>
-                    <p class="text-muted small">Cloud, Big Data y certificaciones oficiales.</p>
+                    <p class="text-muted small">Cloud, Big Data y certificaciones.</p>
                     <a href="formacion.html" class="btn btn-sm btn-outline-primary rounded-pill">Títulos</a>
                 </div>
             </div>
@@ -104,25 +123,21 @@
 
     <section class="mb-5">
         <h2 class="section-title">Proyectos Destacados</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600" class="card-img-top" alt="Escritor Pro">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Escritor Pro (PWA)</h5>
-                        <p class="text-muted small">Dictado de voz a texto con privacidad total.</p>
-                        <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-custom d-inline-block">Ver App</a>
-                    </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600" class="project-img-small" alt="Escritor Pro">
+                    <h5 class="fw-bold">Escritor Pro (PWA)</h5>
+                    <p class="text-muted small mb-3">Dictado de voz a texto con privacidad total.</p>
+                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-custom">Ver App</a>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card border-0 shadow-sm overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600" class="card-img-top" alt="Calendario">
-                    <div class="card-body">
-                        <h5 class="fw-bold">Familia Calendario</h5>
-                        <p class="text-muted small">Gestión colaborativa en Django.</p>
-                        <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-custom d-inline-block">Ver Demo</a>
-                    </div>
+            <div class="col-md-5">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600" class="project-img-small" alt="Calendario">
+                    <h5 class="fw-bold">Familia Calendario</h5>
+                    <p class="text-muted small mb-3">Gestión colaborativa en Django.</p>
+                    <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-custom">Ver Demo</a>
                 </div>
             </div>
         </div>
