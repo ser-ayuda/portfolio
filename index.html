@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Contreras M. | Especialista IAM & Full Stack</title>
+    <title>Portfolio Profesional | IAM & Full Stack</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,65 +11,62 @@
         :root {
             --primary-blue: #1e4b8a;
             --accent-blue: #38bdf8;
-            --dark-slate: #0f172a;
             --light-bg: #f8fafc;
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: #334155; }
         
-        /* Hero con el estilo de marca personal */
+        /* Hero Section */
         .hero { 
             background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
                         url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center; color: white; padding: 100px 0; 
         }
-        .profile-img { width: 190px; height: 190px; border-radius: 50%; border: 6px solid rgba(255,255,255,0.1); object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; border: 5px solid rgba(255,255,255,0.2); object-fit: cover; }
         
-        /* Proyectos Estilo Visual Impactante */
+        /* Proyectos */
         .custom-card { 
             border: none; border-radius: 20px; background: white; 
             transition: 0.4s; box-shadow: 0 10px 25px rgba(0,0,0,0.05); overflow: hidden;
         }
-        .custom-card:hover { transform: translateY(-12px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
-        .card-img-container { position: relative; height: 260px; }
-        .card-img-top { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .custom-card:hover .card-img-top { scale: 1.1; }
+        .custom-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .card-img-container { position: relative; height: 240px; }
+        .card-img-top { width: 100%; height: 100%; object-fit: cover; }
         .card-overlay { 
-            position: absolute; bottom: 0; left: 0; right: 0; padding: 25px;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95)); color: white;
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 20px;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.9)); color: white;
         }
 
-        /* Botones Estilo Premium */
+        /* Botones */
         .btn-primary-custom { background: var(--primary-blue); color: white; border: none; padding: 12px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .btn-primary-custom:hover { background: #153a6b; transform: scale(1.05); color: white; }
+        .btn-primary-custom:hover { background: #153a6b; color: white; }
         .btn-outline-custom { border: 2px solid var(--primary-blue); color: var(--primary-blue); background: transparent; padding: 10px 24px; border-radius: 10px; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s; }
         .btn-outline-custom:hover { background: var(--primary-blue); color: white; }
 
-        /* Certificaciones Visuales */
+        /* Certificaciones */
         .cert-card { background: white; padding: 25px; border-radius: 18px; border: 1px solid #e2e8f0; transition: 0.3s; height: 100%; text-align: center; }
-        .cert-card:hover { border-color: var(--accent-blue); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .cert-logo { height: 45px; margin-bottom: 15px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
+        .cert-logo { height: 45px; margin-bottom: 15px; object-fit: contain; }
         
-        .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 50px; position: relative; display: inline-block; font-size: 2.5rem; }
-        .section-title::after { content: ""; width: 70px; height: 5px; background: var(--accent-blue); position: absolute; bottom: -15px; left: 0; border-radius: 10px; }
+        .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 50px; position: relative; display: inline-block; font-size: 2.2rem; }
+        .section-title::after { content: ""; width: 60px; height: 4px; background: var(--accent-blue); position: absolute; bottom: -12px; left: 0; }
     </style>
 </head>
 <body>
 
 <header class="hero">
-    <div class="container">
-        <div class="row align-items-center text-center text-md-start">
+    <div class="container text-center text-md-start">
+        <div class="row align-items-center">
             <div class="col-md-4 text-center">
-                <img src="https://via.placeholder.com/190" alt="Jesús Contreras M" class="profile-img animate__animated animate__zoomIn">
+                <img src="https://via.placeholder.com/180" alt="Perfil" class="profile-img shadow animate__animated animate__fadeIn">
             </div>
             <div class="col-md-8 animate__animated animate__fadeInRight">
-                <h1 class="display-3 fw-bold mb-2">Jesús Contreras M.</h1>
-                <p class="h3 fw-light text-info mb-4">Analista y Desarrollador | IAM | Cloud Specialist</p>
+                <h1 class="display-4 fw-bold mb-2">Analista y Desarrollador</h1>
+                <p class="h3 fw-light text-info mb-4">IAM | Ciberseguridad | Cloud Specialist</p>
                 <div class="d-flex gap-4 mb-4 justify-content-center justify-content-md-start">
                     <a href="https://github.com/ser-ayuda" class="text-white fs-3"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/jesus-contreras-m-b3378b17" class="text-white fs-3"><i class="fab fa-linkedin"></i></a>
                     <a href="mailto:jcm2222@hotmail.com" class="text-white fs-3"><i class="fas fa-envelope"></i></a>
                 </div>
-                <p class="lead opacity-75 fs-4">Más de 15 años protegiendo infraestructuras críticas y desarrollando ecosistemas digitales seguros.</p>
+                <p class="lead opacity-75">Más de 15 años de experiencia técnica en entornos críticos y desarrollo de soluciones seguras.</p>
             </div>
         </div>
     </div>
@@ -81,37 +78,31 @@
         <h2 class="section-title">Proyectos Destacados</h2>
         <div class="row g-4 mt-2">
             <div class="col-md-6">
-                <div class="custom-card animate__animated animate__fadeInUp">
+                <div class="custom-card">
                     <div class="card-img-container">
                         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Escritor Pro">
-                        <div class="card-overlay">
-                            <h3 class="fw-bold mb-0">Escritor Pro (PWA)</h3>
-                            <p class="small opacity-75 mb-0">Voice-to-Text & Data Privacy</p>
-                        </div>
+                        <div class="card-overlay"><h3 class="h5 fw-bold mb-0">Escritor Pro (PWA)</h3></div>
                     </div>
                     <div class="card-body p-4">
-                        <p class="text-muted mb-4">Aplicación inteligente de dictado de voz enfocada en la total privacidad del usuario y almacenamiento local cifrado.</p>
+                        <p class="text-muted small mb-4">Dictado de voz a texto con almacenamiento local cifrado. Enfoque total en privacidad.</p>
                         <div class="d-flex gap-3">
-                            <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-primary-custom flex-grow-1">Lanzar Aplicación</a>
-                            <a href="https://github.com/ser-ayuda" target="_blank" class="btn btn-outline-custom">Código</a>
+                            <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-primary-custom flex-grow-1 text-center">Abrir App</a>
+                            <a href="dev.html" class="btn btn-outline-custom">Detalles</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="custom-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="custom-card">
                     <div class="card-img-container">
                         <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Familia Calendario">
-                        <div class="card-overlay">
-                            <h3 class="fw-bold mb-0">Familia Calendario</h3>
-                            <p class="small opacity-75 mb-0">Django Full-Stack / DRF</p>
-                        </div>
+                        <div class="card-overlay"><h3 class="h5 fw-bold mb-0">Familia Calendario</h3></div>
                     </div>
                     <div class="card-body p-4">
-                        <p class="text-muted mb-4">Plataforma colaborativa para la gestión de metas y tareas familiares. Arquitectura robusta y escalable.</p>
+                        <p class="text-muted small mb-4">Gestión colaborativa de metas y tareas familiares. Desarrollado con Django y REST Framework.</p>
                         <div class="d-flex gap-3">
-                            <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-primary-custom flex-grow-1">Ver Demo</a>
-                            <a href="https://github.com/ser-ayuda" target="_blank" class="btn btn-outline-custom">Código</a>
+                            <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-primary-custom flex-grow-1 text-center">Demo</a>
+                            <a href="dev.html" class="btn btn-outline-custom">Detalles</a>
                         </div>
                     </div>
                 </div>
@@ -120,57 +111,60 @@
     </section>
 
     <section class="mb-5 pb-5">
-        <h2 class="section-title">Trayectoria Técnica</h2>
+        <h2 class="section-title">Especialización</h2>
         <div class="row g-4">
             <div class="col-md-4">
-                <div class="p-4 bg-white rounded-4 shadow-sm border-top border-4 border-primary h-100">
-                    <h4 class="fw-bold mb-3">IAM & PAM</h4>
-                    <p class="text-muted">Especialista en <strong>IBM Security (ISVG, ISIM)</strong>, SailPoint y despliegue de soluciones <strong>CyberArk PAM</strong>.</p>
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                    <i class="fas fa-user-shield fa-3x text-primary mb-3"></i>
+                    <h4 class="fw-bold">IAM & PAM</h4>
+                    <p class="small text-muted">IBM Security, SailPoint y CyberArk.</p>
+                    <a href="iam.html" class="btn btn-sm btn-outline-primary rounded-pill">Ver Trayectoria</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="p-4 bg-white rounded-4 shadow-sm border-top border-4 border-primary h-100">
-                    <h4 class="fw-bold mb-3">Software Dev</h4>
-                    <p class="text-muted">Desarrollo experto en <strong>Python/Django</strong>, REST APIs y automatización avanzada con PowerShell y Bash.</p>
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                    <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
+                    <h4 class="fw-bold">Desarrollo</h4>
+                    <p class="small text-muted">Python, Django y Automatización.</p>
+                    <a href="dev.html" class="btn btn-sm btn-outline-primary rounded-pill">Ver Proyectos</a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="p-4 bg-white rounded-4 shadow-sm border-top border-4 border-primary h-100">
-                    <h4 class="fw-bold mb-3">Cloud Architect</h4>
-                    <p class="text-muted">Gestión de infraestructuras en <strong>Azure y AWS</strong>. Procesamiento Big Data con ecosistema <strong>Cloudera CDP</strong>.</p>
+                <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                    <i class="fas fa-graduation-cap fa-3x text-primary mb-3"></i>
+                    <h4 class="fw-bold">Formación</h4>
+                    <p class="small text-muted">Certificaciones y Estudios.</p>
+                    <a href="formacion.html" class="btn btn-sm btn-outline-primary rounded-pill">Ver Títulos</a>
                 </div>
             </div>
-        </div>
-        <div class="text-center mt-5">
-            <a href="iam.html" class="btn btn-outline-custom btn-lg px-5">Explorar Trayectoria Completa</a>
         </div>
     </section>
 
     <section class="mb-5 pb-5">
-        <h2 class="section-title">Certificaciones Core</h2>
-        <div class="row g-4 text-center">
-            <div class="col-6 col-lg-3">
+        <h2 class="section-title">Certificaciones Oficiales</h2>
+        <div class="row g-4">
+            <div class="col-6 col-md-3">
                 <div class="cert-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" class="cert-logo" alt="Azure">
-                    <p class="fw-bold mb-0">Azure AZ-900</p>
+                    <p class="fw-bold small mb-0">Azure Fundamentals</p>
                 </div>
             </div>
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-md-3">
                 <div class="cert-card">
-                    <img src="https://vsc-wp-uploads.s3.amazonaws.com/sailpoint/wp-content/uploads/2019/03/SailPoint-Logo-Blue-RGB.png" class="cert-logo" alt="SailPoint">
-                    <p class="fw-bold mb-0">Identity Security</p>
+                    <img src="https://www.sailpoint.com/wp-content/uploads/2019/03/SailPoint-Logo-Blue-RGB.png" class="cert-logo" alt="SailPoint">
+                    <p class="fw-bold small mb-0">Identity Security</p>
                 </div>
             </div>
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-md-3">
                 <div class="cert-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" class="cert-logo" alt="AWS">
-                    <p class="fw-bold mb-0">AWS Cloud Practitioner</p>
+                    <p class="fw-bold small mb-0">Cloud Practitioner</p>
                 </div>
             </div>
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-md-3">
                 <div class="cert-card">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Cloudera_Logo.png" class="cert-logo" alt="Cloudera">
-                    <p class="fw-bold mb-0">CDP Essentials</p>
+                    <p class="fw-bold small mb-0">CDP Essentials</p>
                 </div>
             </div>
         </div>
@@ -178,10 +172,9 @@
 
 </main>
 
-<footer class="bg-white py-5 border-top">
-    <div class="container text-center text-secondary">
-        <p class="fw-bold mb-2">Jesús Contreras M. | 2025</p>
-        <p class="small mb-0">Madrid, España | English & Spanish (Bilingual)</p>
+<footer class="bg-white py-4 border-top text-center">
+    <div class="container text-secondary">
+        <p class="mb-0 small">Madrid, España | Inglés: Full Professional | © 2025</p>
     </div>
 </footer>
 
