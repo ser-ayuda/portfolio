@@ -12,66 +12,64 @@
             --primary-blue: #1e4b8a;
             --accent-blue: #38bdf8;
             --light-bg: #f8fafc;
+            --card-shadow: 0 10px 30px -12px rgba(0,0,0,0.1);
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: #334155; }
         
         .hero { 
             background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), 
                         url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80');
-            background-size: cover; background-position: center; color: white; padding: 50px 0; 
+            background-size: cover; background-position: center; color: white; padding: 60px 0; 
         }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-blue); object-fit: cover; }
 
-        /* Contenedores Genéricos */
-        .content-box {
-            background: white; padding: 30px; border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        /* BENTO GRID STYLE CARDS */
+        .bento-card {
+            background: white; padding: 20px; border-radius: 16px;
+            box-shadow: var(--card-shadow); transition: all 0.3s ease;
+            height: 100%; border: 1px solid rgba(0,0,0,0.03);
+            display: flex; align-items: center; gap: 15px;
+        }
+        .bento-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15); }
+        .icon-box { 
+            width: 45px; height: 45px; background: #eff6ff; color: var(--primary-blue);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
         }
 
-        /* Listas Estilizadas */
-        .custom-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
-        .custom-list li { 
-            width: 50%; padding: 6px 15px; font-weight: 500; color: #4a5568; font-size: 0.9rem;
-            display: flex; align-items: flex-start;
+        /* PROYECTOS MINI */
+        .project-item {
+            background: white; border-radius: 16px; overflow: hidden; 
+            box-shadow: var(--card-shadow); transition: 0.3s; height: 100%;
         }
-        .custom-list li::before { content: "▹"; color: var(--accent-blue); margin-right: 10px; font-weight: bold; }
+        .project-img-top { height: 100px; object-fit: cover; width: 100%; }
 
-        /* Proyectos */
-        .project-card-small {
-            background: white; border: none; border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; text-align: center;
-        }
-        .project-card-small:hover { transform: translateY(-5px); }
-        .project-img-small { height: 100px; object-fit: cover; width: 100%; border-radius: 8px 8px 0 0; }
+        .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 30px; position: relative; }
+        .section-title span { color: var(--accent-blue); }
 
-        .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 25px; position: relative; display: inline-block; }
-        .section-title::after { content: ""; width: 30px; height: 3px; background: var(--accent-blue); position: absolute; bottom: -8px; left: 0; }
-        
-        .btn-custom { 
-            background: var(--primary-blue); color: white; padding: 10px 25px; 
-            border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; border: none;
+        .btn-main { 
+            background: var(--primary-blue); color: white; padding: 12px 30px; 
+            border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s;
         }
-        .btn-custom:hover { background: var(--accent-blue); color: white; }
-        
-        /* Imagen de Tecnologías Ajustada */
-        .tech-side-img { max-width: 100%; height: auto; border-radius: 10px; }
+        .btn-main:hover { background: var(--accent-blue); color: white; }
+
+        .tech-img-fluid { max-width: 100%; height: auto; border-radius: 12px; }
     </style>
 </head>
 <body>
 
 <header class="hero">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-3 text-center">
+        <div class="row align-items-center text-center text-md-start">
+            <div class="col-md-3">
                 <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img shadow animate__animated animate__zoomIn">
             </div>
-            <div class="col-md-9 animate__animated animate__fadeInRight text-center text-md-start">
+            <div class="col-md-9 animate__animated animate__fadeInRight">
                 <h1 class="display-6 fw-bold mb-1">Jesús Contreras</h1>
-                <p class="h5 text-info fw-light mb-3">Analista IAM & Desarrollador Full Stack</p>
-                <div class="d-flex gap-3 justify-content-center justify-content-md-start">
-                    <a href="https://github.com/ser-ayuda" target="_blank" class="text-white fs-5"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/jesus-contreras-m-b3378b17" target="_blank" class="text-white fs-5"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:jcm2222@hotmail.com" class="text-white fs-5"><i class="fas fa-envelope"></i></a>
+                <p class="h5 text-info fw-light mb-3">IAM Specialist & Full Stack Developer</p>
+                <div class="d-flex gap-3 justify-content-center justify-content-md-start mt-3">
+                    <a href="https://github.com/ser-ayuda" target="_blank" class="text-white fs-4"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:jcm2222@hotmail.com" class="text-white fs-4"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -81,79 +79,99 @@
 <main class="container my-5">
     
     <section class="mb-5">
-        <h2 class="section-title">Trayectoria Profesional</h2>
-        <div class="content-box">
-            <ul class="custom-list mb-4">
-                <li>Desarrollador Full Stack</li>
-                <li>Gestión de Identidades y Accesos (GIA/IAM)</li>
-                <li>Analista Programador</li>
-                <li>Programador y Técnico</li>
-                <li>Gestor Incidencias Técnicas</li>
-                <li>Responsable Informático (Inglés)</li>
-                <li>Administrador de Sistemas (Inglés)</li>
-                <li>Profesor Informática</li>
-                <li>Especialista Informático (Inglés)</li>
-                <li>Administrador de Sistemas ISP</li>
-                <li>Técnico Informático y Administración</li>
-                <li>Prácticas F.P.II. Informática de Gestión</li>
-            </ul>
-            <div class="text-center">
-                <a href="iam.html" class="btn-custom"><i class="fas fa-briefcase me-2"></i> Ver Experiencia Detallada</a>
+        <h2 class="section-title">Trayectoria <span>Profesional</span></h2>
+        <div class="row g-3">
+            <div class="col-md-4 col-sm-6">
+                <div class="bento-card">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <div class="small fw-bold">Full Stack Developer</div>
+                </div>
             </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="bento-card">
+                    <div class="icon-box"><i class="fas fa-id-card-alt"></i></div>
+                    <div class="small fw-bold">IAM / GIA Specialist</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="bento-card">
+                    <div class="icon-box"><i class="fas fa-terminal"></i></div>
+                    <div class="small fw-bold">Analista Programador</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="bento-card">
+                    <div class="icon-box"><i class="fas fa-server"></i></div>
+                    <div class="small fw-bold">Administrador Sistemas</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="bento-card">
+                    <div class="icon-box"><i class="fas fa-language"></i></div>
+                    <div class="small fw-bold">Responsable IT (English)</div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="bento-card">
+                    <div class="icon-box"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="small fw-bold">Profesor Informática</div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="iam.html" class="btn-main">Explorar Experiencia Completa</a>
         </div>
     </section>
 
     <section class="mb-5">
-        <h2 class="section-title">Aplicaciones y Proyectos</h2>
+        <h2 class="section-title">Aplicaciones <span>Activas</span></h2>
         <div class="row g-4 justify-content-center">
-            <div class="col-md-4 col-6">
-                <div class="project-card-small p-3">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-small mb-3" alt="PWA">
-                    <h6 class="fw-bold small">Escritor Pro (PWA)</h6>
-                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-custom py-1 px-3" style="font-size: 0.7rem;">Abrir App</a>
-                </div>
-            </div>
-            <div class="col-md-4 col-6">
-                <div class="project-card-small p-3">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-small mb-3" alt="Django">
-                    <h6 class="fw-bold small">Gestión Familiar (Django)</h6>
-                    <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-custom py-1 px-3" style="font-size: 0.7rem;">Ver Demo</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mb-5">
-        <h2 class="section-title">Formación y Certificaciones</h2>
-        <div class="content-box">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <ul class="custom-list mb-4">
-                        <li>SailPoint Technologies</li>
-                        <li>Learn.Microsoft</li>
-                        <li>AWS</li>
-                        <li>CyberArk</li>
-                        <li>IBM Security</li>
-                        <li>Seguridad Informática</li>
-                        <li>Lenguajes programación</li>
-                        <li>BBDD</li>
-                        <li>Cloudera</li>
-                        <li>Otros</li>
-                    </ul>
-                    <div class="text-center text-lg-start">
-                        <a href="formacion.html" class="btn-custom"><i class="fas fa-graduation-cap me-2"></i> Detalles de Formación</a>
+            <div class="col-md-4">
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-top" alt="PWA">
+                    <div class="p-3 text-center">
+                        <h6 class="fw-bold mb-2">Escritor Pro (PWA)</h6>
+                        <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">Abrir App</a>
                     </div>
                 </div>
-                <div class="col-lg-5 mt-4 mt-lg-0 text-center">
-                    <img src="img/tech-stack.png" alt="Stack Tecnológico" class="tech-side-img animate__animated animate__fadeIn">
+            </div>
+            <div class="col-md-4">
+                <div class="project-item">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-top" alt="Django">
+                    <div class="p-3 text-center">
+                        <h6 class="fw-bold mb-2">Gestión Familiar</h6>
+                        <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-sm btn-outline-primary rounded-pill px-3">Ver Demo</a>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="section-title">Formación <span>& Skills</span></h2>
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="row g-2">
+                    <div class="col-6"><div class="bento-card py-2 px-3 shadow-sm"><small class="fw-bold">SailPoint Tech</small></div></div>
+                    <div class="col-6"><div class="bento-card py-2 px-3 shadow-sm"><small class="fw-bold">Microsoft Learn</small></div></div>
+                    <div class="col-6"><div class="bento-card py-2 px-3 shadow-sm"><small class="fw-bold">AWS Certified</small></div></div>
+                    <div class="col-6"><div class="bento-card py-2 px-3 shadow-sm"><small class="fw-bold">CyberArk PAM</small></div></div>
+                    <div class="col-6"><div class="bento-card py-2 px-3 shadow-sm"><small class="fw-bold">IBM Security</small></div></div>
+                    <div class="col-6"><div class="bento-card py-2 px-3 shadow-sm"><small class="fw-bold">Ciberseguridad</small></div></div>
+                </div>
+                <div class="mt-4 text-center text-lg-start">
+                    <a href="formacion.html" class="btn-main">Ver Títulos Académicos</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="img/tech-stack.png" alt="Stack Tecnológico" class="tech-img-fluid animate__animated animate__fadeIn">
             </div>
         </div>
     </section>
 
 </main>
 
-<footer class="bg-white py-4 border-top text-center">
+<footer class="bg-white py-4 border-top text-center mt-5">
     <p class="text-secondary small mb-0">© 2025 Jesús Contreras | Madrid, España</p>
 </footer>
 
