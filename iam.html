@@ -3,167 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trayectoria Detallada | Jesús Contreras</title>
+    <title>Expediente Técnico | Jesús Contreras</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --accent: #38bdf8; --dark: #0f172a; --muted: #64748b; }
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #334155; font-size: 0.95rem; }
+        :root { --neon: #38bdf8; --bg-dark: #0f172a; --card-bg: #1e293b; }
+        body { background-color: #0b1120; color: #e2e8f0; font-family: 'Inter', sans-serif; }
         
-        .page-header { background: var(--dark); padding: 40px 0; color: white; border-bottom: 4px solid var(--accent); }
-        .btn-back { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.8rem; }
+        /* Cabecera Tipo Dashboard */
+        .dash-header { background: linear-gradient(180deg, var(--bg-dark) 0%, #0b1120 100%); padding: 50px 0; border-bottom: 2px solid var(--neon); box-shadow: 0 0 20px rgba(56, 189, 248, 0.2); }
+        .neon-text { color: var(--neon); text-shadow: 0 0 8px rgba(56, 189, 248, 0.5); font-weight: 800; }
+        
+        /* Secciones de Datos */
+        .data-segment { margin-bottom: 60px; }
+        .segment-title { border-left: 4px solid var(--neon); padding-left: 15px; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; }
 
-        /* Tarjeta de Experiencia con Timeline */
-        .experience-wrap { border-left: 2px solid #e2e8f0; margin-left: 20px; padding-left: 30px; position: relative; }
-        
-        .exp-card { 
-            background: white; border-radius: 12px; border: 1px solid #e2e8f0; 
-            padding: 25px; margin-bottom: 30px; position: relative; transition: 0.3s;
+        /* Tarjeta de Ingeniería */
+        .tech-card { 
+            background: var(--card-bg); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px;
+            padding: 30px; margin-bottom: 25px; transition: all 0.3s ease; position: relative;
         }
-        .exp-card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .tech-card:hover { border-color: var(--neon); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .tech-card .company { font-size: 0.8rem; color: var(--neon); font-weight: 700; text-transform: uppercase; margin-bottom: 5px; display: block; }
+        .tech-card .role { font-size: 1.4rem; font-weight: 800; color: white; margin-bottom: 15px; }
         
-        /* Punto en la línea de tiempo */
-        .exp-card::before {
-            content: ""; position: absolute; left: -41px; top: 25px;
-            width: 20px; height: 20px; border-radius: 50%;
-            background: white; border: 4px solid var(--accent);
-        }
+        .bullet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .bullet-item { font-size: 0.9rem; color: #94a3b8; position: relative; padding-left: 20px; }
+        .bullet-item::before { content: ">_"; position: absolute; left: 0; color: var(--neon); font-family: monospace; }
 
-        .role-title { font-weight: 800; color: var(--dark); font-size: 1.25rem; margin-bottom: 2px; }
-        .company-label { color: var(--muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 15px; display: block; }
-        
-        .task-list { list-style: none; padding: 0; margin-bottom: 20px; }
-        .task-list li { margin-bottom: 8px; padding-left: 20px; position: relative; line-height: 1.5; }
-        .task-list li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        /* Badge de "Legacy" para empleos antiguos */
+        .legacy-section { background: rgba(30, 41, 59, 0.5); border-radius: 15px; padding: 30px; }
+        .mini-log { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 15px 0; font-size: 0.85rem; }
+        .mini-log:last-child { border: none; }
+        .log-tag { color: #64748b; font-family: monospace; width: 120px; display: inline-block; }
 
-        .tech-box { background: #f1f5f9; padding: 12px; border-radius: 8px; border: 1px dashed #cbd5e1; }
-        .tech-tag { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #1e293b; background: #e2e8f0; padding: 2px 8px; border-radius: 4px; margin: 2px; display: inline-block; }
-        
-        .section-header { font-weight: 900; color: var(--dark); margin: 50px 0 30px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 15px; }
-        .section-header::after { content: ""; height: 2px; background: #e2e8f0; flex-grow: 1; }
+        .footer-nav { background: var(--bg-dark); padding: 20px; text-align: center; border-top: 1px solid var(--neon); }
     </style>
 </head>
 <body>
 
-<header class="page-header text-center">
+<header class="dash-header">
     <div class="container">
-        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> VOLVER AL INICIO</a>
-        <h1 class="mt-2 fw-800">Trayectoria Profesional Detallada</h1>
-        <p class="opacity-75">Especialista en Identidades, Ciberseguridad y Desarrollo de Software</p>
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="neon-text">SYSTEM_LOG: Trayectoria_Completa.sh</h1>
+                <p class="text-muted">Jesús Contreras > Analista & Arquitecto IT > +25 años de experiencia técnica</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <a href="index.html" class="btn btn-outline-info btn-sm">REBOOT_SYSTEM (Volver)</a>
+            </div>
+        </div>
     </div>
 </header>
 
-<main class="container py-5">
-    <div class="experience-wrap">
+<main class="container my-5">
 
-        <h4 class="section-header">Gestión de Identidades (IAM/PAM)</h4>
-
-        <div class="exp-card">
-            <span class="role-title">Ingeniero de Identidades (Banca)</span>
-            <span class="company-label">Serem / Sector Bancario</span>
-            <ul class="task-list">
-                <li>Administración de <strong>IBM Security Verify Governance (ISVG) v10</strong> e ISIM v6.</li>
-                <li>Operativa con Tivoli Directory Integrator (TDI) y Security Directory Integrator (SDI).</li>
-                <li><strong>CyberArk PAM:</strong> Gestión de ciclos de vida de cuentas, PVWA, CPM, PSM y PTA.</li>
-                <li>Health checking diario de plataformas críticas, gestión de certificados PKI y administración en Red Hat Linux.</li>
-            </ul>
-            <div class="tech-box">
-                <span class="tech-tag">IBM ISIM/ISVG</span> <span class="tech-tag">CyberArk</span> <span class="tech-tag">LDAP</span> <span class="tech-tag">Bash</span> <span class="tech-tag">Jira</span>
+    <div class="data-segment">
+        <h3 class="segment-title neon-text">I. Ingeniería de Identidades y Ciberseguridad</h3>
+        
+        <div class="tech-card">
+            <span class="company">Serem / Sector Banca</span>
+            <h2 class="role">Ingeniero IAM & Especialista PAM</h2>
+            <div class="bullet-grid">
+                <div class="bullet-item">Administración ISIM V6.0.2 e ISVG IM V10 (Identity Manager).</div>
+                <div class="bullet-item">Tivoli Directory Integrator (TDI) & Security Directory Integrator (SDI).</div>
+                <div class="bullet-item">Gestión CyberArk: PVWA, CPM, PSM, PTA. Ciclo de vida de safes y licencias.</div>
+                <div class="bullet-item">Health checking plataformas críticas, logs, estados servicios/servidores.</div>
+                <div class="bullet-item">Gestión de PKI, LDAP, Red Hat Linux, Bash y Microsoft PowerShell.</div>
             </div>
         </div>
 
-        <div class="exp-card">
-            <span class="role-title">Especialista IAM & Seguridad Cloud</span>
-            <span class="company-label">Capgemini</span>
-            <ul class="task-list">
-                <li>Implementación de soluciones con <strong>Microsoft FIM y MIM</strong>.</li>
-                <li>Automatización de tareas complejas con PowerShell.</li>
-                <li>Monitorización de infraestructura en <strong>Azure</strong> (VMs Linux/Windows) y aseguramiento de SLAs.</li>
-                <li>Administración de Directorio Activo (AD), GPOs, roles y mantenimiento de servidores SQL Server y WSUS.</li>
-            </ul>
+        <div class="tech-card">
+            <span class="company">Capgemini</span>
+            <h2 class="role">Especialista IAM & Monitorización Cloud</h2>
+            <div class="bullet-grid">
+                <div class="bullet-item">Implementación y Gestión con Microsoft FIM y MIM.</div>
+                <div class="bullet-item">Automatización avanzada con PowerShell para reducir SLAs.</div>
+                <div class="bullet-item">Monitorización de Azure Cloud: VMs Linux/Windows alojadas en la nube.</div>
+                <div class="bullet-item">Administración de Active Directory (AD), PKI, GPOs y parches WSUS/SQL.</div>
+            </div>
         </div>
 
-        <div class="exp-card">
-            <span class="role-title">Consultor SailPoint (IdentityIQ)</span>
-            <span class="company-label">Softtek (Vector ITC) / Logicalis</span>
-            <ul class="task-list">
-                <li>Integración y configuración de <strong>SailPoint IdentityIQ</strong> y IdentityNow.</li>
-                <li>Cumplimiento normativo: Gestión de <strong>controles SOX (Sarbox)</strong> y auditorías internas.</li>
-                <li>Automatización de datos con <strong>Python (Pandas, Numpy, Jupyter Notebook)</strong>.</li>
-                <li>Desarrollo de integraciones con Angular, APIs REST y herramientas ETL como Talend.</li>
-            </ul>
+        <div class="tech-card">
+            <span class="company">Softtek / Logicalis</span>
+            <h2 class="role">Consultor de Gobierno de Identidad (SailPoint)</h2>
+            <div class="bullet-grid">
+                <div class="bullet-item">Configuración SailPoint IdentityIQ & IdentityNow. Perfilado y RBAC.</div>
+                <div class="bullet-item">Cumplimiento SOX (Ley Sarbanes-Oxley): Evidencias y auditoría interna.</div>
+                <div class="bullet-item">Análisis de datos con Python (Pandas, Numpy, Matplotlib, Jupyter).</div>
+                <div class="bullet-item">Integración ETL con Talend y gestión de incidencias en ServiceNow.</div>
+            </div>
         </div>
-
-        <h4 class="section-header">Análisis y Desarrollo de Software</h4>
-
-        <div class="exp-card">
-            <span class="role-title">Analista Programador Java Backend</span>
-            <span class="company-label">CMV Consultores (Everis - Santander Asset Management)</span>
-            <ul class="task-list">
-                <li>Análisis y desarrollo en Java para la aplicación <strong>Perssa</strong> (masterización y conciliación bancaria).</li>
-                <li>Diseño de vistas y consultas SQL optimizadas en Oracle y MySQL.</li>
-                <li>Uso de Eclipse Neon, Git y gestión de procesos Core en entornos de alto rendimiento.</li>
-            </ul>
-        </div>
-
-        <div class="exp-card">
-            <span class="role-title">Programador y Técnico de Sistemas</span>
-            <span class="company-label">Impormovil</span>
-            <ul class="task-list">
-                <li>Desarrollo en <strong>Java EE (Servlets, JSP)</strong>, PHP y JavaScript/jQuery.</li>
-                <li>Mantenimiento de aplicaciones internas (SoftFIT) y soporte remoto avanzado.</li>
-                <li>Implementación de escáneres de códigos de barras e integración con WebServices.</li>
-            </ul>
-        </div>
-
-        <h4 class="section-header">Sistemas e Infraestructura Internacional</h4>
-
-        <div class="exp-card">
-            <span class="role-title">Administrador de Sistemas (Inglés)</span>
-            <span class="company-label">Jaguar Land Rover / Personal 7</span>
-            <ul class="task-list">
-                <li>Administración integral de sistemas para España y Portugal (Win 2003, Red Hat 8, Oracle).</li>
-                <li>Intermediación técnica Bilingüe. Gestión de Directorio Activo y soporte a concesionarios.</li>
-            </ul>
-        </div>
-
-        <div class="exp-card">
-            <span class="role-title">Especialista Informático (Proyectos Críticos)</span>
-            <span class="company-label">Compusof (Aena / CSN / Telefónica)</span>
-            <ul class="task-list">
-                <li><strong>Aena:</strong> Monitorización de red y datos aeroportuarios, Sun One, PKI.</li>
-                <li><strong>Telefónica CGP:</strong> Plataformado de Routers, Firewalls y Sondaje.</li>
-                <li><strong>Consejo de Seguridad Nuclear:</strong> Soporte informático y maquetación técnica.</li>
-                <li><strong>Kyocera / ISCIII:</strong> Administración de servidores AS400 y políticas de seguridad.</li>
-            </ul>
-        </div>
-
-        <h4 class="section-header">Orígenes e Infraestructura de Red</h4>
-
-        <div class="exp-card">
-            <span class="role-title">Admin Sistemas ISP / Operador</span>
-            <span class="company-label">Cibernos / AFI (Madritel, R, Unicable)</span>
-            <ul class="task-list">
-                <li>Control de servidores con HP-Openview, Solaris, HP-UX e IBM AS400.</li>
-                <li>Gestión de copias de seguridad con <strong>Legato Networker</strong> y administración LDAP/Radius.</li>
-            </ul>
-        </div>
-
-        <div class="exp-card">
-            <span class="role-title">Técnico Informático & Administración</span>
-            <span class="company-label">Vía Digital / Telefónica Móviles / Royal Mail</span>
-            <ul class="task-list">
-                <li><strong>Vía Digital:</strong> Monitorización con Patrol y Spectrum en entornos Unix.</li>
-                <li><strong>Telefónica Móviles:</strong> Formación técnica in-situ en toda España.</li>
-                <li><strong>Royal Mail (UK):</strong> Servicio postal y comunicación bilingüe en Perth.</li>
-            </ul>
-        </div>
-        
     </div>
+
+    <div class="data-segment">
+        <h3 class="segment-title neon-text">II. Ingeniería de Software y Desarrollo</h3>
+
+        <div class="tech-card">
+            <span class="company">CMV Consultores (Everis / Santander Asset Management)</span>
+            <h2 class="role">Analista Programador Java Backend</h2>
+            <div class="bullet-grid">
+                <div class="bullet-item">Aplicación PERSA: Conciliación, importación y masterización de datos bancarios.</div>
+                <div class="bullet-item">Performance y Portfolio Analysis para Santander Asset Management.</div>
+                <div class="bullet-item">Stack: Java EE, Eclipse Neon 3, Git, SQL Oracle y MySQL.</div>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <span class="company">Impormovil</span>
+            <h2 class="role">Programador Java Web & Soporte Crítico</h2>
+            <div class="bullet-grid">
+                <div class="bullet-item">Desarrollo JavaEE (Servlets/JSP), PHP y jQuery para sistemas de gestión.</div>
+                <div class="bullet-item">Integración de Hardware: Escáneres de códigos de barras y WebServices.</div>
+                <div class="bullet-item">Virtualización con VirtualBox y soporte remoto vía Teamviewer.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-segment">
+        <h3 class="segment-title neon-text">III. Sistemas e Infraestructura Bilingüe</h3>
+        
+        <div class="tech-card">
+            <span class="company">Jaguar Land Rover (España y Portugal)</span>
+            <h2 class="role">Administrador de Sistemas Bilingüe</h2>
+            <div class="bullet-grid">
+                <div class="bullet-item">Administración Windows 2003, Red Hat 8 y Oracle.</div>
+                <div class="bullet-item">Gestión de Videoconferencias y Directorio Activo internacional.</div>
+                <div class="bullet-item">Intermediación técnica Ingles ↔ Español para reportes a UK.</div>
+            </div>
+        </div>
+
+        <div class="tech-card">
+            <span class="company">Compusof (Multi-Proyecto)</span>
+            <h2 class="role">Especialista de Infraestructuras</h2>
+            <div class="bullet-grid">
+                <div class="bullet-item"><strong>Telefónica CGP:</strong> Plataformado de Routers, Firewalls y Sondas.</div>
+                <div class="bullet-item"><strong>AENA:</strong> Control de Red y datos aeroportuarios, Sun One, PKI.</div>
+                <div class="bullet-item"><strong>Consejo Seguridad Nuclear:</strong> Maquetación técnica y soporte vídeo.</div>
+                <div class="bullet-item"><strong>ISCIII:</strong> Políticas de seguridad y backups de datos críticos.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-segment">
+        <h3 class="segment-title neon-text">IV. Registro Histórico de Actividades (Legacy Logs)</h3>
+        <div class="legacy-section">
+            <div class="mini-log"><span class="log-tag">[ISP_ADMIN]</span> <strong>Cibernos/AFI:</strong> Admin Madritel/Unicable. Solaris, HP-UX, AS400, Legato Networker, Radius/LDAP.</div>
+            <div class="mini-log"><span class="log-tag">[UNIX_OP]</span> <strong>Vía Digital:</strong> Operador de sistemas. Monitorización con Patrol y Spectrum.</div>
+            <div class="mini-log"><span class="log-tag">[TRAINING]</span> <strong>Telefónica Móviles:</strong> Formador técnico en tiendas Movistar (Alma Technologies).</div>
+            <div class="mini-log"><span class="log-tag">[GOV_SOP]</span> <strong>Ayto. Segovia:</strong> Prácticas F.P.II. Gestión de Plusvalía y Recaudación.</div>
+            <div class="mini-log"><span class="log-tag">[UK_POSTAL]</span> <strong>Royal Mail (Perth, UK):</strong> Christmas Postal Worker. Comunicación bilingüe fluida.</div>
+            <div class="mini-log"><span class="log-tag">[MILITARY]</span> <strong>Servicio Militar:</strong> Opla de Informática. Conductor de Ambulancias.</div>
+            <div class="mini-log"><span class="log-tag">[EDUCATION]</span> <strong>Profesor Informática:</strong> I.E.S. Ortega y Gasset. Diseño Web y Blogs.</div>
+        </div>
+    </div>
+
 </main>
 
-<footer class="py-5 text-center bg-white border-top">
-    <p class="text-muted small">Historial Técnico Verificado — Jesús Contreras — 2025</p>
+<footer class="footer-nav">
+    <p class="small text-muted mb-0">Jesús Contreras | Data_Integrity: 100% | Status: Ready</p>
 </footer>
 
 </body>
