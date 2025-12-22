@@ -1,331 +1,928 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV Técnico Completo | Proyectos y Trayectoria</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Trabajos realizados</title>
+  <meta name="description" content="Portfolio: Proyectos, experiencia IAM/GIA, formación y certificaciones." />
 
-<style>
-:root{
-  --bg:#020617;
-  --panel:#0b1120;
-  --card:#0f172a;
-  --border:#1f2937;
-  --text:#e5e7eb;
-  --muted:#9ca3af;
-  --accent:#38bdf8;
-}
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
 
-*{box-sizing:border-box}
+      --brand: #7c5cff;      /* violeta */
+      --brand2:#2dd4bf;      /* turquesa */
+      --warn: #ffd166;       /* amarillo */
+      --ok:   #22c55e;       /* verde */
+      --info: #60a5fa;       /* azul */
 
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,sans-serif;
-  background:linear-gradient(180deg,#020617,#020617);
-  color:var(--text);
-  line-height:1.65;
-}
+      --shadow: 0 20px 70px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
 
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1000px 800px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 700px at 85% 25%, rgba(45,212,191,.22), transparent 60%),
+        radial-gradient(1200px 900px at 50% 90%, rgba(96,165,250,.18), transparent 60%),
+        var(--bg);
+      line-height:1.55;
+    }
 
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:3rem 1.5rem 5rem;
-}
+    a{ color: #b9a9ff; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .container{ width:min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .pill{
+      display:inline-flex; align-items:center; gap:.55rem;
+      padding:.35rem .7rem; border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      font-size:.9rem; color: var(--muted);
+    }
+    .pill b{ color: var(--text); font-weight: 650; }
+    .kbd{ font-family: var(--mono); font-size:.85rem; padding:.1rem .35rem; border:1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,.22); }
 
-header{
-  margin-bottom:4rem;
-}
+    /* Header */
+    header{
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(11,18,32,.78), rgba(11,18,32,.55));
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800; letter-spacing:.2px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: var(--shadow);
+    }
+    .nav a{ color: var(--muted); font-weight: 600; }
+    .nav a:hover{ color: var(--text); text-decoration:none; }
+    .navlinks{ display:flex; flex-wrap:wrap; gap: 12px; justify-content:flex-end; }
+    .navlinks a{ padding:8px 10px; border-radius: 10px; }
+    .navlinks a:hover{ background: rgba(255,255,255,.05); }
 
-header h1{
-  font-size:2.8rem;
-  margin-bottom:.6rem;
-}
+    /* Hero */
+    .hero{
+      padding: 34px 0 22px;
+    }
+    .heroCard{
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .heroTop{
+      display:flex; gap:14px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
+    }
+    .title{
+      margin:0;
+      font-size: clamp(1.45rem, 2.6vw, 2.1rem);
+      letter-spacing: .2px;
+    }
+    .subtitle{
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
 
-header p{
-  color:var(--muted);
-  max-width:1000px;
-}
+    .grid2{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
 
-.badges span{
-  display:inline-block;
-  margin:.3rem .3rem 0 0;
-  padding:.35rem .7rem;
-  font-size:.75rem;
-  border-radius:999px;
-  background:#020617;
-  border:1px solid var(--border);
-}
+    .panel{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius2);
+      padding: 16px;
+    }
+    .panel h3{ margin:0 0 10px; font-size:1.05rem; }
+    .panel ul{ margin: 0; padding-left: 18px; color: var(--muted); }
+    .panel li{ margin: 7px 0; }
+    .links a{ color: #d7cfff; }
 
-section{margin-bottom:4rem}
+    /* Sections */
+    section{ padding: 18px 0; }
+    .sectionTitle{
+      display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+      margin: 14px 0 10px;
+    }
+    .sectionTitle h2{
+      margin:0; font-size: 1.25rem;
+      letter-spacing:.2px;
+    }
+    .divider{ height: 1px; background: var(--line); margin: 6px 0 16px; }
 
-h2{
-  font-size:2rem;
-  margin-bottom:1.5rem;
-  border-bottom:1px solid var(--border);
-  padding-bottom:.4rem;
-}
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px){
+      .cards{ grid-template-columns: 1fr; }
+    }
+    .card{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px -2px auto -2px;
+      height: 6px;
+      background: linear-gradient(90deg, rgba(124,92,255,.8), rgba(45,212,191,.75), rgba(96,165,250,.75));
+      opacity:.9;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:.45rem;
+      padding:.25rem .6rem;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      font-size:.88rem;
+      margin-bottom: 10px;
+    }
+    .card h3{ margin: 6px 0 6px; font-size: 1.15rem; }
+    .card p{ margin: 8px 0; color: var(--muted); }
+    .card .cta{
+      display:flex; gap: 10px; flex-wrap:wrap;
+      margin-top: 12px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: .55rem .8rem;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight: 650;
+      text-decoration:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.08); text-decoration:none; }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.85), rgba(45,212,191,.55));
+      border-color: transparent;
+    }
 
-h3{
-  margin-top:0;
-  font-size:1.5rem;
-}
+    details{
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      border-radius: 14px;
+      padding: 10px 12px;
+    }
+    details summary{
+      cursor:pointer;
+      color: var(--text);
+      font-weight: 700;
+      list-style: none;
+    }
+    details summary::-webkit-details-marker{ display:none; }
+    details .detailsBody{ margin-top: 10px; color: var(--muted); }
+    details .detailsBody h4{ margin: 12px 0 6px; color: var(--text); font-size: 1rem; }
+    details .detailsBody ul{ margin: 0; padding-left: 18px; }
 
-.card{
-  background:linear-gradient(180deg,var(--card),#020617);
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:2rem;
-  margin-bottom:2rem;
-}
+    /* Timeline */
+    .timeline{
+      margin-top: 8px;
+      border-left: 2px solid var(--line);
+      padding-left: 14px;
+    }
+    .item{
+      position: relative;
+      padding: 12px 14px;
+      margin: 12px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.04);
+    }
+    .item::before{
+      content:"";
+      position:absolute;
+      left: -24px;
+      top: 18px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(124,92,255,.14);
+    }
+    .itemHead{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 10px; flex-wrap:wrap;
+    }
+    .role{ margin:0; font-weight: 800; }
+    .meta{
+      display:flex; gap: 8px; flex-wrap:wrap; justify-content:flex-end;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .meta .chip{
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .item ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    .item li{ margin: 7px 0; }
 
-.meta{
-  font-size:.8rem;
-  color:var(--muted);
-  margin-bottom:1rem;
-}
-
-ul{padding-left:1.4rem}
-li{margin-bottom:.45rem}
-
-.tech{
-  margin-top:1.2rem;
-  font-size:.85rem;
-  color:var(--muted);
-}
-
-.small{
-  font-size:.8rem;
-  color:var(--muted);
-}
-
-footer{
-  border-top:1px solid var(--border);
-  padding-top:2rem;
-  text-align:center;
-  font-size:.85rem;
-  color:var(--muted);
-}
-</style>
+    footer{
+      padding: 24px 0 44px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 24px;
+    }
+    .footgrid{
+      display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+      align-items:center;
+    }
+  </style>
 </head>
 
 <body>
-<div class="container">
-
 <header>
-<h1>Trayectoria Profesional Completa</h1>
-<p>
-TRABAJOS REALIZADOS · Proyectos · Desarrollo · Seguridad · Cloud · IAM
-</p>
-<p>
-GitHub: <a href="https://github.com/ser-ayuda" target="_blank">https://github.com/ser-ayuda</a>
-</p>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>Portfolio</div>
+    </div>
+    <nav class="navlinks" aria-label="Navegación">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#formacion">Formación</a>
+      <a href="#certificaciones">Certificaciones</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#idiomas">Idiomas</a>
+    </nav>
+  </div>
 </header>
 
-<!-- PROYECTOS -->
-<section>
-<h2>Proyectos</h2>
+<main class="container">
+  <section class="hero" id="top">
+    <div class="heroCard">
+      <div class="heroTop">
+        <div>
+          <h1 class="title">Portfolio (versión visual)</h1>
+          <p class="subtitle">
+            Proyectos personales, experiencia IAM/GIA, formación y certificaciones.
+            Estructura inspirada en el formato “A” (enlaces + resumen + secciones + timeline).
+          </p>
+        </div>
+        <div class="pill" title="Estado">
+          <span>✅</span> <b>Actualizado</b> <span class="kbd">2025</span>
+        </div>
+      </div>
 
-<div class="card">
-<h3>Escritor Pro</h3>
-<div class="meta">Aplicación web para móviles · Dictado de voz</div>
+      <div class="grid2">
+        <div class="panel links">
+          <h3>Enlaces</h3>
+          <ul>
+            <li><b>GitHub:</b> <a href="https://github.com/ser-ayuda" target="_blank" rel="noreferrer">github.com/ser-ayuda</a></li>
+            <li><b>Demo Escritor Pro:</b> <a href="https://ser-ayuda.github.io/diario" target="_blank" rel="noreferrer">ser-ayuda.github.io/diario</a></li>
+            <li><b>Demo Calendario familiar:</b> <a href="https://familia-calendario-demo.onrender.com/" target="_blank" rel="noreferrer">familia-calendario-demo.onrender.com</a></li>
+            <li><b>Certificado IBM TechXchange (Virtualbadge):</b> <a href="https://www.virtualbadge.io/certificate-validator?credential=49e96b6c-ef06-4ecb-86e1-c51ab73ab1a5" target="_blank" rel="noreferrer">Verificación</a></li>
+            <li><b>IFCD38 (SEPE, PDF):</b> <a href="https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCD38.pdf" target="_blank" rel="noreferrer">Especialidad</a></li>
+          </ul>
+        </div>
 
-<p>
-Aplicación web pensada para móviles que permite crear un diario de notas por dictado de voz de forma simple y eficaz.
-Convierte voz en texto, organiza el contenido por categorías y permite su edición y exportación,
-manteniendo todos los datos almacenados localmente para garantizar la privacidad.
-</p>
+        <div class="panel">
+          <h3>Resumen</h3>
+          <ul>
+            <li><b>Full Stack</b> (Python/Django/DRF) + <b>DevOps/CI</b> (GitHub Actions, Docker, Render)</li>
+            <li><b>IAM / GIA</b> (SailPoint, CyberArk, IBM ISIM/ISVG, Oracle OIM, FIM/MIM)</li>
+            <li>Automatización (Playwright, PowerShell, Bash)</li>
+            <li>Experiencia en banca, telecom y consultoría</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-Demostración funcional en GitHub Pages:
-<a href="https://ser-ayuda.github.io/diario" target="_blank">https://ser-ayuda.github.io/diario</a>
-</p>
-</div>
+  <section id="proyectos">
+    <div class="sectionTitle">
+      <h2>Proyectos</h2>
+      <span class="pill"><b>Open-source</b> + demos</span>
+    </div>
+    <div class="divider"></div>
 
-<div class="card">
-<h3>Calendario Familiar Colaborativo</h3>
-<div class="meta">Desarrollador Full Stack · Proyecto personal · Open-source</div>
+    <div class="cards">
+      <article class="card">
+        <div class="badge">📝 App web móvil</div>
+        <h3>Escritor Pro</h3>
+        <p>
+          Aplicación web pensada para móviles para crear un <b>diario de notas por dictado de voz</b>,
+          simple y eficaz. Mantiene los datos <b>localmente</b> para garantizar la privacidad.
+        </p>
+        <ul>
+          <li>Voz a texto</li>
+          <li>Categorías</li>
+          <li>Edición y exportación</li>
+        </ul>
+        <div class="cta">
+          <a class="btn primary" href="https://ser-ayuda.github.io/diario" target="_blank" rel="noreferrer">Ver demo (GitHub Pages)</a>
+          <a class="btn" href="https://github.com/ser-ayuda" target="_blank" rel="noreferrer">Ver GitHub</a>
+        </div>
+      </article>
 
-<p>
-Desarrollé un calendario familiar de tareas y metas, colaborativo y reproducible,
-centrado en la privacidad de los datos y la experiencia de usuario.
-</p>
+      <article class="card">
+        <div class="badge">🗓️ Full Stack • Ago. 2025</div>
+        <h3>Calendario familiar (tareas y metas)</h3>
+        <p>
+          Calendario familiar colaborativo y reproducible, centrado en la <b>privacidad</b> de datos
+          y la experiencia de usuario.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="https://familia-calendario-demo.onrender.com/" target="_blank" rel="noreferrer">Ver demo (Render)</a>
+          <a class="btn" href="https://github.com/ser-ayuda" target="_blank" rel="noreferrer">Repositorio / docs</a>
+        </div>
 
-<ul>
-<li>Django / Django REST Framework y base de datos</li>
-<li>Despliegue en la nube con Render (hosting capa gratuita)</li>
-<li>Proyecto documentado en GitHub</li>
-<li>Desarrollo con Visual Studio Code</li>
-<li>Uso de IA asistente de código: Copilot, Gemini Code Assist, ChatGPT, Perplexity.ai</li>
-<li>DevOps / CI: GitHub Actions, Docker builder, scripts</li>
-</ul>
+        <details>
+          <summary>Stack y entrega (detalle completo)</summary>
+          <div class="detailsBody">
+            <h4>Backend</h4>
+            <ul>
+              <li>Python + Django + DRF, Gunicorn, Whitenoise</li>
+            </ul>
 
-<p>
-Demo Docker funcional:
-<a href="https://familia-calendario-demo.onrender.com/" target="_blank">
-https://familia-calendario-demo.onrender.com/
-</a>
-</p>
+            <h4>Base de datos</h4>
+            <ul>
+              <li>SQLite (dev)</li>
+              <li>Postgres (prod) + psycopg2 + dj-database-url</li>
+            </ul>
 
-<div class="tech">
-Backend: Python + Django + DRF, Gunicorn, Whitenoise<br>
-DB: SQLite (dev), PostgreSQL (prod), psycopg2, dj-database-url<br>
-Frontend: Django templates + JS (Fetch), FullCalendar, Bootstrap / jQuery<br>
-Docs: Mermaid, PlantUML, mermaid-cli, plantuml.jar, pako<br>
-DevOps: GitHub Actions, Docker, Render<br>
-Scripts: Pillow, requests, PowerShell helpers
-</div>
-</div>
-</section>
+            <h4>Frontend</h4>
+            <ul>
+              <li>Django templates + JavaScript (Fetch)</li>
+              <li>FullCalendar (UI)</li>
+              <li>Bootstrap / jQuery</li>
+            </ul>
 
-<!-- EVENTOS -->
-<section>
-<h2>Eventos y Hackathons</h2>
-<div class="card">
-<ul>
-<li>IBM TechXchange Dev Day: AI and Automation Unpacked + Hackathon</li>
-<li>
-Credencial:
-<a href="https://www.virtualbadge.io/certificate-validator?credential=49e96b6c-ef06-4ecb-86e1-c51ab73ab1a5" target="_blank">
-virtualbadge.io
-</a>
-</li>
-<li>Code with Kiro Hackathon</li>
-</ul>
-</div>
-</section>
+            <h4>Docs/Diagramas</h4>
+            <ul>
+              <li>Mermaid, PlantUML, mermaid-cli, plantuml.jar, pako (client)</li>
+            </ul>
 
-<!-- FORMACIÓN -->
-<section>
-<h2>Formación y certificaciones</h2>
+            <h4>DevOps/CI</h4>
+            <ul>
+              <li>GitHub Actions</li>
+              <li>Docker builder</li>
+              <li>Render (hosting)</li>
+            </ul>
 
-<div class="card">
-<ul>
-<li>Desarrollador Web y Cloud Microsoft (IFCD38)</li>
-<li>Código especialidad: IFCD38 – DESARROLLADOR WEB Y CLOUD MICROSOFT</li>
-<li>Código de curso: 22/2335 · Presencial · 400 horas</li>
-<li>
-Programa:
-<a href="https://tecnologias.tajamar.es/" target="_blank">tecnologias.tajamar.es</a>
-</li>
-<li>Desarrollo .NET orientado a Azure y sistemas multicloud</li>
-<li>Uso de Copilot y asistentes de IA</li>
-<li>Vouchers: AWS Certified Cloud Practitioner</li>
-<li>Microsoft Azure Fundamentals (AZ-900)</li>
-<li>Preparación Azure Administrator (AZ-104)</li>
-<li>
-Referencia SEPE:
-<a href="https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCD38.pdf" target="_blank">
-PDF IFCD38
-</a>
-</li>
-<li>SailPoint Identity Security Leader Credential</li>
-</ul>
-</div>
-</section>
+            <h4>Scripts/Utilidades</h4>
+            <ul>
+              <li>Pillow, requests, PowerShell helpers</li>
+            </ul>
 
-<!-- EXPERIENCIA -->
-<section>
-<h2>Experiencia profesional</h2>
+            <h4>Automatización y portfolio-ready</h4>
+            <ul>
+              <li>Automatización de capturas con Playwright</li>
+              <li>Fixtures anonimizados, comandos de seed, scripts de empaquetado y assets para RRSS</li>
+              <li>Release pública con ZIP limpio (sin BBDD privadas) + documentación paso a paso</li>
+            </ul>
 
-<div class="card">
-<h3>Gestión de Identidades y Accesos (IAM / GIA)</h3>
+            <h4>Herramientas</h4>
+            <ul>
+              <li>Visual Studio Code</li>
+              <li>IA asistente: Copilot, Gemini Code Assist, ChatGPT, Perplexity</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+    </div>
+  </section>
 
-<ul>
-<li>IBM ISIM v6.0.2, ISVG IM v10</li>
-<li>Tivoli Directory Integrator (TDI) y Security Directory Integrator (SDI)</li>
-<li>Health checking diario de plataformas, logs, servicios y servidores</li>
-<li>Altas, bajas y modificaciones de identidades, roles, grupos y políticas</li>
-<li>PKI, administración de adaptadores y agentes</li>
-<li>CyberArk PAM: PVWA, CPM, PSM, PTA</li>
-<li>LDAP, bases de datos, Red Hat Linux</li>
-<li>Bash y Microsoft PowerShell</li>
-<li>Jira, Service Desk / CAU</li>
-</ul>
-</div>
+  <section id="eventos">
+    <div class="sectionTitle">
+      <h2>Participación en eventos</h2>
+    </div>
+    <div class="divider"></div>
 
-<div class="card">
-<h3>IAM · Cloud · Automatización</h3>
-<ul>
-<li>Microsoft FIM y MIM</li>
-<li>Automatización con PowerShell</li>
-<li>CyberArk y cumplimiento de seguridad</li>
-<li>Azure: monitorización de aplicaciones y máquinas virtuales Linux y Windows</li>
-<li>Active Directory, PKI, GPOs, roles</li>
-<li>Administración de servidores: DCs, WSUS, SQL Server</li>
-</ul>
-</div>
+    <div class="panel">
+      <ul>
+        <li><b>IBM TechXchange Dev Day: AI and Automation Unpacked + Hackathon</b> — <a href="https://www.virtualbadge.io/certificate-validator?credential=49e96b6c-ef06-4ecb-86e1-c51ab73ab1a5" target="_blank" rel="noreferrer">Certificado / verificación</a></li>
+        <li><b>Code with Kiro Hackathon</b></li>
+      </ul>
+    </div>
+  </section>
 
-<div class="card">
-<h3>IAM · SailPoint · Desarrollo</h3>
-<ul>
-<li>SailPoint IdentityIQ y IdentityNow</li>
-<li>Gestión de parches y actualizaciones</li>
-<li>Desarrollo con Java, Angular y APIs</li>
-<li>Postman, documentación y gestión de tickets</li>
-<li>Python para automatización (pandas, Jupyter, matplotlib, numpy)</li>
-<li>Controles SOX y auditoría interna</li>
-<li>Cloud: Google Cloud Platform, AWS</li>
-<li>Django y Angular, Git, Jenkins, Bitbucket</li>
-<li>ServiceNow, Excel avanzado, Talend ETL</li>
-</ul>
-</div>
+  <section id="formacion">
+    <div class="sectionTitle">
+      <h2>Formación</h2>
+    </div>
+    <div class="divider"></div>
 
-<div class="card">
-<h3>Consultoría IAM y Desarrollo</h3>
-<ul>
-<li>Oracle Identity Manager (11g a 12c)</li>
-<li>RBAC, roles y perfiles de acceso</li>
-<li>Manuales técnicos y documentación de instalación</li>
-<li>Clusters Red Hat Linux, certificados SSL</li>
-</ul>
-</div>
+    <div class="card">
+      <div class="badge">🎓 IFCD38</div>
+      <h3>Desarrollador Web y Cloud Microsoft (ESP)</h3>
+      <ul>
+        <li><b>Código de especialidad:</b> IFCD38</li>
+        <li><b>Código de curso:</b> 22/2335</li>
+        <li><b>Modalidad:</b> Presencial</li>
+        <li><b>Duración:</b> 400 horas</li>
+        <li><b>Centro/enlace:</b> <a href="https://tecnologias.tajamar.es/" target="_blank" rel="noreferrer">tecnologias.tajamar.es</a></li>
+      </ul>
+      <p><b>Contenido:</b> .NET, Azure, multicloud, Copilot.</p>
+      <div class="cta">
+        <a class="btn" href="https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCD38.pdf" target="_blank" rel="noreferrer">Ver PDF SEPE</a>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>Desarrollo Java y Sistemas</h3>
-<ul>
-<li>Java SE y EE, Servlets, JSP</li>
-<li>PHP, JavaScript, jQuery</li>
-<li>WebServices, Swing</li>
-<li>Eclipse, Git, MySQL, Oracle</li>
-<li>Soporte remoto, VirtualBox, TeamViewer</li>
-</ul>
-</div>
+  <section id="certificaciones">
+    <div class="sectionTitle">
+      <h2>Certificaciones / vouchers / objetivos</h2>
+    </div>
+    <div class="divider"></div>
 
-<div class="card">
-<h3>Sistemas, Redes y Soporte</h3>
-<ul>
-<li>Administración Windows, Linux, Solaris</li>
-<li>Backups, redes, firewalls, routers y switches</li>
-<li>HP-UX, AIX, AS/400, HP OpenView</li>
-<li>ISP, LDAP, Radius</li>
-<li>Soporte in situ, telefónico y remoto</li>
-<li>Intermediación Inglés ↔ Español</li>
-</ul>
-</div>
-</section>
+    <div class="panel">
+      <ul>
+        <li><b>AWS Certified Cloud Practitioner</b> (voucher)</li>
+        <li><b>AZ-900: Microsoft Azure Fundamentals</b> — <b>Conseguido:</b> Enero 2025</li>
+        <li><b>AZ-104: Microsoft Azure Administrator</b> — <b>Preparación objetivo:</b> Enero 2026</li>
+      </ul>
+    </div>
+  </section>
 
-<!-- IDIOMAS -->
-<section>
-<h2>Idiomas</h2>
-<div class="card">
-<ul>
-<li>Inglés – Nivel alto</li>
-<li>English for Career Development – University of Pennsylvania</li>
-<li>Diploma Inglés Gestión Comercial (CEEP)</li>
-<li>Inglés conversación – Business Line</li>
-<li>Perth College (UK)</li>
-<li>ETCi – Universidad de Cambridge (UK)</li>
-</ul>
-</div>
-</section>
+  <section id="experiencia">
+    <div class="sectionTitle">
+      <h2>Experiencia profesional (IAM / GIA)</h2>
+      <span class="pill"><b>Empresas</b> y <b>fechas</b> destacadas</span>
+    </div>
+    <div class="divider"></div>
 
-<footer>
-CV técnico completo · GitHub Pages · Sin recortes · Sin filtros
-</footer>
+    <div class="timeline">
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Serem — Gestión de Identidades y Accesos (GIA)</p>
+          <div class="meta">
+            <span class="chip">02/2025 – 05/2025</span>
+            <span class="chip">Sector banca</span>
+          </div>
+        </div>
+        <ul>
+          <li><b>Departamento:</b> Gestión de identidades (Infraestructuras)</li>
+          <li><b>IBM:</b> ISIM v6.0.2, ISVG IM v10, IBM Security Verify Governance Identity Manager v10, TDI/SDI</li>
+          <li>Health checking diario (plataformas, logs, servicios, servidores)</li>
+          <li>Altas/actualizaciones/bajas (cuentas, roles, grupos, políticas)</li>
+          <li>PKI</li>
+          <li>Adaptadores, agentes y monitorización</li>
+          <li><b>CyberArk (PAM):</b> PVWA, CPM, PSM, PTA (ciclo de vida, safes, licencias, informes)</li>
+          <li>LDAP, BBDD, Red Hat Linux, Bash, PowerShell</li>
+          <li>Jira + Service Desk/CAU</li>
+        </ul>
+      </article>
 
-</div>
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Capgemini — Gestión de Identidades y Accesos (GIA)</p>
+          <div class="meta">
+            <span class="chip">03/2023 – 07/2024</span>
+          </div>
+        </div>
+        <ul>
+          <li>Microsoft FIM / MIM</li>
+          <li>Automatización con PowerShell</li>
+          <li>Seguridad y cumplimiento. CyberArk</li>
+          <li>Azure: monitorización apps y VMs (Linux/Windows)</li>
+          <li>Reporting/documentación y coordinación inter-equipos</li>
+          <li>AD, PKI, GPOs, roles</li>
+          <li>DCs, WSUS, SQL Server (parches, redes, certificados)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Logicalis — Gestión de Identidades y Accesos (IAM)</p>
+          <div class="meta">
+            <span class="chip">02/2022 – 04/2022</span>
+          </div>
+        </div>
+        <ul>
+          <li>SailPoint: IdentityIQ e IdentityNow</li>
+          <li>Parches/actualizaciones</li>
+          <li>CyberArk</li>
+          <li>Java, Angular, APIs. Postman</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Softtek (Antes Vector ITC) — Gestión de Identidades y Accesos (IAM)</p>
+          <div class="meta">
+            <span class="chip">10/2020 – 02/2022</span>
+          </div>
+        </div>
+        <ul>
+          <li>SailPoint IdentityIQ (perfilado)</li>
+          <li>Python (pandas, Jupyter, Matplotlib, NumPy…)</li>
+          <li>SOX (Sarbanes‑Oxley 2002), evidencias y auditoría interna</li>
+          <li>CyberArk + nube (GCP/AWS…)</li>
+          <li>Django + Angular, Git, Jenkins/Bitbucket</li>
+          <li>ServiceNow</li>
+          <li>Excel + Data Studio + Talend (ETL)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Crecimiento profesional / Descanso profesional — Madrid, España</p>
+          <div class="meta">
+            <span class="chip">Sept. 2024 – Ene. 2025</span>
+            <span class="chip">5 meses</span>
+          </div>
+        </div>
+        <ul>
+          <li>SailPoint Identity Security Leader Credential from SailPoint</li>
+          <li>Curso IFCD38 (22/2335, 400h, presencial)</li>
+          <li>AWS CCP / AZ-900 / AZ-104</li>
+          <li>Archivo mencionado: Sailpoint_Leader_Identity_Security.jpg</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Grupo CMC — Consultor (proyecto en Azure)</p>
+          <div class="meta">
+            <span class="chip">06/2019 – 05/2020</span>
+          </div>
+        </div>
+        <ul>
+          <li>Oracle Identity Management (OIM) 11g → 12c</li>
+          <li>Conectores y políticas de acceso</li>
+          <li>RBAC: roles y perfiles</li>
+          <li>Manuales de instalación/configuración y documentación técnica</li>
+          <li>Seguridad y clústeres distribuidos</li>
+          <li>Red Hat (Linux), certificados SSL, conexiones seguras a BBDD/apps</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">SIA Group — Analista / GIA</p>
+          <div class="meta">
+            <span class="chip">04/2018 – 06/2019</span>
+          </div>
+        </div>
+        <ul>
+          <li>SailPoint IdentityIQ v7.1 / v7.2</li>
+          <li>Aprovisionamiento, políticas de acceso, workflows</li>
+          <li>SSO</li>
+          <li>LDAP, Active Directory, CyberArk</li>
+          <li>Automatización: Java, PowerShell, Python</li>
+          <li>Linux: Bash/Awk, Red Hat/CentOS</li>
+          <li>Oracle, MySQL; SCRUM; GIT; documentación</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">CMV Consultores – Everis (Santander Asset Management) — Java</p>
+          <div class="meta">
+            <span class="chip">12/2017 – 02/2018</span>
+          </div>
+        </div>
+        <ul>
+          <li>Aplicación perssa: adquisición/importación/masterización y conciliación</li>
+          <li>JAVA, SQL (Oracle/MySQL)</li>
+          <li>Eclipse Neon 3, Git, MySQL Workbench, Apache</li>
+          <li>Procesos core, backend, pruebas, logs y alertas</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Impormovil — Programador y Técnico</p>
+          <div class="meta">
+            <span class="chip">06/2015 – 22/09/2017</span>
+          </div>
+        </div>
+        <ul>
+          <li>Java SE/EE, Servlets/JSP</li>
+          <li>PHP, jQuery, JavaScript</li>
+          <li>ODBC, WebServices, Swing</li>
+          <li>VirtualBox, TeamViewer, soporte remoto</li>
+          <li>SoftFIT (Gestión de Talleres Autofit): mantenimiento, actualizaciones, versiones</li>
+          <li>Compatibilización Windows 10</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Unísono (Orange) — Gestor de incidencias</p>
+          <div class="meta">
+            <span class="chip">11/2012 – 02/2013</span>
+            <span class="chip">01/06 – 08/2013</span>
+            <span class="chip">08/2014 – 10/2014</span>
+            <span class="chip">12/2014 – 03/2015</span>
+          </div>
+        </div>
+        <ul>
+          <li>Gestión de incidencias, formularios, documentación</li>
+          <li>Conexiones de red, web de routers y configuraciones</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Uniway (Isban – Grupo Santander) — Analista/Programador</p>
+          <div class="meta">
+            <span class="chip">01/09/2011 – 12/12/2011</span>
+          </div>
+        </div>
+        <ul>
+          <li>TLM (conciliación), vistas e informes</li>
+          <li>Unix/awk, JAVA, SQL Oracle</li>
+          <li>Documentación y cambios continuos</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Angelbenito S.L. — Responsable informático</p>
+          <div class="meta">
+            <span class="chip">04/2011 – 07/2011</span>
+          </div>
+        </div>
+        <ul>
+          <li>Access/MySQL, Java</li>
+          <li>Red Hat, Windows 2003</li>
+          <li>Virtualización, redes sociales, e‑commerce</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Personal 7 (Jaguar Land Rover) — Admin sistemas (ES/PT)</p>
+          <div class="meta">
+            <span class="chip">02/2010 – 09/2010</span>
+          </div>
+        </div>
+        <ul>
+          <li>Windows 2003, Red Hat 8, Oracle</li>
+          <li>Centralita, Active Directory, videoconferencias</li>
+          <li>Backups, VBA, scripts, soporte remoto</li>
+          <li>Intermediación Inglés ↔ Español</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Activa (I.E.S. Ortega y Gasset) — Profesor informática</p>
+          <div class="meta">
+            <span class="chip">Enero – Marzo 2010</span>
+          </div>
+        </div>
+        <ul>
+          <li>Revista digital, blogs (Wordpress)</li>
+          <li>Diseño (Gimp), banners</li>
+          <li>Programación web (HTML, Java)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Kairos Sistemas de Gestión, S.L. — Colaboraciones</p>
+          <div class="meta">
+            <span class="chip">05/2009 – 11/2009</span>
+          </div>
+        </div>
+        <ul>
+          <li>Desarrollo web (diseño/programación)</li>
+          <li>Soporte y mantenimiento de redes/sistemas de control</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Compusof S.A. — Especialista informático</p>
+          <div class="meta">
+            <span class="chip">10/2007 – 04/2009</span>
+          </div>
+        </div>
+        <details>
+          <summary>Proyectos y tareas (detalle)</summary>
+          <div class="detailsBody">
+            <h4>Proyectos</h4>
+            <ul>
+              <li>Telefónica (CGP)</li>
+              <li>CSN – Consejo de Seguridad Nuclear</li>
+              <li>Kyocera (AS400, Vista, Windows 2000/2003)</li>
+              <li>Instituto de Salud Carlos III</li>
+              <li>Aena – Centro de Gestión de Red</li>
+              <li>Centro de Demostraciones Telefónica: Movilforum 2008</li>
+              <li>Suiza de Reaseguros (Ibérica)</li>
+            </ul>
+
+            <h4>Tareas</h4>
+            <ul>
+              <li>Incidencias, routers/switches, scripts, firewalls/sondas</li>
+              <li>Windows, Linux, Solaris; monitorización</li>
+              <li>Soporte, vídeo, formación, maquetación de manuales</li>
+              <li>Backups, eliminación de virus, instalación/configuración</li>
+              <li>Sun One, PKI; control red y datos aeroportuarios</li>
+              <li>LAN/Wi‑Fi: Alcatel‑Lucent OmniAcces 4308, AP70, Enterasys N7/N3</li>
+              <li>Lotus Notes, documentación, intermediación Inglés ↔ Español</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Capgemini (Orange & France Telecom) — Técnico</p>
+          <div class="meta">
+            <span class="chip">09/2006 – 07/2007</span>
+          </div>
+        </div>
+        <ul>
+          <li>Altas/bajas, usuarios/MACs, accesos intranet</li>
+          <li>Red, impresoras, perfiles, soporte remoto</li>
+          <li>Windows XP/2000/NT, Linux; correo, DNS, antivirus, Exchange</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Solkia Group (FT, Uni2, Wanadoo, Amena) — Técnico</p>
+          <div class="meta">
+            <span class="chip">04/2005 – 08/2006</span>
+          </div>
+        </div>
+        <ul>
+          <li>Altas/bajas, red, impresoras, perfiles, soporte</li>
+          <li>Windows XP/2000/NT, Linux; correo, DNS, antivirus, Exchange</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Royal Mail (Perth, UK) — Christmas Postal Worker</p>
+          <div class="meta">
+            <span class="chip">12/2004</span>
+          </div>
+        </div>
+        <ul>
+          <li>Servicio postal. Comunicación, instrucciones, flexibilidad y trabajo en equipo</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Infortec (Rossa‑IBM y CNH Spain) — Técnico</p>
+          <div class="meta">
+            <span class="chip">12/03 – 01/04</span>
+          </div>
+        </div>
+        <ul>
+          <li>Soporte in situ/telefónico</li>
+          <li>Migración Novell → NT</li>
+          <li>Supervisión de red (Tivoli)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">AFI / Cibernos — Admin sistemas / ISP / Operador</p>
+          <div class="meta">
+            <span class="chip">09/2000 – 03/2001</span>
+            <span class="chip">03/2001 – 05/2002</span>
+          </div>
+        </div>
+        <ul>
+          <li>UNICABLE: HP‑Openview</li>
+          <li>AS/400, Windows NT Server, SUN Solaris, HP‑UX</li>
+          <li>LEGATO Networker; backups diarios (AS/400, SAP, Oracle, NT, Internet)</li>
+          <li>LDAP, Radius; IBM AS400 Client Access</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Sinergia Tecnológica (Vía Digital) — Técnico‑Operador</p>
+          <div class="meta">
+            <span class="chip">03/2000 – 09/2000</span>
+          </div>
+        </div>
+        <ul>
+          <li>Administración (seguridad/usuarios: claves, logins, perfiles, grupos)</li>
+          <li>Control procesos/servidores</li>
+          <li>Monitorización Patrol/Spectrum y manual (UNIX)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Dinsa (Banesto) — Técnico</p>
+          <div class="meta">
+            <span class="chip">01/2000 – 03/2000</span>
+          </div>
+        </div>
+        <p style="margin:10px 0 0; color: var(--muted);">Detalle no especificado en el texto original más allá del rol/cliente.</p>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Alma Tecnologies (Telefónica Móviles) — Técnico</p>
+          <div class="meta">
+            <span class="chip">10/1999 – 01/2000</span>
+          </div>
+        </div>
+        <ul>
+          <li>Formación al cliente y mantenimiento</li>
+          <li>En tiendas Movistar por toda España</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Servicio militar — Opla de Informática</p>
+          <div class="meta">
+            <span class="chip">08/1992 – 05/1993</span>
+          </div>
+        </div>
+        <ul>
+          <li>Camiones y ambulancias</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Prácticas F.P.II. Informática de Gestión — Ayuntamiento de Segovia</p>
+          <div class="meta">
+            <span class="chip">01/1992 – 05/1992</span>
+          </div>
+        </div>
+        <ul>
+          <li>Plusvalía y Recaudación</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="idiomas">
+    <div class="sectionTitle">
+      <h2>Idiomas</h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="panel">
+      <ul>
+        <li><b>Inglés (alto)</b>
+          <ul>
+            <li>English for Career Development (University of Pennsylvania) — 09/2022 – 10/2022</li>
+            <li>Inglés Gestión Comercial (CEEP) — 200h — 07/2007 – 09/2007</li>
+            <li>Inglés conversación — Business Line, S.A. — 02/2006 – 05/2006</li>
+            <li>Perth College (UK) — 09/2004 – 03/2005</li>
+            <li>ETCi (Universidad de Cambridge) — Butlins, Skegness (UK) — 04/2003 – 08/2003</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footgrid">
+      <div>© <span id="year"></span> — Portfolio</div>
+      <div class="pill">Hecho con <b>HTML</b> + <b>CSS</b> (sin frameworks)</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
