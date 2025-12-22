@@ -1,247 +1,277 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Proyectos | Portfolio Técnico</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Técnico | Proyectos & Experiencia</title>
 
-  <style>
-    :root {
-      --bg: #0f172a;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --border: #1f2933;
-    }
+<style>
+:root {
+  --bg: #0b1120;
+  --panel: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --accent2: #22d3ee;
+  --border: #1f2937;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(180deg, #020617, #0b1120);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem 5rem;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1.5rem 4rem;
-    }
+header {
+  margin-bottom: 4rem;
+}
 
-    header {
-      margin-bottom: 3rem;
-    }
+header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
 
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-    }
+header p {
+  color: var(--muted);
+  max-width: 850px;
+}
 
-    header p {
-      color: var(--muted);
-      max-width: 700px;
-    }
+.badges span {
+  display: inline-block;
+  background: #020617;
+  border: 1px solid var(--border);
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin: 0.25rem 0.25rem 0 0;
+}
 
-    section {
-      margin-bottom: 3rem;
-    }
+section { margin-bottom: 4rem; }
 
-    h2 {
-      font-size: 1.6rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.4rem;
-      margin-bottom: 1.5rem;
-    }
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
+.card {
+  background: linear-gradient(180deg, var(--card), #020617);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+}
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
 
-    .subtitle {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
+.subtitle {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
 
-    ul {
-      padding-left: 1.2rem;
-    }
+ul { padding-left: 1.2rem; }
+li { margin-bottom: 0.4rem; }
 
-    li {
-      margin-bottom: 0.4rem;
-    }
+.tech {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 
-    .tech {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 1rem;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-  </style>
+footer {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <header>
-      <h1>Proyectos y Experiencia Técnica</h1>
-      <p>
-        Selección de proyectos personales y experiencia técnica relevante,
-        con foco en desarrollo web, cloud, automatización y gestión de identidades.
-      </p>
-      <p>
-        GitHub: <a href="https://github.com/ser-ayuda" target="_blank">github.com/ser-ayuda</a>
-      </p>
-    </header>
+<header>
+<h1>Portfolio Técnico</h1>
+<p>
+Profesional senior en <strong>Desarrollo Web, Cloud, Seguridad e Identidades (IAM)</strong>,
+con amplia experiencia en entornos críticos, automatización, DevOps y proyectos open-source.
+</p>
 
-    <!-- PROYECTOS PERSONALES -->
-    <section>
-      <h2>Proyectos personales · Open-source</h2>
+<p>
+GitHub: <a href="https://github.com/ser-ayuda" target="_blank">github.com/ser-ayuda</a>
+</p>
 
-      <div class="card">
-        <h3>Escritor Pro</h3>
-        <div class="subtitle">Aplicación web orientada a móviles</div>
+<div class="badges">
+<span>Full Stack</span>
+<span>IAM / PAM</span>
+<span>Cloud & DevOps</span>
+<span>Python · Java · PowerShell</span>
+<span>Django · Azure · AWS</span>
+</div>
+</header>
 
-        <p>
-          Aplicación web diseñada para crear un diario personal mediante
-          <strong>dictado de voz</strong>, priorizando la simplicidad y la
-          privacidad de los datos.
-        </p>
+<!-- PROYECTOS -->
+<section>
+<h2>Proyectos personales · Open Source</h2>
 
-        <ul>
-          <li>Conversión de voz a texto en el navegador</li>
-          <li>Organización de notas por categorías</li>
-          <li>Edición y exportación de contenido</li>
-          <li>Almacenamiento local sin envío de datos a servidores</li>
-        </ul>
+<div class="card">
+<h3>Escritor Pro</h3>
+<div class="subtitle">Aplicación web mobile-first · Dictado por voz · Privacidad</div>
 
-        <p>
-          Demo: 
-          <a href="https://ser-ayuda.github.io/diario" target="_blank">
-            ser-ayuda.github.io/diario
-          </a>
-        </p>
+<p>
+Aplicación web diseñada para crear un diario personal mediante dictado de voz,
+centrada en la simplicidad de uso y el control total de los datos por parte del usuario.
+</p>
 
-        <div class="tech">
-          Tecnologías: JavaScript, Web APIs, Local Storage, diseño mobile-first
-        </div>
-      </div>
+<ul>
+<li>Conversión de voz a texto directamente en el navegador</li>
+<li>Organización por categorías y edición posterior</li>
+<li>Exportación de contenido</li>
+<li>Persistencia local sin envío de datos a servidores externos</li>
+</ul>
 
-      <div class="card">
-        <h3>Calendario Familiar Colaborativo</h3>
-        <div class="subtitle">Aplicación web reproducible con Docker</div>
+<p>
+Demo: <a href="https://ser-ayuda.github.io/diario" target="_blank">GitHub Pages</a>
+</p>
 
-        <p>
-          Aplicación web para la gestión colaborativa de tareas y metas familiares,
-          centrada en la experiencia de usuario, la privacidad y la
-          reproducibilidad del proyecto.
-        </p>
+<div class="tech">
+JavaScript · Web APIs · Local Storage · UX mobile
+</div>
+</div>
 
-        <ul>
-          <li>Backend REST desacoplado</li>
-          <li>Arquitectura reproducible con Docker</li>
-          <li>CI automatizado y despliegue cloud</li>
-          <li>Release pública sin datos privados</li>
-        </ul>
+<div class="card">
+<h3>Calendario Familiar Colaborativo</h3>
+<div class="subtitle">Full Stack · Docker · CI/CD · Privacidad por diseño</div>
 
-        <p>
-          Demo:
-          <a href="https://familia-calendario-demo.onrender.com/" target="_blank">
-            familia-calendario-demo.onrender.com
-          </a>
-        </p>
+<p>
+Aplicación web colaborativa para la gestión de tareas y metas familiares,
+con arquitectura reproducible y preparada para portfolio profesional.
+</p>
 
-        <div class="tech">
-          Backend: Python, Django, DRF · Frontend: Django Templates, JS, FullCalendar ·
-          DB: SQLite / PostgreSQL · DevOps: Docker, GitHub Actions, Render
-        </div>
-      </div>
-    </section>
+<ul>
+<li>Backend REST con Django y DRF</li>
+<li>Frontend con templates, JavaScript y FullCalendar</li>
+<li>Dockerización completa y CI automatizado</li>
+<li>Release pública sin datos privados</li>
+</ul>
 
-    <!-- EXPERIENCIA PROFESIONAL -->
-    <section>
-      <h2>Experiencia técnica destacada (IAM / Seguridad / Cloud)</h2>
+<p>
+Demo: <a href="https://familia-calendario-demo.onrender.com/" target="_blank">Render</a>
+</p>
 
-      <div class="card">
-        <p>
-          Participación en proyectos de <strong>Gestión de Identidades y Accesos</strong>
-          en entornos corporativos de alta criticidad (banca, telecomunicaciones,
-          sector público).
-        </p>
+<div class="tech">
+Backend: Python · Django · DRF · Gunicorn · Whitenoise<br>
+DB: SQLite · PostgreSQL · psycopg2<br>
+Frontend: Django Templates · JS · Bootstrap · jQuery<br>
+DevOps: Docker · GitHub Actions · Render<br>
+Docs: Mermaid · PlantUML · Playwright · Scripts
+</div>
+</div>
+</section>
 
-        <ul>
-          <li>Aprovisionamiento y desaprovisionamiento de identidades</li>
-          <li>Gestión de accesos privilegiados (PAM)</li>
-          <li>Automatización con scripting</li>
-          <li>Auditoría, cumplimiento y controles SOX</li>
-          <li>Administración de infraestructuras híbridas y cloud</li>
-        </ul>
+<!-- EXPERIENCIA -->
+<section>
+<h2>Experiencia técnica consolidada</h2>
 
-        <div class="tech">
-          SailPoint, CyberArk, Oracle IAM, Microsoft FIM/MIM ·
-          Azure, AWS, GCP · Active Directory, LDAP ·
-          Python, PowerShell, Java, Bash
-        </div>
-      </div>
-    </section>
+<div class="card">
+<p>
+Trayectoria extensa en <strong>Gestión de Identidades y Accesos (IAM / GIA)</strong>,
+seguridad, automatización y cloud, en sectores como banca, telecomunicaciones
+y grandes corporaciones.
+</p>
 
-    <!-- FORMACIÓN -->
-    <section>
-      <h2>Formación y certificaciones</h2>
+<ul>
+<li>Implementación y operación de soluciones IAM y PAM</li>
+<li>Gestión del ciclo de vida de identidades y accesos privilegiados</li>
+<li>Automatización de procesos con scripting</li>
+<li>Auditoría, cumplimiento normativo y controles SOX</li>
+<li>Administración de infraestructuras híbridas y multicloud</li>
+</ul>
 
-      <div class="card">
-        <ul>
-          <li>Desarrollador Web y Cloud Microsoft (IFCD38)</li>
-          <li>SailPoint Identity Security Leader</li>
-          <li>AWS Certified Cloud Practitioner</li>
-          <li>Microsoft Azure Fundamentals (AZ-900)</li>
-          <li>Preparación avanzada Azure Administrator (AZ-104)</li>
-        </ul>
-      </div>
-    </section>
+<div class="tech">
+SailPoint · CyberArk · Oracle IAM · Microsoft FIM/MIM · IBM ISIM/ISVG<br>
+Active Directory · LDAP · PKI · Azure · AWS · GCP<br>
+Python · PowerShell · Java · Bash · Linux · Windows Server
+</div>
+</div>
+</section>
 
-    <!-- IDIOMAS -->
-    <section>
-      <h2>Idiomas</h2>
-      <div class="card">
-        <p>Inglés — Nivel alto (uso profesional y técnico)</p>
-      </div>
-    </section>
+<!-- FORMACIÓN -->
+<section>
+<h2>Formación y certificaciones</h2>
 
-    <footer>
-      Portfolio técnico · Proyectos seleccionados · GitHub Pages
-    </footer>
+<div class="grid">
+<div class="card">
+<h3>Cloud & Desarrollo</h3>
+<ul>
+<li>Desarrollador Web y Cloud Microsoft (IFCD38)</li>
+<li>.NET · Azure · Multicloud</li>
+<li>Uso avanzado de IA asistida (Copilot, ChatGPT)</li>
+</ul>
+</div>
 
-  </div>
+<div class="card">
+<h3>Certificaciones</h3>
+<ul>
+<li>SailPoint Identity Security Leader</li>
+<li>AWS Certified Cloud Practitioner</li>
+<li>Microsoft Azure Fundamentals (AZ-900)</li>
+<li>Preparación Azure Administrator (AZ-104)</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- EVENTOS -->
+<section>
+<h2>Eventos y comunidad</h2>
+
+<div class="card">
+<ul>
+<li>IBM TechXchange Dev Day · AI & Automation + Hackathon</li>
+<li>Code with Kiro Hackathon</li>
+</ul>
+</div>
+</section>
+
+<!-- IDIOMAS -->
+<section>
+<h2>Idiomas</h2>
+<div class="card">
+<p><strong>Inglés:</strong> Nivel alto (entorno profesional y técnico)</p>
+</div>
+</section>
+
+<footer>
+Portfolio técnico · GitHub Pages · Proyectos y experiencia seleccionados
+</footer>
+
+</div>
 </body>
 </html>
