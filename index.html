@@ -3,144 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Contreras | Portfolio</title>
+    <title>Jesús Contreras | Portfolio Profesional</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --dark: #0f172a;
-            --gray-text: #64748b;
-            --accent: #38bdf8;
-            --border-light: #f1f5f9;
+            --primary: #1e4b8a;
+            --secondary: #334155;
+            --accent: #0ea5e9;
+            --bg-light: #f1f5f9;
         }
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: var(--dark); line-height: 1.6; }
-        
-        /* Hero Minimalista */
-        .hero-section { padding: 80px 0 60px; border-bottom: 1px solid var(--border-light); }
-        .profile-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; filter: grayscale(20%); }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: var(--secondary); }
 
-        /* Estilo de Tags Minimalistas */
-        .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .tag { 
-            padding: 6px 16px; border: 1px solid var(--border-light); border-radius: 4px;
-            font-size: 0.85rem; color: var(--gray-text); transition: 0.2s;
+        /* Header con carácter */
+        .hero-clean { 
+            background: white; padding: 60px 0; border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
-        .tag:hover { border-color: var(--accent); color: var(--dark); background: #f8fafc; cursor: default; }
+        .profile-img { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
 
-        /* Secciones */
-        section { padding: 60px 0; border-bottom: 1px solid var(--border-light); }
-        .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); font-weight: 700; margin-bottom: 30px; display: block; }
-        
-        .project-link { 
-            text-decoration: none; color: var(--dark); display: block; padding: 20px;
-            border: 1px solid var(--border-light); border-radius: 8px; transition: 0.2s;
+        /* Tarjetas de datos */
+        .info-card {
+            background: white; border: 1px solid #e2e8f0; border-radius: 12px;
+            padding: 25px; height: 100%; transition: all 0.3s ease;
         }
-        .project-link:hover { border-color: var(--accent); background: #fcfcfc; }
+        .info-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
-        .btn-minimal { 
-            display: inline-block; padding: 12px 30px; border: 1px solid var(--dark);
-            color: var(--dark); text-decoration: none; font-size: 0.9rem; font-weight: 600;
-            margin-top: 30px; transition: 0.3s;
+        .section-title { 
+            font-weight: 800; color: var(--primary); margin-bottom: 30px; 
+            display: flex; align-items: center; gap: 10px;
         }
-        .btn-minimal:hover { background: var(--dark); color: #fff; }
+        .section-title i { color: var(--accent); }
 
-        .tech-img-min { max-width: 100%; height: auto; opacity: 0.9; }
+        /* Listado de roles con bullets personalizados */
+        .role-grid { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .role-grid li { 
+            font-size: 0.9rem; padding: 8px 12px; background: #f8fafc; 
+            border-radius: 8px; display: flex; align-items: center; border-left: 3px solid var(--accent);
+        }
+
+        /* Proyectos */
+        .project-box {
+            background: var(--primary); color: white; border-radius: 12px;
+            padding: 20px; position: relative; overflow: hidden;
+        }
+        .project-box h5 { font-weight: 700; margin-bottom: 15px; }
+        .btn-light-outline { 
+            border: 1px solid rgba(255,255,255,0.4); color: white; 
+            text-decoration: none; padding: 6px 15px; border-radius: 6px; font-size: 0.8rem;
+            transition: 0.3s;
+        }
+        .btn-light-outline:hover { background: white; color: var(--primary); }
+
+        /* Botón Principal */
+        .btn-action {
+            background: var(--primary); color: white; padding: 12px 30px;
+            border-radius: 8px; text-decoration: none; font-weight: 600;
+            display: inline-block; transition: 0.3s;
+        }
+        .btn-action:hover { background: var(--accent); color: white; }
+
+        .stack-img { max-width: 100%; height: auto; border-radius: 12px; mix-blend-mode: multiply; }
     </style>
 </head>
 <body>
 
-<header class="hero-section">
+<header class="hero-clean mb-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-8">
-                <h1 class="display-5 fw-bold mb-2">Jesús Contreras</h1>
-                <p class="lead text-secondary mb-4">IAM & Full Stack Specialist. 15+ años construyendo seguridad y software.</p>
-                <div class="d-flex gap-3">
-                    <a href="mailto:jcm2222@hotmail.com" class="text-dark text-decoration-none small fw-bold">Email</a>
-                    <a href="#" class="text-dark text-decoration-none small fw-bold">LinkedIn</a>
-                    <a href="https://github.com/ser-ayuda" class="text-dark text-decoration-none small fw-bold">GitHub</a>
+        <div class="row align-items-center text-center text-md-start">
+            <div class="col-md-2">
+                <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img">
+            </div>
+            <div class="col-md-7">
+                <h1 class="display-6 fw-bold">Jesús Contreras</h1>
+                <p class="h5 text-muted fw-normal">Analista IAM & Desarrollador Full Stack</p>
+                <div class="mt-3">
+                    <span class="badge bg-light text-dark border me-2 p-2"><i class="fas fa-envelope text-primary me-1"></i> jcm2222@hotmail.com</span>
+                    <span class="badge bg-light text-dark border p-2"><i class="fab fa-github text-dark me-1"></i> ser-ayuda</span>
                 </div>
             </div>
-            <div class="col-md-4 text-md-end mt-4 mt-md-0">
-                <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img">
+            <div class="col-md-3 text-md-end mt-4 mt-md-0">
+                <a href="iam.html" class="btn-action">Ver Trayectoria</a>
             </div>
         </div>
     </div>
 </header>
 
-<main>
-    <section>
-        <div class="container">
-            <span class="section-label">Trayectoria Profesional</span>
-            <div class="tag-container">
-                <span class="tag">Desarrollador Full Stack</span>
-                <span class="tag">Gestión de Identidades y Accesos (GIA / IAM)</span>
-                <span class="tag">Analista Programador</span>
-                <span class="tag">Programador y Técnico</span>
-                <span class="tag">Gestor Incidencias Técnicas</span>
-                <span class="tag">Responsable Informático (Inglés)</span>
-                <span class="tag">Administrador de Sistemas (Inglés)</span>
-                <span class="tag">Profesor Informática</span>
-                <span class="tag">Especialista Informático (Inglés)</span>
-                <span class="tag">Administrador de Sistemas ISP</span>
-                <span class="tag">Operador de Sistemas</span>
-                <span class="tag">Técnico Informático y Administración</span>
-                <span class="tag">Prácticas F.P.II. Informática de Gestión</span>
-                <span class="tag">Otros</span>
-            </div>
-            <a href="iam.html" class="btn-minimal">Leer Experiencia Detallada</a>
+<main class="container">
+
+    <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Perfil Profesional</h2>
+        <div class="info-card">
+            <ul class="role-grid mb-0">
+                <li>Desarrollador Full Stack</li>
+                <li>Gestión de Identidades (IAM/GIA)</li>
+                <li>Analista Programador</li>
+                <li>Programador y Técnico</li>
+                <li>Gestor Incidencias Técnicas</li>
+                <li>Responsable Informático (Inglés)</li>
+                <li>Administrador de Sistemas (Inglés)</li>
+                <li>Profesor Informática</li>
+                <li>Especialista Informático (Inglés)</li>
+                <li>Admin de Sistemas ISP / Operador</li>
+                <li>Técnico Informático & Admin</li>
+                <li>Prácticas F.P.II. Informática</li>
+                <li>Otros</li>
+            </ul>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <span class="section-label">Aplicaciones Activas</span>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="project-link">
-                        <h5 class="fw-bold mb-1">Escritor Pro (PWA)</h5>
-                        <p class="text-secondary small mb-0">Aplicación progresiva de dictado y diario personal.</p>
-                    </a>
+    <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-laptop-code"></i> Aplicaciones Activas</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="project-box shadow-sm">
+                    <h5>Escritor Pro (PWA)</h5>
+                    <p class="small opacity-75">App de dictado por voz y gestión de diarios.</p>
+                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-light-outline">Lanzar Aplicación</a>
                 </div>
-                <div class="col-md-6">
-                    <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="project-link">
-                        <h5 class="fw-bold mb-1">Gestión Familiar (Django)</h5>
-                        <p class="text-secondary small mb-0">Sistema backend para organización colaborativa.</p>
-                    </a>
+            </div>
+            <div class="col-md-6">
+                <div class="project-box shadow-sm" style="background: var(--secondary);">
+                    <h5>Gestión Familiar</h5>
+                    <p class="small opacity-75">Sistema colaborativo desarrollado en Django.</p>
+                    <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-light-outline">Ver Demo Online</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <span class="section-label">Formación & Stack</span>
+    <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación & Stack Tecnológico</h2>
+        <div class="info-card">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="tag-container mb-4">
-                        <span class="tag">SailPoint Technologies</span>
-                        <span class="tag">Learn.Microsoft</span>
-                        <span class="tag">AWS</span>
-                        <span class="tag">CyberArk</span>
-                        <span class="tag">IBM</span>
-                        <span class="tag">Seguridad Informática</span>
-                        <span class="tag">Lenguajes programación</span>
-                        <span class="tag">BBDD</span>
-                        <span class="tag">Cloudera</span>
-                        <span class="tag">Otros</span>
+                <div class="col-lg-7">
+                    <div class="row g-2 mb-4">
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>SailPoint Technologies</div>
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>Learn.Microsoft</div>
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>AWS</div>
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>CyberArk</div>
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>IBM Security</div>
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>Seguridad Informática</div>
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>Lenguajes Programación</div>
+                        <div class="col-md-6"><i class="fas fa-check text-accent me-2"></i>BBDD / Cloudera</div>
                     </div>
-                    <a href="formacion.html" class="btn-minimal">Ver Certificaciones</a>
+                    <a href="formacion.html" class="btn btn-outline-primary fw-bold">Ver Certificados Detallados</a>
                 </div>
-                <div class="col-lg-6 text-center mt-5 mt-lg-0">
-                    <img src="img/tech-stack.png" alt="Stack" class="tech-img-min">
+                <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                    <img src="img/tech-stack.png" alt="Stack" class="stack-img">
                 </div>
             </div>
         </div>
     </section>
+
 </main>
 
-<footer class="py-5 text-center">
-    <p class="text-secondary small mb-0">© 2025 Jesús Contreras — Madrid, España</p>
+<footer class="py-5 text-center border-top bg-white mt-5">
+    <p class="text-muted small">© 2025 Jesús Contreras — Madrid, España</p>
 </footer>
 
 </body>
