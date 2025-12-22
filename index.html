@@ -3,127 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Contreras | Portfolio Profesional</title>
+    <title>Jesús Contreras | Portfolio IT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1e4b8a;
-            --secondary: #334155;
-            --accent: #0ea5e9;
-            --bg-light: #f8fafc;
+            --primary: #0f172a;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
         }
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: var(--bg-light); color: var(--secondary); line-height: 1.6; }
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
 
-        /* CABECERA MEJORADA */
-        .hero-header { 
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-            padding: 80px 0 60px;
-            border-bottom: 1px solid #e2e8f0;
-            text-align: center;
+        /* CABECERA DE ALTO IMPACTO */
+        .hero-professional { 
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            padding: 100px 0 80px;
+            color: var(--text-main);
+            position: relative;
+            overflow: hidden;
         }
-        .profile-wrapper { position: relative; display: inline-block; margin-bottom: 20px; }
-        .profile-img { 
-            width: 140px; height: 140px; border-radius: 30px; object-fit: cover; 
-            border: 5px solid #fff; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-        }
-        .header-title { font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-        .contact-pill {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 8px 16px; background: white; border: 1px solid #e2e8f0;
-            border-radius: 50px; text-decoration: none; color: var(--secondary);
-            font-size: 0.9rem; transition: 0.3s; margin: 5px;
-        }
-        .contact-pill:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-        /* SECCIONES Y TARJETAS */
-        .section-title { 
-            font-weight: 800; color: var(--primary); margin-bottom: 25px; 
-            display: flex; align-items: center; gap: 12px; font-size: 1.5rem;
-        }
-        .section-title i { color: var(--accent); font-size: 1.2rem; }
-
-        .info-card {
-            background: white; border: 1px solid #e2e8f0; border-radius: 20px;
-            padding: 35px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        /* Decoración de fondo sutil */
+        .hero-professional::after {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(var(--accent) 0.5px, transparent 0.5px);
+            background-size: 30px 30px; opacity: 0.1;
         }
 
-        /* GRID DE ROLES */
-        .role-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 12px; list-style: none; padding: 0; margin-bottom: 30px;
+        .expertise-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            margin-bottom: 20px;
         }
-        .role-grid li { 
-            font-size: 0.95rem; padding: 12px 18px; background: #f1f5f9; 
-            border-radius: 12px; display: flex; align-items: center; font-weight: 500;
-            transition: 0.2s;
-        }
-        .role-grid li:hover { background: #e2e8f0; }
-        .role-grid li::before { content: "→"; color: var(--accent); margin-right: 12px; font-weight: 800; }
 
-        /* PROYECTOS CON IMAGEN */
+        .main-headline { 
+            font-size: 3rem; font-weight: 800; line-height: 1.1; 
+            letter-spacing: -1px; margin-bottom: 25px;
+        }
+        .main-headline span { color: var(--accent); }
+
+        .sub-headline { 
+            font-size: 1.25rem; color: var(--text-dim); 
+            max-width: 800px; margin-bottom: 40px; font-weight: 400;
+        }
+
+        .header-meta { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+        .meta-item { display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: 500; font-size: 0.95rem; }
+        .meta-item i { color: var(--accent); font-size: 1.1rem; }
+
+        .profile-img-header { 
+            width: 160px; height: 160px; border-radius: 24px; 
+            object-fit: cover; border: 2px solid rgba(255,255,255,0.1);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+        }
+
+        /* SECCIONES POSTERIORES */
+        .section-title { font-weight: 800; color: var(--primary); margin: 50px 0 30px; display: flex; align-items: center; gap: 12px; }
+        .info-card { background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        
+        .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; list-style: none; padding: 0; margin-bottom: 30px; }
+        .role-grid li { font-size: 0.95rem; padding: 12px 18px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; font-weight: 500; }
+        .role-grid li::before { content: "•"; color: var(--accent); margin-right: 12px; font-weight: 900; }
+
+        .btn-cta { 
+            background: var(--accent); color: var(--primary); padding: 14px 35px; 
+            border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s;
+        }
+        .btn-cta:hover { background: #fff; transform: translateY(-3px); }
+
         .project-card {
-            background-size: cover; background-position: center; 
-            border-radius: 20px; padding: 40px 30px; color: white;
-            position: relative; overflow: hidden; height: 260px;
-            display: flex; flex-direction: column; justify-content: flex-end;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: none; margin-bottom: 20px;
+            background-size: cover; background-position: center; border-radius: 20px; padding: 40px 30px; color: white;
+            position: relative; overflow: hidden; height: 280px; display: flex; flex-direction: column; justify-content: flex-end;
+            transition: 0.4s; border: none; text-decoration: none;
         }
-        .project-card:hover { transform: scale(1.02); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
-        .project-card::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(0,0,0,0.9) 100%);
-            z-index: 1;
-        }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0) 100%); z-index: 1; }
+        .project-card:hover { transform: scale(1.02); }
         .project-content { position: relative; z-index: 2; }
-
-        /* BOTONES */
-        .btn-action {
-            background: var(--primary); color: white; padding: 12px 32px;
-            border-radius: 12px; text-decoration: none; font-weight: 700;
-            display: inline-block; transition: 0.3s; border: none;
-        }
-        .btn-action:hover { background: var(--accent); color: white; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3); }
-
-        .btn-outline-white {
-            border: 2px solid rgba(255,255,255,0.3); color: white;
-            padding: 8px 20px; border-radius: 10px; text-decoration: none;
-            font-size: 0.85rem; font-weight: 600; transition: 0.3s;
-        }
-        .btn-outline-white:hover { background: white; color: var(--primary); border-color: white; }
-
-        .stack-img { max-width: 100%; height: auto; border-radius: 15px; }
     </style>
 </head>
 <body>
 
-<header class="hero-header">
+<header class="hero-professional">
     <div class="container">
-        <div class="profile-wrapper">
-            <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img">
-        </div>
-        <h1 class="header-title display-4">Jesús Contreras</h1>
-        <p class="h4 text-muted fw-light mb-4">Analista IAM & Desarrollador Full Stack</p>
-        
-        <div class="d-flex flex-wrap justify-content-center">
-            <a href="mailto:jcm2222@hotmail.com" class="contact-pill">
-                <i class="fas fa-envelope text-primary"></i> jcm2222@hotmail.com
-            </a>
-            <a href="https://github.com/ser-ayuda" target="_blank" class="contact-pill">
-                <i class="fab fa-github"></i> ser-ayuda
-            </a>
-            <a href="#" class="contact-pill">
-                <i class="fab fa-linkedin text-primary"></i> LinkedIn
-            </a>
+        <div class="row align-items-center">
+            <div class="col-lg-9">
+                <div class="expertise-badge">Expertise Tecnológica</div>
+                <h1 class="main-headline">
+                    Analista y Desarrollador <span>Full Stack</span><br>
+                    Ciberseguridad & IA
+                </h1>
+                <p class="sub-headline">
+                    Especialista en <strong>Gestión de Identidades y Accesos (IAM/GIA)</strong> en la Nube, 
+                    <strong>Virtualización</strong> de infraestructuras críticas y desarrollo de soluciones seguras.
+                </p>
+                
+                <div class="header-meta">
+                    <div class="meta-item"><i class="fas fa-user-shield"></i> 15+ años exp.</div>
+                    <div class="meta-item"><i class="fas fa-envelope"></i> jcm2222@hotmail.com</div>
+                    <div class="meta-item"><i class="fab fa-github"></i> ser-ayuda</div>
+                    <div class="meta-item"><i class="fas fa-code-branch"></i> Jesús Contreras</div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center d-none d-lg-block">
+                <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img-header">
+            </div>
         </div>
     </div>
 </header>
 
-<main class="container my-5">
+<main class="container">
 
-    <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-id-badge"></i> Perfil Profesional</h2>
+    <section>
+        <h2 class="section-title"><i class="fas fa-list-check"></i> Áreas de Especialización</h2>
         <div class="info-card">
             <ul class="role-grid">
                 <li>Desarrollador Full Stack</li>
@@ -135,64 +134,57 @@
                 <li>Administrador de Sistemas (Inglés)</li>
                 <li>Profesor Informática</li>
                 <li>Especialista Informático (Inglés)</li>
-                <li>Admin de Sistemas ISP / Operador</li>
+                <li>Admin de Sistemas ISP</li>
                 <li>Técnico Informático & Admin</li>
-                <li>Prácticas F.P.II. Informática</li>
-                <li>Otros</li>
+                <li>Prácticas F.P.II. Gestión</li>
             </ul>
-            <div class="text-center">
-                <a href="iam.html" class="btn-action">
-                    <i class="fas fa-history me-2"></i> Ver Trayectoria Detallada
+            <div class="text-center mt-4">
+                <a href="iam.html" class="btn-cta">Consultar Trayectoria Completa</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-rocket"></i> Proyectos Destacados</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <a href="https://ser-ayuda.github.io/diario" target="_blank" class="project-card" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800');">
+                    <div class="project-content">
+                        <span class="badge bg-info mb-2">PWA / IA</span>
+                        <h4 class="fw-bold">Escritor Pro</h4>
+                        <p class="small">Integración de dictado inteligente y diarios personales.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="project-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800');">
+                    <div class="project-content">
+                        <span class="badge bg-primary mb-2">Backend / Django</span>
+                        <h4 class="fw-bold">Gestión Familiar</h4>
+                        <p class="small">Sistema de organización centralizada y gestión de accesos.</p>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-code"></i> Aplicaciones Activas</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800');">
-                    <div class="project-content">
-                        <h4 class="fw-bold mb-2">Escritor Pro (PWA)</h4>
-                        <p class="small mb-3">App de dictado por voz y diarios personales.</p>
-                        <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-outline-white">Lanzar Aplicación</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800');">
-                    <div class="project-content">
-                        <h4 class="fw-bold mb-2">Gestión Familiar (Django)</h4>
-                        <p class="small mb-3">Plataforma colaborativa de organización del hogar.</p>
-                        <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-outline-white">Ver Demo Online</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación & Certificaciones</h2>
+    <section class="mb-5 pb-5">
+        <h2 class="section-title"><i class="fas fa-microchip"></i> Formación y Stack</h2>
         <div class="info-card">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <div class="row g-3 mb-4">
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>SailPoint Technologies</div>
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>Learn.Microsoft</div>
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>AWS</div>
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>CyberArk</div>
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>IBM Security</div>
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>Seguridad Informática</div>
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>Lenguajes Programación</div>
-                        <div class="col-md-6"><i class="fas fa-certificate text-accent me-2"></i>BBDD / Cloudera</div>
+                    <div class="row g-3">
+                        <div class="col-6 small"><i class="fas fa-shield-alt text-info me-2"></i>SailPoint Tech</div>
+                        <div class="col-6 small"><i class="fas fa-cloud text-info me-2"></i>Microsoft / AWS</div>
+                        <div class="col-6 small"><i class="fas fa-key text-info me-2"></i>CyberArk / IBM</div>
+                        <div class="col-6 small"><i class="fas fa-code text-info me-2"></i>Python / JS / SQL</div>
                     </div>
-                    <a href="formacion.html" class="btn btn-outline-primary fw-bold px-4 py-2">
-                        Ver Todos los Títulos
-                    </a>
+                    <div class="mt-4">
+                        <a href="formacion.html" class="text-accent fw-bold text-decoration-none">Ver todas las certificaciones →</a>
+                    </div>
                 </div>
-                <div class="col-lg-5 mt-4 mt-lg-0 text-center">
-                    <img src="img/tech-stack.png" alt="Tech Stack" class="stack-img">
+                <div class="col-lg-5 mt-4 mt-lg-0">
+                    <img src="img/tech-stack.png" alt="Stack" class="img-fluid" style="filter: brightness(0.9);">
                 </div>
             </div>
         </div>
@@ -200,8 +192,8 @@
 
 </main>
 
-<footer class="py-5 text-center bg-white border-top mt-5">
-    <p class="text-muted small mb-0">© 2025 Jesús Contreras — Analista IT & Developer</p>
+<footer class="py-5 bg-white border-top text-center">
+    <p class="text-muted small">© 2025 Jesús Contreras — Arquitectura IT & Seguridad</p>
 </footer>
 
 </body>
