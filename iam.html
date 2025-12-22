@@ -1,116 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Historial Técnico Íntegro - Jesús Contreras</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { font-family: 'Courier New', Courier, monospace; background-color: #ffffff; color: #1a1a1a; font-size: 0.85rem; line-height: 1.2; }
-        .container { max-width: 1200px; padding: 20px; }
-        .header-box { border: 2px solid #000; padding: 15px; margin-bottom: 20px; background: #eee; }
-        .section-title { background: #000; color: #fff; padding: 5px 10px; font-weight: bold; text-transform: uppercase; margin-top: 25px; }
-        .job-block { border-bottom: 1px solid #ccc; padding: 10px 0; }
-        .company-name { font-weight: bold; color: #333; text-decoration: underline; }
-        .tech-list { margin: 5px 0 10px 20px; list-style-type: square; }
-        .project-box { border: 1px dashed #666; padding: 10px; margin: 10px 0; background: #f9f9f9; }
-        .meta { font-style: italic; color: #555; font-size: 0.8rem; }
-        @media print { .no-print { display: none; } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proyectos | Portfolio Técnico</title>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --border: #1f2933;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    header {
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    .tech {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
 
-<div class="container">
-    <div class="header-box">
-        <h1 style="margin:0;">REGISTRO TÉCNICO COMPLETO: JESÚS CONTRERAS</h1>
-        <p style="margin:5px 0 0 0;">GITHUB: https://github.com/ser-ayuda | PERFIL PROFESIONAL MULTIDISCIPLINAR</p>
-    </div>
+    <header>
+      <h1>Proyectos y Experiencia Técnica</h1>
+      <p>
+        Selección de proyectos personales y experiencia técnica relevante,
+        con foco en desarrollo web, cloud, automatización y gestión de identidades.
+      </p>
+      <p>
+        GitHub: <a href="https://github.com/ser-ayuda" target="_blank">github.com/ser-ayuda</a>
+      </p>
+    </header>
 
-    <a href="index.html" class="no-print"> < VOLVER AL PORTFOLIO</a>
+    <!-- PROYECTOS PERSONALES -->
+    <section>
+      <h2>Proyectos personales · Open-source</h2>
 
-    <div class="section-title">PROYECTOS Y DESARROLLO (GITHUB & CLOUD)</div>
-    <div class="project-box">
-        <strong>App: Escritor Pro</strong> – Aplicación web pensada para móviles. Dictado de voz, diario de notas, conversión voz a texto, almacenamiento local/privacidad.
-        <br>Demo: https://ser-ayuda.github.io/diario
-    </div>
-    <div class="project-box">
-        <strong>Calendario Familiar</strong> – Django/DRF, Postgres, Render, Docker, GitHub Actions. 
-        <br>IA Assistant: Copilot, Gemini Code Assist, ChatGPT, perplexity.ai. 
-        <br>DevOps: Playwright, Mermaid, PlantUML, Pillow, Gunicorn, Whitenoise.
-    </div>
+      <div class="card">
+        <h3>Escritor Pro</h3>
+        <div class="subtitle">Aplicación web orientada a móviles</div>
 
-    <div class="section-title">GESTIÓN DE IDENTIDADES Y ACCESOS (GIA / IAM)</div>
-    
-    <div class="job-block">
-        <span class="company-name">Serem (Sector Banca)</span>: ISIM V6.0.2, ISVG IM V10, TDI (Tivoli Directory Integrator), SDI.
-        <ul class="tech-list">
-            <li>CyberArk (PAM): PVWA, CPM, PSM, PTA. Gestión de safes, licencias e informes.</li>
-            <li>Red Hat Linux, Bash, PowerShell, LDAP, PKI, Jira Service Desk/CAU.</li>
+        <p>
+          Aplicación web diseñada para crear un diario personal mediante
+          <strong>dictado de voz</strong>, priorizando la simplicidad y la
+          privacidad de los datos.
+        </p>
+
+        <ul>
+          <li>Conversión de voz a texto en el navegador</li>
+          <li>Organización de notas por categorías</li>
+          <li>Edición y exportación de contenido</li>
+          <li>Almacenamiento local sin envío de datos a servidores</li>
         </ul>
-    </div>
 
-    <div class="job-block">
-        <span class="company-name">Capgemini</span>: Microsoft FIM y MIM, PowerShell, Azure Cloud (Monitorización VMs Linux/Windows).
-        <ul class="tech-list">
-            <li>Administración Active Directory (AD), PKI, GPOs, WSUS, SQL Server.</li>
+        <p>
+          Demo: 
+          <a href="https://ser-ayuda.github.io/diario" target="_blank">
+            ser-ayuda.github.io/diario
+          </a>
+        </p>
+
+        <div class="tech">
+          Tecnologías: JavaScript, Web APIs, Local Storage, diseño mobile-first
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Calendario Familiar Colaborativo</h3>
+        <div class="subtitle">Aplicación web reproducible con Docker</div>
+
+        <p>
+          Aplicación web para la gestión colaborativa de tareas y metas familiares,
+          centrada en la experiencia de usuario, la privacidad y la
+          reproducibilidad del proyecto.
+        </p>
+
+        <ul>
+          <li>Backend REST desacoplado</li>
+          <li>Arquitectura reproducible con Docker</li>
+          <li>CI automatizado y despliegue cloud</li>
+          <li>Release pública sin datos privados</li>
         </ul>
-    </div>
 
-    <div class="job-block">
-        <span class="company-name">Logicalis / Softtek (Vector ITC)</span>: SailPoint IdentityIQ e IdentityNow.
-        <ul class="tech-list">
-            <li>Cumplimiento SOX (Ley Sarbanes-Oxley 2002), Python (Pandas, Jupyter, Numpy), Talend ETL.</li>
-            <li>Desarrollo Django (Python), Angular, Jenkins, Bitbucket, ServiceNow.</li>
+        <p>
+          Demo:
+          <a href="https://familia-calendario-demo.onrender.com/" target="_blank">
+            familia-calendario-demo.onrender.com
+          </a>
+        </p>
+
+        <div class="tech">
+          Backend: Python, Django, DRF · Frontend: Django Templates, JS, FullCalendar ·
+          DB: SQLite / PostgreSQL · DevOps: Docker, GitHub Actions, Render
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA PROFESIONAL -->
+    <section>
+      <h2>Experiencia técnica destacada (IAM / Seguridad / Cloud)</h2>
+
+      <div class="card">
+        <p>
+          Participación en proyectos de <strong>Gestión de Identidades y Accesos</strong>
+          en entornos corporativos de alta criticidad (banca, telecomunicaciones,
+          sector público).
+        </p>
+
+        <ul>
+          <li>Aprovisionamiento y desaprovisionamiento de identidades</li>
+          <li>Gestión de accesos privilegiados (PAM)</li>
+          <li>Automatización con scripting</li>
+          <li>Auditoría, cumplimiento y controles SOX</li>
+          <li>Administración de infraestructuras híbridas y cloud</li>
         </ul>
-    </div>
 
-    <div class="job-block">
-        <span class="company-name">Grupo CMC</span>: Oracle Identity Management (OIM 11g a 12c), BI Publisher.
-        <ul class="tech-list">
-            <li>Roles RBAC, Clústeres Red Hat Linux, Certificados SSL.</li>
+        <div class="tech">
+          SailPoint, CyberArk, Oracle IAM, Microsoft FIM/MIM ·
+          Azure, AWS, GCP · Active Directory, LDAP ·
+          Python, PowerShell, Java, Bash
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section>
+      <h2>Formación y certificaciones</h2>
+
+      <div class="card">
+        <ul>
+          <li>Desarrollador Web y Cloud Microsoft (IFCD38)</li>
+          <li>SailPoint Identity Security Leader</li>
+          <li>AWS Certified Cloud Practitioner</li>
+          <li>Microsoft Azure Fundamentals (AZ-900)</li>
+          <li>Preparación avanzada Azure Administrator (AZ-104)</li>
         </ul>
-    </div>
+      </div>
+    </section>
 
-    <div class="job-block">
-        <span class="company-name">SIA Group</span>: SailPoint IdentityIQ (V 7.1 y 7.2), SSO, Java, PowerShell, Python, Bash, Awk, Scrum, Git.
-    </div>
+    <!-- IDIOMAS -->
+    <section>
+      <h2>Idiomas</h2>
+      <div class="card">
+        <p>Inglés — Nivel alto (uso profesional y técnico)</p>
+      </div>
+    </section>
 
-    <div class="section-title">ANÁLISIS Y PROGRAMACIÓN JAVA / CORE BANCARIO</div>
-    <div class="job-block">
-        <span class="company-name">Everis / CMV (Santander Asset Management)</span>: Aplicación Perssa (conciliación, masterización). Java, SQL Oracle, MySQL Workbench.
-    </div>
-    <div class="job-block">
-        <span class="company-name">Uniway (Isban - Grupo Santander)</span>: Aplicación TLM para conciliación. Scripts Unix, awk, Java.
-    </div>
-    <div class="job-block">
-        <span class="company-name">Impormovil</span>: Java SE/EE, PHP, Jquery, ODBC, WebServices, SoftFIT (Gestión Talleres).
-    </div>
+    <footer>
+      Portfolio técnico · Proyectos seleccionados · GitHub Pages
+    </footer>
 
-    <div class="section-title">ADMINISTRACIÓN DE SISTEMAS E INFRAESTRUCTURA HISTÓRICA</div>
-    <div class="job-block">
-        <span class="company-name">Jaguar Land Rover (Personal 7)</span>: Win 2003, Red Hat 8, Oracle, AD, VBA Scripts. Intermediación Inglés-Español.
-    </div>
-    <div class="job-block">
-        <span class="company-name">Compusof (Proyectos)</span>: 
-        Aena (Monitorización Red, Sun One, PKI), CSN (Consejo Seguridad Nuclear - Soporte/Manuales), Kyocera (AS400, Win 2003), Telefónica CGP (Routers, Switches, Firewalls, Solaris, Linux).
-    </div>
-    <div class="job-block">
-        <span class="company-name">Cibernos / AFI (ISP)</span>: Madritel, R, Unicable. HP-Openview, AS/400, Solaris, HP-UX, Legato Networker, Radius, LDAP.
-    </div>
-    <div class="job-block">
-        <span class="company-name">Vía Digital (Sinergia Tecnológica)</span>: Patrol, Spectrum, Unix (Seguridad, usuarios, perfiles).
-    </div>
-
-    <div class="section-title">FORMACIÓN, IDIOMAS Y OTROS REGISTROS</div>
-    <div class="job-block">
-        <strong>Inglés:</strong> Career Development (Penn University), Gestión Comercial (CEEP 200H), Perth College (UK), ETCi Cambridge Butlins (UK).
-    </div>
-    <div class="job-block">
-        <strong>Certificaciones/Cursos:</strong> SailPoint Identity Security Leader, IFCD38 Desarrollador Web y Cloud Microsoft (Tajamar 400h), AWS Practitioner, AZ-900.
-    </div>
-    <div class="job-block">
-        <strong>Otros:</strong> Unísono (Orange), Profesor I.E.S. Ortega y Gasset, Royal Mail Perth (UK), Servicio Militar (Opla Informática), Prácticas Ayto. Segovia (1992).
-    </div>
-</div>
-
+  </div>
 </body>
 </html>
