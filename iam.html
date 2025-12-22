@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trayectoria Profesional | Portfolio Técnico</title>
+<title>CV Técnico Completo | Proyectos y Trayectoria</title>
 
 <style>
 :root{
@@ -21,7 +21,7 @@
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,sans-serif;
-  background:linear-gradient(180deg,#020617,#020617 60%,#020617);
+  background:linear-gradient(180deg,#020617,#020617);
   color:var(--text);
   line-height:1.65;
 }
@@ -46,7 +46,7 @@ header h1{
 
 header p{
   color:var(--muted);
-  max-width:900px;
+  max-width:1000px;
 }
 
 .badges span{
@@ -62,10 +62,15 @@ header p{
 section{margin-bottom:4rem}
 
 h2{
-  font-size:1.9rem;
+  font-size:2rem;
   margin-bottom:1.5rem;
   border-bottom:1px solid var(--border);
   padding-bottom:.4rem;
+}
+
+h3{
+  margin-top:0;
+  font-size:1.5rem;
 }
 
 .card{
@@ -76,18 +81,13 @@ h2{
   margin-bottom:2rem;
 }
 
-.card h3{
-  margin-top:0;
-  font-size:1.5rem;
-}
-
 .meta{
   font-size:.8rem;
   color:var(--muted);
   margin-bottom:1rem;
 }
 
-ul{padding-left:1.3rem}
+ul{padding-left:1.4rem}
 li{margin-bottom:.45rem}
 
 .tech{
@@ -115,161 +115,194 @@ footer{
 <div class="container">
 
 <header>
-<h1>Trayectoria Profesional y Proyectos</h1>
+<h1>Trayectoria Profesional Completa</h1>
 <p>
-Profesional senior en <strong>Desarrollo de Software, Cloud, Seguridad e Identidades (IAM/PAM)</strong>,
-con experiencia extensa en entornos críticos, automatización, desarrollo full stack y sistemas,
-combinando proyectos personales open-source con una trayectoria técnica continuada.
+TRABAJOS REALIZADOS · Proyectos · Desarrollo · Seguridad · Cloud · IAM
 </p>
-
 <p>
 GitHub: <a href="https://github.com/ser-ayuda" target="_blank">https://github.com/ser-ayuda</a>
 </p>
-
-<div class="badges">
-<span>Full Stack</span>
-<span>IAM / PAM</span>
-<span>Cloud & DevOps</span>
-<span>Python</span>
-<span>Java</span>
-<span>PowerShell</span>
-<span>Django</span>
-<span>Azure</span>
-<span>AWS</span>
-<span>Linux</span>
-</div>
 </header>
 
 <!-- PROYECTOS -->
 <section>
-<h2>Proyectos personales y open-source</h2>
+<h2>Proyectos</h2>
 
 <div class="card">
 <h3>Escritor Pro</h3>
-<div class="meta">Aplicación web orientada a móviles · Dictado por voz · Privacidad</div>
+<div class="meta">Aplicación web para móviles · Dictado de voz</div>
 
 <p>
-Aplicación web pensada para móviles que permite crear un diario de notas por dictado de voz
-de forma simple y eficaz. Convierte voz en texto, organiza el contenido por categorías
-y permite su edición y exportación, manteniendo todos los datos almacenados localmente
-para garantizar la privacidad.
+Aplicación web pensada para móviles que permite crear un diario de notas por dictado de voz de forma simple y eficaz.
+Convierte voz en texto, organiza el contenido por categorías y permite su edición y exportación,
+manteniendo todos los datos almacenados localmente para garantizar la privacidad.
 </p>
 
 <p>
-Demo funcional en GitHub Pages:
+Demostración funcional en GitHub Pages:
 <a href="https://ser-ayuda.github.io/diario" target="_blank">https://ser-ayuda.github.io/diario</a>
 </p>
 </div>
 
 <div class="card">
 <h3>Calendario Familiar Colaborativo</h3>
-<div class="meta">Proyecto personal · Full Stack · Open-source</div>
+<div class="meta">Desarrollador Full Stack · Proyecto personal · Open-source</div>
 
 <p>
-Desarrollo de un calendario familiar de tareas y metas, colaborativo y reproducible,
+Desarrollé un calendario familiar de tareas y metas, colaborativo y reproducible,
 centrado en la privacidad de los datos y la experiencia de usuario.
 </p>
 
 <ul>
-<li>Backend en Django con Django REST Framework</li>
-<li>Infraestructura reproducible con Docker</li>
-<li>Despliegue cloud en Render (capa gratuita)</li>
-<li>Documentación completa en GitHub</li>
-<li>Demo funcional preparada con Docker</li>
+<li>Django / Django REST Framework y base de datos</li>
+<li>Despliegue en la nube con Render (hosting capa gratuita)</li>
+<li>Proyecto documentado en GitHub</li>
+<li>Desarrollo con Visual Studio Code</li>
+<li>Uso de IA asistente de código: Copilot, Gemini Code Assist, ChatGPT, Perplexity.ai</li>
+<li>DevOps / CI: GitHub Actions, Docker builder, scripts</li>
 </ul>
 
 <p>
-Demo:
+Demo Docker funcional:
 <a href="https://familia-calendario-demo.onrender.com/" target="_blank">
 https://familia-calendario-demo.onrender.com/
 </a>
 </p>
 
 <div class="tech">
-Backend: Python, Django, DRF, Gunicorn, Whitenoise<br>
+Backend: Python + Django + DRF, Gunicorn, Whitenoise<br>
 DB: SQLite (dev), PostgreSQL (prod), psycopg2, dj-database-url<br>
-Frontend: Django Templates, JavaScript (Fetch), FullCalendar, Bootstrap, jQuery<br>
-DevOps / CI: GitHub Actions, Docker builder, Render<br>
-Docs y utilidades: Mermaid, PlantUML, Playwright, Pillow, requests, PowerShell
+Frontend: Django templates + JS (Fetch), FullCalendar, Bootstrap / jQuery<br>
+Docs: Mermaid, PlantUML, mermaid-cli, plantuml.jar, pako<br>
+DevOps: GitHub Actions, Docker, Render<br>
+Scripts: Pillow, requests, PowerShell helpers
 </div>
-</div>
-</section>
-
-<!-- EXPERIENCIA COMPLETA -->
-<section>
-<h2>Experiencia profesional completa</h2>
-
-<div class="card">
-<h3>Gestión de Identidades y Accesos (IAM / GIA)</h3>
-
-<p>
-Participación continuada en proyectos de gestión de identidades, accesos privilegiados
-y seguridad en entornos corporativos complejos.
-</p>
-
-<ul>
-<li>IBM ISIM / ISVG, SailPoint IdentityIQ & IdentityNow</li>
-<li>Oracle Identity Manager (11g a 12c)</li>
-<li>Microsoft FIM / MIM</li>
-<li>CyberArk: PAM, PSM, PVWA, CPM, PTA</li>
-<li>Altas, bajas y modificaciones de identidades, roles, grupos y políticas</li>
-<li>Auditorías, controles SOX, cumplimiento normativo</li>
-<li>Automatización con Python, PowerShell, Java, Bash, Awk</li>
-<li>Administración de Active Directory, LDAP, PKI</li>
-</ul>
-
-<div class="tech">
-Sectores: banca, telecomunicaciones, sector público, grandes corporaciones<br>
-Sistemas: Linux (Red Hat, CentOS), Windows Server, Oracle, SQL Server
-</div>
-</div>
-
-<div class="card">
-<h3>Desarrollo de Software y Sistemas</h3>
-
-<ul>
-<li>Desarrollo backend y full stack en Java, Python, Django, Angular</li>
-<li>Aplicaciones web Java EE, Servlets, JSP, PHP, JavaScript, jQuery</li>
-<li>Automatización y análisis con Python (pandas, Jupyter, numpy, matplotlib)</li>
-<li>Integraciones, APIs, scripts y herramientas internas</li>
-<li>Administración de sistemas, virtualización, backups y redes</li>
-</ul>
-
-<div class="tech">
-Eclipse, VS Code, Git, Jenkins, Bitbucket, Postman, Jira, ServiceNow
-</div>
-</div>
-</section>
-
-<!-- FORMACIÓN -->
-<section>
-<h2>Formación, cursos y certificaciones</h2>
-
-<div class="card">
-<ul>
-<li>Desarrollador Web y Cloud Microsoft (IFCD38)</li>
-<li>Especialidad IFCD38 · Desarrollo .NET y servicios Azure · Multicloud</li>
-<li>AWS Certified Cloud Practitioner</li>
-<li>Microsoft Azure Fundamentals (AZ-900)</li>
-<li>Preparación Azure Administrator (AZ-104)</li>
-<li>SailPoint Identity Security Leader Credential</li>
-</ul>
-
-<p class="small">
-Formación presencial (400h) orientada a desarrollo, cloud, automatización y uso de IA asistida
-(Copilot, ChatGPT, Gemini, Perplexity).
-</p>
 </div>
 </section>
 
 <!-- EVENTOS -->
 <section>
 <h2>Eventos y Hackathons</h2>
+<div class="card">
+<ul>
+<li>IBM TechXchange Dev Day: AI and Automation Unpacked + Hackathon</li>
+<li>
+Credencial:
+<a href="https://www.virtualbadge.io/certificate-validator?credential=49e96b6c-ef06-4ecb-86e1-c51ab73ab1a5" target="_blank">
+virtualbadge.io
+</a>
+</li>
+<li>Code with Kiro Hackathon</li>
+</ul>
+</div>
+</section>
+
+<!-- FORMACIÓN -->
+<section>
+<h2>Formación y certificaciones</h2>
 
 <div class="card">
 <ul>
-<li>IBM TechXchange Dev Day – AI and Automation + Hackathon</li>
-<li>Code with Kiro Hackathon</li>
+<li>Desarrollador Web y Cloud Microsoft (IFCD38)</li>
+<li>Código especialidad: IFCD38 – DESARROLLADOR WEB Y CLOUD MICROSOFT</li>
+<li>Código de curso: 22/2335 · Presencial · 400 horas</li>
+<li>
+Programa:
+<a href="https://tecnologias.tajamar.es/" target="_blank">tecnologias.tajamar.es</a>
+</li>
+<li>Desarrollo .NET orientado a Azure y sistemas multicloud</li>
+<li>Uso de Copilot y asistentes de IA</li>
+<li>Vouchers: AWS Certified Cloud Practitioner</li>
+<li>Microsoft Azure Fundamentals (AZ-900)</li>
+<li>Preparación Azure Administrator (AZ-104)</li>
+<li>
+Referencia SEPE:
+<a href="https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCD38.pdf" target="_blank">
+PDF IFCD38
+</a>
+</li>
+<li>SailPoint Identity Security Leader Credential</li>
+</ul>
+</div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section>
+<h2>Experiencia profesional</h2>
+
+<div class="card">
+<h3>Gestión de Identidades y Accesos (IAM / GIA)</h3>
+
+<ul>
+<li>IBM ISIM v6.0.2, ISVG IM v10</li>
+<li>Tivoli Directory Integrator (TDI) y Security Directory Integrator (SDI)</li>
+<li>Health checking diario de plataformas, logs, servicios y servidores</li>
+<li>Altas, bajas y modificaciones de identidades, roles, grupos y políticas</li>
+<li>PKI, administración de adaptadores y agentes</li>
+<li>CyberArk PAM: PVWA, CPM, PSM, PTA</li>
+<li>LDAP, bases de datos, Red Hat Linux</li>
+<li>Bash y Microsoft PowerShell</li>
+<li>Jira, Service Desk / CAU</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>IAM · Cloud · Automatización</h3>
+<ul>
+<li>Microsoft FIM y MIM</li>
+<li>Automatización con PowerShell</li>
+<li>CyberArk y cumplimiento de seguridad</li>
+<li>Azure: monitorización de aplicaciones y máquinas virtuales Linux y Windows</li>
+<li>Active Directory, PKI, GPOs, roles</li>
+<li>Administración de servidores: DCs, WSUS, SQL Server</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>IAM · SailPoint · Desarrollo</h3>
+<ul>
+<li>SailPoint IdentityIQ y IdentityNow</li>
+<li>Gestión de parches y actualizaciones</li>
+<li>Desarrollo con Java, Angular y APIs</li>
+<li>Postman, documentación y gestión de tickets</li>
+<li>Python para automatización (pandas, Jupyter, matplotlib, numpy)</li>
+<li>Controles SOX y auditoría interna</li>
+<li>Cloud: Google Cloud Platform, AWS</li>
+<li>Django y Angular, Git, Jenkins, Bitbucket</li>
+<li>ServiceNow, Excel avanzado, Talend ETL</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Consultoría IAM y Desarrollo</h3>
+<ul>
+<li>Oracle Identity Manager (11g a 12c)</li>
+<li>RBAC, roles y perfiles de acceso</li>
+<li>Manuales técnicos y documentación de instalación</li>
+<li>Clusters Red Hat Linux, certificados SSL</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Desarrollo Java y Sistemas</h3>
+<ul>
+<li>Java SE y EE, Servlets, JSP</li>
+<li>PHP, JavaScript, jQuery</li>
+<li>WebServices, Swing</li>
+<li>Eclipse, Git, MySQL, Oracle</li>
+<li>Soporte remoto, VirtualBox, TeamViewer</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Sistemas, Redes y Soporte</h3>
+<ul>
+<li>Administración Windows, Linux, Solaris</li>
+<li>Backups, redes, firewalls, routers y switches</li>
+<li>HP-UX, AIX, AS/400, HP OpenView</li>
+<li>ISP, LDAP, Radius</li>
+<li>Soporte in situ, telefónico y remoto</li>
+<li>Intermediación Inglés ↔ Español</li>
 </ul>
 </div>
 </section>
@@ -277,18 +310,20 @@ Formación presencial (400h) orientada a desarrollo, cloud, automatización y us
 <!-- IDIOMAS -->
 <section>
 <h2>Idiomas</h2>
-
 <div class="card">
 <ul>
-<li>Inglés – Nivel alto (profesional y técnico)</li>
-<li>Formación en Reino Unido (Perth College, Cambridge ETCI)</li>
+<li>Inglés – Nivel alto</li>
 <li>English for Career Development – University of Pennsylvania</li>
+<li>Diploma Inglés Gestión Comercial (CEEP)</li>
+<li>Inglés conversación – Business Line</li>
+<li>Perth College (UK)</li>
+<li>ETCi – Universidad de Cambridge (UK)</li>
 </ul>
 </div>
 </section>
 
 <footer>
-Portfolio técnico completo · GitHub Pages · Experiencia real sin filtros
+CV técnico completo · GitHub Pages · Sin recortes · Sin filtros
 </footer>
 
 </div>
