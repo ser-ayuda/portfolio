@@ -8,54 +8,68 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1e4b8a;
-            --secondary: #334155;
-            --accent: #0ea5e9;
-            --bg-light: #f1f5f9;
+            --primary: #1e4b8a; /* Azul oscuro principal */
+            --secondary: #334155; /* Gris oscuro para texto */
+            --accent: #0ea5e9; /* Azul claro para detalles */
+            --bg-light: #f1f5f9; /* Fondo claro general */
         }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: var(--secondary); }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; color: var(--secondary); line-height: 1.6; }
 
-        /* Header con carácter */
+        /* Header (se mantiene profesional) */
         .hero-clean { 
             background: white; padding: 60px 0; border-bottom: 1px solid #e2e8f0;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
         }
         .profile-img { width: 120px; height: 120px; border-radius: 20px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
 
-        /* Tarjetas de datos */
+        /* Tarjetas de información general */
         .info-card {
             background: white; border: 1px solid #e2e8f0; border-radius: 12px;
             padding: 25px; height: 100%; transition: all 0.3s ease;
         }
         .info-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 
+        /* Títulos de sección con icono */
         .section-title { 
             font-weight: 800; color: var(--primary); margin-bottom: 30px; 
             display: flex; align-items: center; gap: 10px;
         }
         .section-title i { color: var(--accent); }
 
-        /* Listado de roles con bullets personalizados */
-        .role-grid { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        /* Listado de roles (Grid) */
+        .role-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
         .role-grid li { 
-            font-size: 0.9rem; padding: 8px 12px; background: #f8fafc; 
+            font-size: 0.9rem; padding: 10px 15px; background: #f8fafc; 
             border-radius: 8px; display: flex; align-items: center; border-left: 3px solid var(--accent);
         }
 
-        /* Proyectos */
-        .project-box {
-            background: var(--primary); color: white; border-radius: 12px;
-            padding: 20px; position: relative; overflow: hidden;
+        /* Proyectos con imágenes de fondo */
+        .project-card {
+            background-color: var(--primary); /* fallback color */
+            background-size: cover; background-position: center; 
+            border-radius: 12px; padding: 30px; color: white;
+            position: relative; overflow: hidden; height: 200px;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .project-box h5 { font-weight: 700; margin-bottom: 15px; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .project-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
+        }
+        .project-card-content { position: relative; z-index: 2; }
+        .project-card h5 { font-weight: 700; margin-bottom: 10px; }
+        .project-card p { font-size: 0.85rem; opacity: 0.9; margin-bottom: 15px; }
+
+        /* Botones */
         .btn-light-outline { 
-            border: 1px solid rgba(255,255,255,0.4); color: white; 
-            text-decoration: none; padding: 6px 15px; border-radius: 6px; font-size: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.5); color: white; 
+            text-decoration: none; padding: 8px 20px; border-radius: 6px; font-size: 0.8rem;
             transition: 0.3s;
         }
         .btn-light-outline:hover { background: white; color: var(--primary); }
 
-        /* Botón Principal */
         .btn-action {
             background: var(--primary); color: white; padding: 12px 30px;
             border-radius: 8px; text-decoration: none; font-weight: 600;
@@ -63,7 +77,7 @@
         }
         .btn-action:hover { background: var(--accent); color: white; }
 
-        .stack-img { max-width: 100%; height: auto; border-radius: 12px; mix-blend-mode: multiply; }
+        .stack-img { max-width: 100%; height: auto; border-radius: 12px; filter: grayscale(10%) contrast(105%); }
     </style>
 </head>
 <body>
@@ -79,7 +93,7 @@
                 <p class="h5 text-muted fw-normal">Analista IAM & Desarrollador Full Stack</p>
                 <div class="mt-3">
                     <span class="badge bg-light text-dark border me-2 p-2"><i class="fas fa-envelope text-primary me-1"></i> jcm2222@hotmail.com</span>
-                    <span class="badge bg-light text-dark border p-2"><i class="fab fa-github text-dark me-1"></i> ser-ayuda</span>
+                    <a href="https://github.com/ser-ayuda" target="_blank" class="badge bg-light text-dark border p-2"><i class="fab fa-github text-dark me-1"></i> ser-ayuda</a>
                 </div>
             </div>
             <div class="col-md-3 text-md-end mt-4 mt-md-0">
@@ -116,17 +130,21 @@
         <h2 class="section-title"><i class="fas fa-laptop-code"></i> Aplicaciones Activas</h2>
         <div class="row g-4">
             <div class="col-md-6">
-                <div class="project-box shadow-sm">
-                    <h5>Escritor Pro (PWA)</h5>
-                    <p class="small opacity-75">App de dictado por voz y gestión de diarios.</p>
-                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-light-outline">Lanzar Aplicación</a>
+                <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800');">
+                    <div class="project-card-content">
+                        <h5>Escritor Pro (PWA)</h5>
+                        <p>Aplicación de dictado por voz y gestión de diarios personales.</p>
+                        <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-light-outline">Lanzar Aplicación</a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="project-box shadow-sm" style="background: var(--secondary);">
-                    <h5>Gestión Familiar</h5>
-                    <p class="small opacity-75">Sistema colaborativo desarrollado en Django.</p>
-                    <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-light-outline">Ver Demo Online</a>
+                <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800');">
+                    <div class="project-card-content">
+                        <h5>Gestión Familiar (Django)</h5>
+                        <p>Sistema backend para organización colaborativa del hogar.</p>
+                        <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-light-outline">Ver Demo Online</a>
+                    </div>
                 </div>
             </div>
         </div>
