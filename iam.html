@@ -2,158 +2,115 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expediente Técnico Completo | Jesús Contreras</title>
+    <title>Historial Técnico Íntegro - Jesús Contreras</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --accent: #38bdf8; --bg: #ffffff; --text: #1e293b; --line: #e2e8f0; }
-        body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg); color: var(--text); font-size: 0.88rem; line-height: 1.5; }
-        
-        /* Layout Estilo Documentación Técnica */
-        .container { max-width: 1100px; }
-        header { border-bottom: 2px solid var(--accent); padding: 40px 0; margin-bottom: 40px; background: #f8fafc; }
-        
-        .record-block { border: 1px solid var(--line); border-radius: 8px; margin-bottom: 30px; overflow: hidden; }
-        .record-header { background: #f1f5f9; padding: 12px 20px; border-bottom: 1px solid var(--line); font-weight: 800; color: #0f172a; display: flex; justify-content: space-between; align-items: center; }
-        .record-body { padding: 20px; }
-        
-        .role-meta { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 5px; display: block; }
-        .job-title { font-size: 1.15rem; font-weight: 800; color: #0f172a; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
-        
-        .data-list { list-style: none; padding: 0; margin: 0; }
-        .data-list li { margin-bottom: 8px; padding-left: 18px; position: relative; }
-        .data-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-        
-        .sub-section { font-weight: 700; color: #475569; margin-top: 15px; margin-bottom: 8px; text-decoration: underline; text-underline-offset: 4px; display: block; }
-        
-        .company-list { font-size: 0.75rem; color: #64748b; font-style: italic; }
-        .badge-tech { display: inline-block; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 1px 6px; border-radius: 4px; font-family: monospace; font-size: 0.75rem; margin: 2px; }
-        
-        .footer-line { border-top: 1px solid var(--line); padding: 30px 0; font-size: 0.8rem; color: #94a3b8; text-align: center; }
+        body { font-family: 'Courier New', Courier, monospace; background-color: #ffffff; color: #1a1a1a; font-size: 0.85rem; line-height: 1.2; }
+        .container { max-width: 1200px; padding: 20px; }
+        .header-box { border: 2px solid #000; padding: 15px; margin-bottom: 20px; background: #eee; }
+        .section-title { background: #000; color: #fff; padding: 5px 10px; font-weight: bold; text-transform: uppercase; margin-top: 25px; }
+        .job-block { border-bottom: 1px solid #ccc; padding: 10px 0; }
+        .company-name { font-weight: bold; color: #333; text-decoration: underline; }
+        .tech-list { margin: 5px 0 10px 20px; list-style-type: square; }
+        .project-box { border: 1px dashed #666; padding: 10px; margin: 10px 0; background: #f9f9f9; }
+        .meta { font-style: italic; color: #555; font-size: 0.8rem; }
+        @media print { .no-print { display: none; } }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center">
-            <div>
-                <h1 class="fw-900 mb-0">EXPEDIENTE PROFESIONAL COMPLETO</h1>
-                <p class="mb-0 text-muted">Jesús Contreras — Analista / Desarrollador / IAM / Sistemas</p>
-            </div>
-            <a href="index.html" class="btn btn-outline-dark btn-sm fw-bold">VOLVER AL INICIO</a>
-        </div>
-    </div>
-</header>
-
-<main class="container">
-
-    <div class="record-block">
-        <div class="record-header">BLOQUE I: CIBERSEGURIDAD & GESTIÓN DE IDENTIDADES</div>
-        <div class="record-body">
-            <span class="role-meta">Experiencia Consolidada en: Serem, Capgemini, Logicalis, Softtek (Vector ITC)</span>
-            <h2 class="job-title">Especialista en Soluciones IAM y PAM</h2>
-            
-            <span class="sub-section">IBM Security Framework:</span>
-            <ul class="data-list">
-                <li>ISIM V6.0.2 e ISVG IM V10 (IBM Security Verify Governance Identity Manager v10).</li>
-                <li>Tivoli Directory Integrator (TDI) & IBM's Security Directory Integrator (SDI).</li>
-                <li>Health checking diario de plataformas, análisis de logs, estados de servicios y servidores.</li>
-                <li>Altas, actualizaciones y bajas de identidades (servicios, roles, grupos y políticas).</li>
-            </ul>
-
-            <span class="sub-section">CyberArk (PAM):</span>
-            <ul class="data-list">
-                <li>Gestión del acceso con privilegios: Ciclo de vida de cuentas, comprobación diaria, safes, licencias e informes.</li>
-                <li>Password Vault Web Access (PVWA), Central Policy Manager (CPM), PSM y Privileged Threat Analytics (PTA).</li>
-            </ul>
-
-            <span class="sub-section">SailPoint & Microsoft:</span>
-            <ul class="data-list">
-                <li>Implementación y Gestión con Microsoft FIM y MIM. Automatización con PowerShell.</li>
-                <li>Integración y configuración de SailPoint IdentityIQ y IdentityNow (Setup, Provisioning, Search).</li>
-                <li>Perfilado, reglas de aprovisionamiento, políticas de acceso y flujos de trabajo.</li>
-                <li>Cumplimiento SOX (Ley Sarbanes-Oxley 2002): Controles, evidencias y auditoría interna.</li>
-            </ul>
-        </div>
+<div class="container">
+    <div class="header-box">
+        <h1 style="margin:0;">REGISTRO TÉCNICO COMPLETO: JESÚS CONTRERAS</h1>
+        <p style="margin:5px 0 0 0;">GITHUB: https://github.com/ser-ayuda | PERFIL PROFESIONAL MULTIDISCIPLINAR</p>
     </div>
 
-    <div class="record-block">
-        <div class="record-header">BLOQUE II: ANALISTA PROGRAMADOR & FULL STACK</div>
-        <div class="record-body">
-            <span class="role-meta">Experiencia en: Grupo CMC, SIA Group, CMV Consultores (Everis), Isban, Uniway, Impormovil</span>
-            <h2 class="job-title">Ingeniería de Software y Desarrollo de Aplicaciones</h2>
-            
-            <span class="sub-section">Proyectos Propios (GitHub: ser-ayuda):</span>
-            <ul class="data-list">
-                <li><strong>Escritor Pro:</strong> PWA móvil. Dictado de voz a texto, almacenamiento local y privacidad total.</li>
-                <li><strong>Gestión Familiar (Django):</strong> Backend Django REST Framework, Postgres, Docker, CI/CD GitHub Actions.</li>
-                <li>Uso intensivo de IA: Copilot, Gemini Code Assist, ChatGPT, Perplexity.ai, Cursor, Kiro.</li>
-            </ul>
+    <a href="index.html" class="no-print"> < VOLVER AL PORTFOLIO</a>
 
-            <span class="sub-section">Banca y Consultoría (Santander Asset Management / Isban):</span>
-            <ul class="data-list">
-                <li>Analista-Programador JAVA: Aplicaciones Perssa y TLM para conciliación, importación y masterización de datos bancarios.</li>
-                <li>Oracle Identity Management (OIM): Migración 11g a 12c, configuración de conectores y RBAC.</li>
-                <li>Desarrollo JAVA SE/EE, JavaWEB (Servlets, JSP), .NET, PHP, jQuery, JavaScript.</li>
-            </ul>
-        </div>
+    <div class="section-title">PROYECTOS Y DESARROLLO (GITHUB & CLOUD)</div>
+    <div class="project-box">
+        <strong>App: Escritor Pro</strong> – Aplicación web pensada para móviles. Dictado de voz, diario de notas, conversión voz a texto, almacenamiento local/privacidad.
+        <br>Demo: https://ser-ayuda.github.io/diario
+    </div>
+    <div class="project-box">
+        <strong>Calendario Familiar</strong> – Django/DRF, Postgres, Render, Docker, GitHub Actions. 
+        <br>IA Assistant: Copilot, Gemini Code Assist, ChatGPT, perplexity.ai. 
+        <br>DevOps: Playwright, Mermaid, PlantUML, Pillow, Gunicorn, Whitenoise.
     </div>
 
-    <div class="record-block">
-        <div class="record-header">BLOQUE III: ADMINISTRACIÓN DE SISTEMAS E INFRAESTRUCTURA</div>
-        <div class="record-body">
-            <span class="role-meta">Experiencia en: Jaguar Land Rover, Compusof (Aena, Telefónica, CSN, Carlos III), Cibernos, AFI</span>
-            <h2 class="job-title">Administración de Sistemas, Redes e ISP</h2>
-            
-            <ul class="data-list">
-                <li><strong>Jaguar Land Rover:</strong> Administración sistemas España y Portugal (Win 2003, Red Hat 8, Oracle). Intermediación Inglés-Español.</li>
-                <li><strong>Compusof:</strong> CGP Telefónica (Plataformado Routers/Switches/Firewalls), AENA (Monitorización Red Aeroportuaria, Sun One, PKI).</li>
-                <li><strong>Consejo de Seguridad Nuclear (CSN):</strong> Soporte técnico, vídeo y maquetación de manuales.</li>
-                <li><strong>ISP (Madritel, Unicable, R):</strong> Control HP-Openview, AS/400, Solaris, HP-UX, Legato Networker (Backups), Radius.</li>
-                <li><strong>Vía Digital:</strong> Monitorización con Patrol y Spectrum. Administración de usuarios y perfiles en UNIX.</li>
-                <li><strong>Impormovil:</strong> Soporte SoftFIT, integración escáneres códigos de barras, WebServices y VirtualBox.</li>
-            </ul>
-        </div>
+    <div class="section-title">GESTIÓN DE IDENTIDADES Y ACCESOS (GIA / IAM)</div>
+    
+    <div class="job-block">
+        <span class="company-name">Serem (Sector Banca)</span>: ISIM V6.0.2, ISVG IM V10, TDI (Tivoli Directory Integrator), SDI.
+        <ul class="tech-list">
+            <li>CyberArk (PAM): PVWA, CPM, PSM, PTA. Gestión de safes, licencias e informes.</li>
+            <li>Red Hat Linux, Bash, PowerShell, LDAP, PKI, Jira Service Desk/CAU.</li>
+        </ul>
     </div>
 
-    <div class="record-block">
-        <div class="record-header">BLOQUE IV: REGISTROS ADICIONALES Y FORMACIÓN BASE</div>
-        <div class="record-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <span class="sub-section">Experiencia Operativa Diversa:</span>
-                    <ul class="data-list">
-                        <li><strong>Unísono (Orange):</strong> Gestión de incidencias técnicas y configuración de routers.</li>
-                        <li><strong>Profesor Informática:</strong> IES Ortega y Gasset (Revista digital, Blogs, Diseño).</li>
-                        <li><strong>Telefónica Móviles (Alma Tech):</strong> Formación a clientes en tiendas Movistar por España.</li>
-                        <li><strong>Royal Mail (Perth, UK):</strong> Christmas Postal Worker (Servicio postal y comunicación).</li>
-                        <li><strong>Infortec:</strong> Soporte IBM/CNH y migración Novell a NT (Tivoli).</li>
-                        <li><strong>Servicio Militar:</strong> Opla de Informática (Camiones y Ambulancias).</li>
-                        <li><strong>Ayuntamiento de Segovia:</strong> Prácticas F.P.II. (Plusvalía y Recaudación).</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <span class="sub-section">Idiomas (Inglés):</span>
-                    <ul class="data-list">
-                        <li>Pennsylvania University: English for Career Development.</li>
-                        <li>Diploma CEEP: Inglés Gestión Comercial (200H).</li>
-                        <li>Perth College (UK): Inglés como Lengua Extranjera.</li>
-                        <li>Cambridge Butlins (UK): Título ETCi.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <div class="job-block">
+        <span class="company-name">Capgemini</span>: Microsoft FIM y MIM, PowerShell, Azure Cloud (Monitorización VMs Linux/Windows).
+        <ul class="tech-list">
+            <li>Administración Active Directory (AD), PKI, GPOs, WSUS, SQL Server.</li>
+        </ul>
     </div>
 
-</main>
-
-<footer class="footer-line">
-    <div class="container">
-        <p>© 2025 Jesús Contreras — Todos los datos extraídos de registros oficiales.</p>
+    <div class="job-block">
+        <span class="company-name">Logicalis / Softtek (Vector ITC)</span>: SailPoint IdentityIQ e IdentityNow.
+        <ul class="tech-list">
+            <li>Cumplimiento SOX (Ley Sarbanes-Oxley 2002), Python (Pandas, Jupyter, Numpy), Talend ETL.</li>
+            <li>Desarrollo Django (Python), Angular, Jenkins, Bitbucket, ServiceNow.</li>
+        </ul>
     </div>
-</footer>
+
+    <div class="job-block">
+        <span class="company-name">Grupo CMC</span>: Oracle Identity Management (OIM 11g a 12c), BI Publisher.
+        <ul class="tech-list">
+            <li>Roles RBAC, Clústeres Red Hat Linux, Certificados SSL.</li>
+        </ul>
+    </div>
+
+    <div class="job-block">
+        <span class="company-name">SIA Group</span>: SailPoint IdentityIQ (V 7.1 y 7.2), SSO, Java, PowerShell, Python, Bash, Awk, Scrum, Git.
+    </div>
+
+    <div class="section-title">ANÁLISIS Y PROGRAMACIÓN JAVA / CORE BANCARIO</div>
+    <div class="job-block">
+        <span class="company-name">Everis / CMV (Santander Asset Management)</span>: Aplicación Perssa (conciliación, masterización). Java, SQL Oracle, MySQL Workbench.
+    </div>
+    <div class="job-block">
+        <span class="company-name">Uniway (Isban - Grupo Santander)</span>: Aplicación TLM para conciliación. Scripts Unix, awk, Java.
+    </div>
+    <div class="job-block">
+        <span class="company-name">Impormovil</span>: Java SE/EE, PHP, Jquery, ODBC, WebServices, SoftFIT (Gestión Talleres).
+    </div>
+
+    <div class="section-title">ADMINISTRACIÓN DE SISTEMAS E INFRAESTRUCTURA HISTÓRICA</div>
+    <div class="job-block">
+        <span class="company-name">Jaguar Land Rover (Personal 7)</span>: Win 2003, Red Hat 8, Oracle, AD, VBA Scripts. Intermediación Inglés-Español.
+    </div>
+    <div class="job-block">
+        <span class="company-name">Compusof (Proyectos)</span>: 
+        Aena (Monitorización Red, Sun One, PKI), CSN (Consejo Seguridad Nuclear - Soporte/Manuales), Kyocera (AS400, Win 2003), Telefónica CGP (Routers, Switches, Firewalls, Solaris, Linux).
+    </div>
+    <div class="job-block">
+        <span class="company-name">Cibernos / AFI (ISP)</span>: Madritel, R, Unicable. HP-Openview, AS/400, Solaris, HP-UX, Legato Networker, Radius, LDAP.
+    </div>
+    <div class="job-block">
+        <span class="company-name">Vía Digital (Sinergia Tecnológica)</span>: Patrol, Spectrum, Unix (Seguridad, usuarios, perfiles).
+    </div>
+
+    <div class="section-title">FORMACIÓN, IDIOMAS Y OTROS REGISTROS</div>
+    <div class="job-block">
+        <strong>Inglés:</strong> Career Development (Penn University), Gestión Comercial (CEEP 200H), Perth College (UK), ETCi Cambridge Butlins (UK).
+    </div>
+    <div class="job-block">
+        <strong>Certificaciones/Cursos:</strong> SailPoint Identity Security Leader, IFCD38 Desarrollador Web y Cloud Microsoft (Tajamar 400h), AWS Practitioner, AZ-900.
+    </div>
+    <div class="job-block">
+        <strong>Otros:</strong> Unísono (Orange), Profesor I.E.S. Ortega y Gasset, Royal Mail Perth (UK), Servicio Militar (Opla Informática), Prácticas Ayto. Segovia (1992).
+    </div>
+</div>
 
 </body>
 </html>
