@@ -22,49 +22,50 @@
         }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-blue); object-fit: cover; }
 
-        /* Estilo Lista de Trayectoria */
-        .career-container {
+        /* Contenedores Genéricos */
+        .content-box {
             background: white; padding: 30px; border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .career-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
-        .career-list li { 
-            width: 50%; padding: 8px 15px; font-weight: 500; color: #4a5568; font-size: 0.9rem;
+
+        /* Listas Estilizadas */
+        .custom-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
+        .custom-list li { 
+            width: 50%; padding: 6px 15px; font-weight: 500; color: #4a5568; font-size: 0.9rem;
             display: flex; align-items: flex-start;
         }
-        .career-list li::before { content: "▹"; color: var(--accent-blue); margin-right: 10px; font-weight: bold; }
+        .custom-list li::before { content: "▹"; color: var(--accent-blue); margin-right: 10px; font-weight: bold; }
 
-        /* Estilo Proyectos Aparte */
+        /* Proyectos */
         .project-card-small {
             background: white; border: none; border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: 0.3s; overflow: hidden; text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; text-align: center;
         }
         .project-card-small:hover { transform: translateY(-5px); }
-        .project-img-small { height: 100px; object-fit: cover; width: 100%; }
+        .project-img-small { height: 100px; object-fit: cover; width: 100%; border-radius: 8px 8px 0 0; }
 
         .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 25px; position: relative; display: inline-block; }
         .section-title::after { content: ""; width: 30px; height: 3px; background: var(--accent-blue); position: absolute; bottom: -8px; left: 0; }
         
         .btn-custom { 
             background: var(--primary-blue); color: white; padding: 10px 25px; 
-            border-radius: 30px; text-decoration: none; font-weight: 600; 
-            transition: 0.3s; display: inline-block; border: none;
+            border-radius: 30px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-block; border: none;
         }
         .btn-custom:hover { background: var(--accent-blue); color: white; }
         
-        .tech-main-img { max-width: 400px; width: 100%; height: auto; margin: 40px 0; }
+        /* Imagen de Tecnologías Ajustada */
+        .tech-side-img { max-width: 100%; height: auto; border-radius: 10px; }
     </style>
 </head>
 <body>
 
 <header class="hero">
-    <div class="container text-center text-md-start">
+    <div class="container">
         <div class="row align-items-center">
             <div class="col-md-3 text-center">
                 <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img shadow animate__animated animate__zoomIn">
             </div>
-            <div class="col-md-9 animate__animated animate__fadeInRight">
+            <div class="col-md-9 animate__animated animate__fadeInRight text-center text-md-start">
                 <h1 class="display-6 fw-bold mb-1">Jesús Contreras</h1>
                 <p class="h5 text-info fw-light mb-3">Analista IAM & Desarrollador Full Stack</p>
                 <div class="d-flex gap-3 justify-content-center justify-content-md-start">
@@ -81,8 +82,8 @@
     
     <section class="mb-5">
         <h2 class="section-title">Trayectoria Profesional</h2>
-        <div class="career-container">
-            <ul class="career-list mb-4">
+        <div class="content-box">
+            <ul class="custom-list mb-4">
                 <li>Desarrollador Full Stack</li>
                 <li>Gestión de Identidades y Accesos (GIA/IAM)</li>
                 <li>Analista Programador</li>
@@ -97,9 +98,7 @@
                 <li>Prácticas F.P.II. Informática de Gestión</li>
             </ul>
             <div class="text-center">
-                <a href="iam.html" class="btn-custom">
-                    <i class="fas fa-briefcase me-2"></i> Ver Detalles de Experiencia
-                </a>
+                <a href="iam.html" class="btn-custom"><i class="fas fa-briefcase me-2"></i> Ver Experiencia Detallada</a>
             </div>
         </div>
     </section>
@@ -109,14 +108,14 @@
         <div class="row g-4 justify-content-center">
             <div class="col-md-4 col-6">
                 <div class="project-card-small p-3">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-small rounded mb-3" alt="PWA">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-small mb-3" alt="PWA">
                     <h6 class="fw-bold small">Escritor Pro (PWA)</h6>
                     <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-custom py-1 px-3" style="font-size: 0.7rem;">Abrir App</a>
                 </div>
             </div>
             <div class="col-md-4 col-6">
                 <div class="project-card-small p-3">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-small rounded mb-3" alt="Django">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-small mb-3" alt="Django">
                     <h6 class="fw-bold small">Gestión Familiar (Django)</h6>
                     <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-custom py-1 px-3" style="font-size: 0.7rem;">Ver Demo</a>
                 </div>
@@ -126,30 +125,31 @@
 
     <section class="mb-5">
         <h2 class="section-title">Formación y Certificaciones</h2>
-        <div class="edu-container">
-            <ul class="career-list mb-4">
-                <li>SailPoint Technologies</li>
-                <li>Learn.Microsoft</li>
-                <li>AWS</li>
-                <li>CyberArk</li>
-                <li>IBM Security</li>
-                <li>Seguridad Informática</li>
-                <li>Lenguajes programación</li>
-                <li>BBDD</li>
-                <li>Cloudera</li>
-                <li>Otros</li>
-            </ul>
-            <div class="text-center">
-                <a href="formacion.html" class="btn-custom">
-                    <i class="fas fa-graduation-cap me-2"></i> Ver Títulos y Certificados
-                </a>
+        <div class="content-box">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <ul class="custom-list mb-4">
+                        <li>SailPoint Technologies</li>
+                        <li>Learn.Microsoft</li>
+                        <li>AWS</li>
+                        <li>CyberArk</li>
+                        <li>IBM Security</li>
+                        <li>Seguridad Informática</li>
+                        <li>Lenguajes programación</li>
+                        <li>BBDD</li>
+                        <li>Cloudera</li>
+                        <li>Otros</li>
+                    </ul>
+                    <div class="text-center text-lg-start">
+                        <a href="formacion.html" class="btn-custom"><i class="fas fa-graduation-cap me-2"></i> Detalles de Formación</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-4 mt-lg-0 text-center">
+                    <img src="img/tech-stack.png" alt="Stack Tecnológico" class="tech-side-img animate__animated animate__fadeIn">
+                </div>
             </div>
         </div>
     </section>
-
-    <div class="text-center">
-        <img src="img/tech-stack.png" alt="Stack Tecnológico" class="tech-main-img animate__animated animate__fadeIn">
-    </div>
 
 </main>
 
