@@ -10,94 +10,50 @@
         :root {
             --accent: #38bdf8;
             --dark-overlay: rgba(15, 23, 42, 0.85);
+            --primary-dark: #0f172a;
         }
         body { font-family: 'Inter', system-ui, sans-serif; background-color: #f8fafc; color: #334155; }
 
         /* CABECERA IMPACTO TOTAL */
         .tech-hero {
             position: relative;
-            background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920'); /* Imagen de ciberseguridad/tecnología */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 120px 0;
-            color: white;
-            text-align: center;
-            border-bottom: 5px solid var(--accent);
+            background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            padding: 100px 0; color: white; text-align: center; border-bottom: 5px solid var(--accent);
         }
-
-        .tech-hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--dark-overlay);
-            z-index: 1;
-        }
-
-        .hero-container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .hero-headline {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.4;
-            max-width: 1000px;
-            margin: 0 auto 40px;
-        }
-
-        /* El texto al mismo nivel con separadores */
-        .hero-headline span {
-            display: inline-block;
-            white-space: nowrap;
-        }
-
-        .tech-divider {
-            color: var(--accent);
-            margin: 0 15px;
-            font-weight: 300;
-        }
-
-        .hero-contact-bar {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .hero-contact-bar a, .hero-contact-bar span {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
+        .tech-hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--dark-overlay); z-index: 1; }
+        .hero-container { position: relative; z-index: 2; }
+        .hero-name { font-size: 1.1rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 15px; display: block; }
+        .hero-headline { font-size: 2.3rem; font-weight: 800; line-height: 1.4; max-width: 1100px; margin: 0 auto 30px; }
+        .tech-divider { color: var(--accent); margin: 0 10px; font-weight: 300; }
+        
+        .hero-contact-bar { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+        .hero-contact-bar a, .hero-contact-bar span { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
         .hero-contact-bar i { color: var(--accent); }
 
-        /* SECCIONES POSTERIORES (Manteniendo tus datos intactos) */
-        .section-title { font-weight: 800; color: #0f172a; margin: 60px 0 30px; display: flex; align-items: center; gap: 12px; }
+        /* ESTILOS COMUNES SECCIONES */
+        .section-title { font-weight: 800; color: var(--primary-dark); margin: 60px 0 30px; display: flex; align-items: center; gap: 12px; }
+        .section-title i { color: var(--accent); }
         .info-card { background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        /* PERFIL PROFESIONAL */
         .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; list-style: none; padding: 0; }
         .role-grid li { font-size: 0.95rem; padding: 12px 18px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; font-weight: 500; border-left: 4px solid var(--accent); }
-        .btn-action { background: #0f172a; color: white; padding: 15px 35px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
-        .btn-action:hover { background: var(--accent); transform: translateY(-3px); }
+
+        /* PROYECTOS */
         .project-card { background-size: cover; background-position: center; border-radius: 20px; padding: 40px 30px; color: white; position: relative; overflow: hidden; height: 280px; display: flex; flex-direction: column; justify-content: flex-end; transition: 0.4s; border: none; }
-        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0) 100%); z-index: 1; }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0) 100%); z-index: 1; }
         .project-content { position: relative; z-index: 2; }
+
+        /* BOTONES */
+        .btn-action { background: var(--primary-dark); color: white; padding: 15px 35px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; border: none; }
+        .btn-action:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+        
+        /* FORMACIÓN Y STACK */
+        .tech-list { list-style: none; padding: 0; margin: 0; }
+        .tech-list li { margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; }
+        .tech-list li i { color: var(--accent); width: 25px; }
+        .stack-img { max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
@@ -113,7 +69,6 @@
             Nube <span class="tech-divider">+</span> 
             Virtualización
         </h1>
-        
         <div class="hero-contact-bar">
             <span><i class="fas fa-location-dot"></i> Madrid, España</span>
             <a href="mailto:jcm2222@hotmail.com"><i class="fas fa-envelope"></i> jcm2222@hotmail.com</a>
@@ -123,8 +78,8 @@
 </header>
 
 <main class="container my-5">
-    <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-id-badge"></i> Perfil Profesional</h2>
+    <section>
+        <h2 class="section-title"><i class="fas fa-user-tie"></i> Perfil Profesional</h2>
         <div class="info-card">
             <ul class="role-grid mb-4">
                 <li>Desarrollador Full Stack</li>
@@ -142,19 +97,19 @@
                 <li>Otros</li>
             </ul>
             <div class="text-center">
-                <a href="iam.html" class="btn-action">Consultar Trayectoria Completa</a>
+                <a href="iam.html" class="btn-action">Ver Trayectoria Detallada</a>
             </div>
         </div>
     </section>
 
-    <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-rocket"></i> Proyectos Destacados</h2>
+    <section>
+        <h2 class="section-title"><i class="fas fa-code"></i> Aplicaciones Activas</h2>
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800');">
                     <div class="project-content">
-                        <h4 class="fw-bold mb-1">Escritor Pro (PWA)</h4>
-                        <p class="small mb-3">Dictado inteligente y gestión de diarios.</p>
+                        <h4 class="fw-bold">Escritor Pro (PWA)</h4>
+                        <p class="small opacity-75">Dictado inteligente y diarios personales.</p>
                         <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Lanzar Aplicación</a>
                     </div>
                 </div>
@@ -162,10 +117,36 @@
             <div class="col-md-6">
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800');">
                     <div class="project-content">
-                        <h4 class="fw-bold mb-1">Gestión Familiar (Django)</h4>
-                        <p class="small mb-3">Backend sólido para organización colaborativa.</p>
+                        <h4 class="fw-bold">Gestión Familiar (Django)</h4>
+                        <p class="small opacity-75">Backend sólido para organización colaborativa.</p>
                         <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Ver Demo Online</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación & Certificaciones</h2>
+        <div class="info-card">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <ul class="tech-list row g-2">
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> SailPoint Technologies</li>
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> Learn.Microsoft</li>
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> AWS Certified</li>
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> CyberArk Security</li>
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> IBM Security</li>
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> Seguridad Informática</li>
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> Lenguajes Programación</li>
+                        <li class="col-md-6"><i class="fas fa-certificate"></i> BBDD / Cloudera</li>
+                    </ul>
+                    <div class="mt-4">
+                        <a href="formacion.html" class="btn btn-outline-primary fw-bold">Ver Títulos Detallados</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                    <img src="img/tech-stack.png" alt="Stack Tecnológico" class="stack-img">
                 </div>
             </div>
         </div>
