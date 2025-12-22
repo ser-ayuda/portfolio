@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio – Trabajos realizados</title>
-  <meta name="description" content="Portfolio: Proyectos, experiencia IAM/GIA, formación y certificaciones." />
+  <meta name="description" content="Portfolio: Proyectos, experiencia IAM/GIA, eventos, idiomas, formación y certificaciones." />
 
   <style>
     :root{
@@ -15,11 +15,9 @@
       --muted: rgba(255,255,255,.70);
       --line: rgba(255,255,255,.14);
 
-      --brand: #7c5cff;      /* violeta */
-      --brand2:#2dd4bf;      /* turquesa */
-      --warn: #ffd166;       /* amarillo */
-      --ok:   #22c55e;       /* verde */
-      --info: #60a5fa;       /* azul */
+      --brand: #7c5cff;
+      --brand2:#2dd4bf;
+      --info: #60a5fa;
 
       --shadow: 0 20px 70px rgba(0,0,0,.45);
       --radius: 18px;
@@ -41,6 +39,9 @@
         radial-gradient(1200px 900px at 50% 90%, rgba(96,165,250,.18), transparent 60%),
         var(--bg);
       line-height:1.55;
+
+      /* Para que el header fijo no tape el contenido */
+      padding-top: 72px;
     }
 
     a{ color: #b9a9ff; text-decoration: none; }
@@ -56,9 +57,11 @@
     .pill b{ color: var(--text); font-weight: 650; }
     .kbd{ font-family: var(--mono); font-size:.85rem; padding:.1rem .35rem; border:1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,.22); }
 
-    /* Header */
+    /* Header fijo (links arriba siempre visibles) */
     header{
-      position: sticky; top: 0; z-index: 50;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
       backdrop-filter: blur(12px);
       background: linear-gradient(to bottom, rgba(11,18,32,.78), rgba(11,18,32,.55));
       border-bottom: 1px solid var(--line);
@@ -79,14 +82,12 @@
     }
     .nav a{ color: var(--muted); font-weight: 600; }
     .nav a:hover{ color: var(--text); text-decoration:none; }
-    .navlinks{ display:flex; flex-wrap:wrap; gap: 12px; justify-content:flex-end; }
+    .navlinks{ display:flex; flex-wrap:wrap; gap: 10px; justify-content:flex-end; }
     .navlinks a{ padding:8px 10px; border-radius: 10px; }
     .navlinks a:hover{ background: rgba(255,255,255,.05); }
 
     /* Hero */
-    .hero{
-      padding: 34px 0 22px;
-    }
+    .hero{ padding: 34px 0 22px; }
     .heroCard{
       background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
       border: 1px solid var(--line);
@@ -278,13 +279,17 @@
       <div class="logo" aria-hidden="true"></div>
       <div>Portfolio</div>
     </div>
+
+    <!-- Orden: Formación y Certificaciones al final -->
     <nav class="navlinks" aria-label="Navegación">
       <a href="#proyectos">Proyectos</a>
       <a href="#eventos">Eventos</a>
-      <a href="#formacion">Formación</a>
-      <a href="#certificaciones">Certificaciones</a>
       <a href="#experiencia">Experiencia</a>
       <a href="#idiomas">Idiomas</a>
+
+      <!-- Al final, como pediste -->
+      <a href="https://ser-ayuda.github.io/portfolio/iam.html#formacion" target="_blank" rel="noreferrer">Formación</a>
+      <a href="https://ser-ayuda.github.io/portfolio/iam.html#certificaciones" target="_blank" rel="noreferrer">Certificaciones</a>
     </nav>
   </div>
 </header>
@@ -296,7 +301,7 @@
         <div>
           <h1 class="title">Portfolio (versión visual)</h1>
           <p class="subtitle">
-            Proyectos personales, experiencia IAM/GIA, formación y certificaciones.
+            Proyectos personales, experiencia IAM/GIA, eventos, idiomas, formación y certificaciones.
             Estructura inspirada en el formato “A” (enlaces + resumen + secciones + timeline).
           </p>
         </div>
@@ -372,9 +377,7 @@
           <summary>Stack y entrega (detalle completo)</summary>
           <div class="detailsBody">
             <h4>Backend</h4>
-            <ul>
-              <li>Python + Django + DRF, Gunicorn, Whitenoise</li>
-            </ul>
+            <ul><li>Python + Django + DRF, Gunicorn, Whitenoise</li></ul>
 
             <h4>Base de datos</h4>
             <ul>
@@ -390,9 +393,7 @@
             </ul>
 
             <h4>Docs/Diagramas</h4>
-            <ul>
-              <li>Mermaid, PlantUML, mermaid-cli, plantuml.jar, pako (client)</li>
-            </ul>
+            <ul><li>Mermaid, PlantUML, mermaid-cli, plantuml.jar, pako (client)</li></ul>
 
             <h4>DevOps/CI</h4>
             <ul>
@@ -402,9 +403,7 @@
             </ul>
 
             <h4>Scripts/Utilidades</h4>
-            <ul>
-              <li>Pillow, requests, PowerShell helpers</li>
-            </ul>
+            <ul><li>Pillow, requests, PowerShell helpers</li></ul>
 
             <h4>Automatización y portfolio-ready</h4>
             <ul>
@@ -434,44 +433,6 @@
       <ul>
         <li><b>IBM TechXchange Dev Day: AI and Automation Unpacked + Hackathon</b> — <a href="https://www.virtualbadge.io/certificate-validator?credential=49e96b6c-ef06-4ecb-86e1-c51ab73ab1a5" target="_blank" rel="noreferrer">Certificado / verificación</a></li>
         <li><b>Code with Kiro Hackathon</b></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="formacion">
-    <div class="sectionTitle">
-      <h2>Formación</h2>
-    </div>
-    <div class="divider"></div>
-
-    <div class="card">
-      <div class="badge">🎓 IFCD38</div>
-      <h3>Desarrollador Web y Cloud Microsoft (ESP)</h3>
-      <ul>
-        <li><b>Código de especialidad:</b> IFCD38</li>
-        <li><b>Código de curso:</b> 22/2335</li>
-        <li><b>Modalidad:</b> Presencial</li>
-        <li><b>Duración:</b> 400 horas</li>
-        <li><b>Centro/enlace:</b> <a href="https://tecnologias.tajamar.es/" target="_blank" rel="noreferrer">tecnologias.tajamar.es</a></li>
-      </ul>
-      <p><b>Contenido:</b> .NET, Azure, multicloud, Copilot.</p>
-      <div class="cta">
-        <a class="btn" href="https://sede.sepe.gob.es/es/portaltrabaja/resources/pdf/especialidades/IFCD38.pdf" target="_blank" rel="noreferrer">Ver PDF SEPE</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="certificaciones">
-    <div class="sectionTitle">
-      <h2>Certificaciones / vouchers / objetivos</h2>
-    </div>
-    <div class="divider"></div>
-
-    <div class="panel">
-      <ul>
-        <li><b>AWS Certified Cloud Practitioner</b> (voucher)</li>
-        <li><b>AZ-900: Microsoft Azure Fundamentals</b> — <b>Conseguido:</b> Enero 2025</li>
-        <li><b>AZ-104: Microsoft Azure Administrator</b> — <b>Preparación objetivo:</b> Enero 2026</li>
       </ul>
     </div>
   </section>
@@ -508,9 +469,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Capgemini — Gestión de Identidades y Accesos (GIA)</p>
-          <div class="meta">
-            <span class="chip">03/2023 – 07/2024</span>
-          </div>
+          <div class="meta"><span class="chip">03/2023 – 07/2024</span></div>
         </div>
         <ul>
           <li>Microsoft FIM / MIM</li>
@@ -526,9 +485,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Logicalis — Gestión de Identidades y Accesos (IAM)</p>
-          <div class="meta">
-            <span class="chip">02/2022 – 04/2022</span>
-          </div>
+          <div class="meta"><span class="chip">02/2022 – 04/2022</span></div>
         </div>
         <ul>
           <li>SailPoint: IdentityIQ e IdentityNow</li>
@@ -541,9 +498,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Softtek (Antes Vector ITC) — Gestión de Identidades y Accesos (IAM)</p>
-          <div class="meta">
-            <span class="chip">10/2020 – 02/2022</span>
-          </div>
+          <div class="meta"><span class="chip">10/2020 – 02/2022</span></div>
         </div>
         <ul>
           <li>SailPoint IdentityIQ (perfilado)</li>
@@ -575,9 +530,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Grupo CMC — Consultor (proyecto en Azure)</p>
-          <div class="meta">
-            <span class="chip">06/2019 – 05/2020</span>
-          </div>
+          <div class="meta"><span class="chip">06/2019 – 05/2020</span></div>
         </div>
         <ul>
           <li>Oracle Identity Management (OIM) 11g → 12c</li>
@@ -592,9 +545,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">SIA Group — Analista / GIA</p>
-          <div class="meta">
-            <span class="chip">04/2018 – 06/2019</span>
-          </div>
+          <div class="meta"><span class="chip">04/2018 – 06/2019</span></div>
         </div>
         <ul>
           <li>SailPoint IdentityIQ v7.1 / v7.2</li>
@@ -610,9 +561,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">CMV Consultores – Everis (Santander Asset Management) — Java</p>
-          <div class="meta">
-            <span class="chip">12/2017 – 02/2018</span>
-          </div>
+          <div class="meta"><span class="chip">12/2017 – 02/2018</span></div>
         </div>
         <ul>
           <li>Aplicación perssa: adquisición/importación/masterización y conciliación</li>
@@ -625,9 +574,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Impormovil — Programador y Técnico</p>
-          <div class="meta">
-            <span class="chip">06/2015 – 22/09/2017</span>
-          </div>
+          <div class="meta"><span class="chip">06/2015 – 22/09/2017</span></div>
         </div>
         <ul>
           <li>Java SE/EE, Servlets/JSP</li>
@@ -658,9 +605,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Uniway (Isban – Grupo Santander) — Analista/Programador</p>
-          <div class="meta">
-            <span class="chip">01/09/2011 – 12/12/2011</span>
-          </div>
+          <div class="meta"><span class="chip">01/09/2011 – 12/12/2011</span></div>
         </div>
         <ul>
           <li>TLM (conciliación), vistas e informes</li>
@@ -672,9 +617,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Angelbenito S.L. — Responsable informático</p>
-          <div class="meta">
-            <span class="chip">04/2011 – 07/2011</span>
-          </div>
+          <div class="meta"><span class="chip">04/2011 – 07/2011</span></div>
         </div>
         <ul>
           <li>Access/MySQL, Java</li>
@@ -686,9 +629,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Personal 7 (Jaguar Land Rover) — Admin sistemas (ES/PT)</p>
-          <div class="meta">
-            <span class="chip">02/2010 – 09/2010</span>
-          </div>
+          <div class="meta"><span class="chip">02/2010 – 09/2010</span></div>
         </div>
         <ul>
           <li>Windows 2003, Red Hat 8, Oracle</li>
@@ -701,9 +642,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Activa (I.E.S. Ortega y Gasset) — Profesor informática</p>
-          <div class="meta">
-            <span class="chip">Enero – Marzo 2010</span>
-          </div>
+          <div class="meta"><span class="chip">Enero – Marzo 2010</span></div>
         </div>
         <ul>
           <li>Revista digital, blogs (Wordpress)</li>
@@ -715,9 +654,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Kairos Sistemas de Gestión, S.L. — Colaboraciones</p>
-          <div class="meta">
-            <span class="chip">05/2009 – 11/2009</span>
-          </div>
+          <div class="meta"><span class="chip">05/2009 – 11/2009</span></div>
         </div>
         <ul>
           <li>Desarrollo web (diseño/programación)</li>
@@ -728,10 +665,9 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Compusof S.A. — Especialista informático</p>
-          <div class="meta">
-            <span class="chip">10/2007 – 04/2009</span>
-          </div>
+          <div class="meta"><span class="chip">10/2007 – 04/2009</span></div>
         </div>
+
         <details>
           <summary>Proyectos y tareas (detalle)</summary>
           <div class="detailsBody">
@@ -739,7 +675,7 @@
             <ul>
               <li>Telefónica (CGP)</li>
               <li>CSN – Consejo de Seguridad Nuclear</li>
-              <li>Kyocera (AS400, Vista, Windows 2000/2003)</li>
+              <li>Kyocera: AS400, Vista, Windows 2000/2003</li>
               <li>Instituto de Salud Carlos III</li>
               <li>Aena – Centro de Gestión de Red</li>
               <li>Centro de Demostraciones Telefónica: Movilforum 2008</li>
@@ -748,12 +684,15 @@
 
             <h4>Tareas</h4>
             <ul>
-              <li>Incidencias, routers/switches, scripts, firewalls/sondas</li>
-              <li>Windows, Linux, Solaris; monitorización</li>
-              <li>Soporte, vídeo, formación, maquetación de manuales</li>
-              <li>Backups, eliminación de virus, instalación/configuración</li>
-              <li>Sun One, PKI; control red y datos aeroportuarios</li>
-              <li>LAN/Wi‑Fi: Alcatel‑Lucent OmniAcces 4308, AP70, Enterasys N7/N3</li>
+              <li>Incidencias, routers/switches, scripts, firewalls/sondas, ofimática</li>
+              <li>Windows / Linux / Solaris. Monitorización de redes</li>
+              <li>Soporte informático, vídeo, formación, maquetación de manuales</li>
+              <li>Compatibilidad SO, backups, eliminación virus, instalación/configuración</li>
+              <li>Sun One, PKI. Control red y datos aeroportuarios</li>
+              <li>Movilforum 2008: smartphones, blackberrys, SIMs, GPRS/UMTS, 3G, HSDPA</li>
+              <li>LAN/Wi‑Fi a/b/g: Alcatel‑Lucent OmniAcces 4308 + APs OmniAcces AP70 + Enterasys N7/N3</li>
+              <li>ADSL/routers. Administración PCs/portátiles/UMPCs/PDAs, impresoras, escáneres</li>
+              <li>Administración/help desk, servidores, centralita, videoconferencia</li>
               <li>Lotus Notes, documentación, intermediación Inglés ↔ Español</li>
             </ul>
           </div>
@@ -763,48 +702,39 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Capgemini (Orange & France Telecom) — Técnico</p>
-          <div class="meta">
-            <span class="chip">09/2006 – 07/2007</span>
-          </div>
+          <div class="meta"><span class="chip">09/2006 – 07/2007</span></div>
         </div>
         <ul>
-          <li>Altas/bajas, usuarios/MACs, accesos intranet</li>
-          <li>Red, impresoras, perfiles, soporte remoto</li>
-          <li>Windows XP/2000/NT, Linux; correo, DNS, antivirus, Exchange</li>
+          <li>Altas/bajas/modificación de equipos, usuarios, MACs, accesos intranet</li>
+          <li>Red, impresoras, aplicaciones, perfiles. Soporte remoto</li>
+          <li>Windows XP/2000/NT, Linux. Correo, DNS, antivirus, Exchange</li>
         </ul>
       </article>
 
       <article class="item">
         <div class="itemHead">
-          <p class="role">Solkia Group (FT, Uni2, Wanadoo, Amena) — Técnico</p>
-          <div class="meta">
-            <span class="chip">04/2005 – 08/2006</span>
-          </div>
+          <p class="role">Solkia Group (France Telecom, Uni2, Wanadoo, Amena) — Técnico</p>
+          <div class="meta"><span class="chip">04/2005 – 08/2006</span></div>
         </div>
         <ul>
-          <li>Altas/bajas, red, impresoras, perfiles, soporte</li>
-          <li>Windows XP/2000/NT, Linux; correo, DNS, antivirus, Exchange</li>
+          <li>Altas/bajas/modificación de equipos, usuarios, MACs, accesos intranet</li>
+          <li>Red, impresoras, aplicaciones, perfiles. Soporte remoto</li>
+          <li>Windows XP/2000/NT, Linux. Correo, DNS, antivirus, Exchange</li>
         </ul>
       </article>
 
       <article class="item">
         <div class="itemHead">
           <p class="role">Royal Mail (Perth, UK) — Christmas Postal Worker</p>
-          <div class="meta">
-            <span class="chip">12/2004</span>
-          </div>
+          <div class="meta"><span class="chip">12/2004</span></div>
         </div>
-        <ul>
-          <li>Servicio postal. Comunicación, instrucciones, flexibilidad y trabajo en equipo</li>
-        </ul>
+        <ul><li>Servicio postal. Comunicación, instrucciones, flexibilidad y trabajo en equipo</li></ul>
       </article>
 
       <article class="item">
         <div class="itemHead">
           <p class="role">Infortec (Rossa‑IBM y CNH Spain) — Técnico</p>
-          <div class="meta">
-            <span class="chip">12/03 – 01/04</span>
-          </div>
+          <div class="meta"><span class="chip">12/03 – 01/04</span></div>
         </div>
         <ul>
           <li>Soporte in situ/telefónico</li>
@@ -824,20 +754,18 @@
         <ul>
           <li>UNICABLE: HP‑Openview</li>
           <li>AS/400, Windows NT Server, SUN Solaris, HP‑UX</li>
-          <li>LEGATO Networker; backups diarios (AS/400, SAP, Oracle, NT, Internet)</li>
-          <li>LDAP, Radius; IBM AS400 Client Access</li>
+          <li>LEGATO Networker. Backups diarios (AS/400, SAP, Oracle, NT, Internet)</li>
+          <li>ISP, IBM AS400 Client Access. LDAP, Radius</li>
         </ul>
       </article>
 
       <article class="item">
         <div class="itemHead">
           <p class="role">Sinergia Tecnológica (Vía Digital) — Técnico‑Operador</p>
-          <div class="meta">
-            <span class="chip">03/2000 – 09/2000</span>
-          </div>
+          <div class="meta"><span class="chip">03/2000 – 09/2000</span></div>
         </div>
         <ul>
-          <li>Administración (seguridad/usuarios: claves, logins, perfiles, grupos)</li>
+          <li>Administración seguridad/usuarios (claves, logins, perfiles, grupos)</li>
           <li>Control procesos/servidores</li>
           <li>Monitorización Patrol/Spectrum y manual (UNIX)</li>
         </ul>
@@ -846,9 +774,7 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Dinsa (Banesto) — Técnico</p>
-          <div class="meta">
-            <span class="chip">01/2000 – 03/2000</span>
-          </div>
+          <div class="meta"><span class="chip">01/2000 – 03/2000</span></div>
         </div>
         <p style="margin:10px 0 0; color: var(--muted);">Detalle no especificado en el texto original más allá del rol/cliente.</p>
       </article>
@@ -856,12 +782,10 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Alma Tecnologies (Telefónica Móviles) — Técnico</p>
-          <div class="meta">
-            <span class="chip">10/1999 – 01/2000</span>
-          </div>
+          <div class="meta"><span class="chip">10/1999 – 01/2000</span></div>
         </div>
         <ul>
-          <li>Formación al cliente y mantenimiento</li>
+          <li>Formación al cliente y mantenimiento de equipación</li>
           <li>En tiendas Movistar por toda España</li>
         </ul>
       </article>
@@ -869,25 +793,17 @@
       <article class="item">
         <div class="itemHead">
           <p class="role">Servicio militar — Opla de Informática</p>
-          <div class="meta">
-            <span class="chip">08/1992 – 05/1993</span>
-          </div>
+          <div class="meta"><span class="chip">08/1992 – 05/1993</span></div>
         </div>
-        <ul>
-          <li>Camiones y ambulancias</li>
-        </ul>
+        <ul><li>Camiones y ambulancias</li></ul>
       </article>
 
       <article class="item">
         <div class="itemHead">
           <p class="role">Prácticas F.P.II. Informática de Gestión — Ayuntamiento de Segovia</p>
-          <div class="meta">
-            <span class="chip">01/1992 – 05/1992</span>
-          </div>
+          <div class="meta"><span class="chip">01/1992 – 05/1992</span></div>
         </div>
-        <ul>
-          <li>Plusvalía y Recaudación</li>
-        </ul>
+        <ul><li>Plusvalía y Recaudación</li></ul>
       </article>
     </div>
   </section>
