@@ -22,35 +22,29 @@
         }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-blue); object-fit: cover; }
 
-        /* Tarjetas de Proyectos y Roles */
-        .project-card-mini {
-            background: white; border: none; border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: 0.3s; overflow: hidden; height: 100%;
-            display: flex; flex-direction: column;
-        }
-        .project-img-mini { height: 110px; object-fit: cover; width: 100%; opacity: 0.8; }
-        
-        .role-list { 
-            font-size: 0.72rem; color: #64748b; list-style: none; 
-            padding: 0; margin: 10px 0; text-align: left;
-        }
-        .role-list li { margin-bottom: 5px; display: flex; align-items: flex-start; line-height: 1.2; }
-        .role-list li i { color: var(--accent-blue); margin-right: 8px; font-size: 0.6rem; margin-top: 4px; }
-
-        /* Formación */
-        .edu-container {
+        /* Estilo Lista de Trayectoria */
+        .career-container {
             background: white; padding: 30px; border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .edu-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
-        .edu-list li { width: 50%; padding: 8px 15px; font-weight: 500; color: #4a5568; font-size: 0.95rem; }
-        .edu-list li::before { content: "•"; color: var(--accent-blue); font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; }
+        .career-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
+        .career-list li { 
+            width: 50%; padding: 8px 15px; font-weight: 500; color: #4a5568; font-size: 0.9rem;
+            display: flex; align-items: flex-start;
+        }
+        .career-list li::before { content: "▹"; color: var(--accent-blue); margin-right: 10px; font-weight: bold; }
+
+        /* Estilo Proyectos Aparte */
+        .project-card-small {
+            background: white; border: none; border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: 0.3s; overflow: hidden; text-align: center;
+        }
+        .project-card-small:hover { transform: translateY(-5px); }
+        .project-img-small { height: 100px; object-fit: cover; width: 100%; }
 
         .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 25px; position: relative; display: inline-block; }
         .section-title::after { content: ""; width: 30px; height: 3px; background: var(--accent-blue); position: absolute; bottom: -8px; left: 0; }
-        
-        .tech-main-img { max-width: 400px; width: 100%; height: auto; margin: 40px 0; }
         
         .btn-custom { 
             background: var(--primary-blue); color: white; padding: 10px 25px; 
@@ -59,7 +53,7 @@
         }
         .btn-custom:hover { background: var(--accent-blue); color: white; }
         
-        .btn-small { font-size: 0.7rem; padding: 5px 12px; border-radius: 20px; width: 100%; display: block; text-align: center; margin-top: auto; }
+        .tech-main-img { max-width: 400px; width: 100%; height: auto; margin: 40px 0; }
     </style>
 </head>
 <body>
@@ -86,45 +80,45 @@
 <main class="container my-5">
     
     <section class="mb-5">
-        <h2 class="section-title">Proyectos</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="project-card-mini p-3">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400" class="project-img-mini rounded mb-2" alt="Seguridad">
-                    <h6 class="fw-bold mb-1">IAM & Ciberseguridad</h6>
-                    <ul class="role-list">
-                        <li><i class="fas fa-check-circle"></i> Gestión de Identidades (IAM/GIA)</li>
-                        <li><i class="fas fa-check-circle"></i> Especialista Informático (Inglés)</li>
-                        <li><i class="fas fa-check-circle"></i> Administrador de Sistemas</li>
-                        <li><i class="fas fa-check-circle"></i> Operador de Sistemas ISP</li>
-                    </ul>
-                    <a href="iam.html" class="btn-custom btn-small">Ver Trayectoria</a>
+        <h2 class="section-title">Trayectoria Profesional</h2>
+        <div class="career-container">
+            <ul class="career-list mb-4">
+                <li>Desarrollador Full Stack</li>
+                <li>Gestión de Identidades y Accesos (GIA/IAM)</li>
+                <li>Analista Programador</li>
+                <li>Programador y Técnico</li>
+                <li>Gestor Incidencias Técnicas</li>
+                <li>Responsable Informático (Inglés)</li>
+                <li>Administrador de Sistemas (Inglés)</li>
+                <li>Profesor Informática</li>
+                <li>Especialista Informático (Inglés)</li>
+                <li>Administrador de Sistemas ISP</li>
+                <li>Técnico Informático y Administración</li>
+                <li>Prácticas F.P.II. Informática de Gestión</li>
+            </ul>
+            <div class="text-center">
+                <a href="iam.html" class="btn-custom">
+                    <i class="fas fa-briefcase me-2"></i> Ver Detalles de Experiencia
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="section-title">Aplicaciones y Proyectos</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-6">
+                <div class="project-card-small p-3">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-small rounded mb-3" alt="PWA">
+                    <h6 class="fw-bold small">Escritor Pro (PWA)</h6>
+                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-custom py-1 px-3" style="font-size: 0.7rem;">Abrir App</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="project-card-mini p-3">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-mini rounded mb-2" alt="Dev">
-                    <h6 class="fw-bold mb-1">Desarrollo Software</h6>
-                    <ul class="role-list">
-                        <li><i class="fas fa-check-circle"></i> Desarrollador Full Stack</li>
-                        <li><i class="fas fa-check-circle"></i> Analista Programador</li>
-                        <li><i class="fas fa-check-circle"></i> Programador y Técnico</li>
-                        <li><i class="fas fa-check-circle"></i> Prácticas F.P.II. Inf. Gestión</li>
-                    </ul>
-                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-custom btn-small">Ver Apps</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card-mini p-3">
-                    <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=400" class="project-img-mini rounded mb-2" alt="Gestión">
-                    <h6 class="fw-bold mb-1">Gestión & IT Support</h6>
-                    <ul class="role-list">
-                        <li><i class="fas fa-check-circle"></i> Responsable Informático</li>
-                        <li><i class="fas fa-check-circle"></i> Gestor Incidencias Técnicas</li>
-                        <li><i class="fas fa-check-circle"></i> Profesor de Informática</li>
-                        <li><i class="fas fa-check-circle"></i> Técnico de Administración IT</li>
-                    </ul>
-                    <a href="formacion.html" class="btn-custom btn-small">Otros Detalles</a>
+            <div class="col-md-4 col-6">
+                <div class="project-card-small p-3">
+                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-small rounded mb-3" alt="Django">
+                    <h6 class="fw-bold small">Gestión Familiar (Django)</h6>
+                    <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn-custom py-1 px-3" style="font-size: 0.7rem;">Ver Demo</a>
                 </div>
             </div>
         </div>
@@ -133,12 +127,12 @@
     <section class="mb-5">
         <h2 class="section-title">Formación y Certificaciones</h2>
         <div class="edu-container">
-            <ul class="edu-list mb-4">
+            <ul class="career-list mb-4">
                 <li>SailPoint Technologies</li>
                 <li>Learn.Microsoft</li>
                 <li>AWS</li>
                 <li>CyberArk</li>
-                <li>IBM</li>
+                <li>IBM Security</li>
                 <li>Seguridad Informática</li>
                 <li>Lenguajes programación</li>
                 <li>BBDD</li>
@@ -147,7 +141,7 @@
             </ul>
             <div class="text-center">
                 <a href="formacion.html" class="btn-custom">
-                    <i class="fas fa-graduation-cap me-2"></i> Ver Detalles de Formación
+                    <i class="fas fa-graduation-cap me-2"></i> Ver Títulos y Certificados
                 </a>
             </div>
         </div>
