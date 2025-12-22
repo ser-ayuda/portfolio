@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Contreras | Portfolio</title>
+    <title>Jesús Contreras | Portfolio Profesional</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,13 +22,21 @@
         }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-blue); object-fit: cover; }
 
-        /* Proyectos */
+        /* Tarjetas de Proyectos y Roles */
         .project-card-mini {
             background: white; border: none; border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: 0.3s; overflow: hidden; text-align: center; margin-bottom: 20px;
+            transition: 0.3s; overflow: hidden; height: 100%;
+            display: flex; flex-direction: column;
         }
-        .project-img-mini { height: 120px; object-fit: cover; width: 100%; }
+        .project-img-mini { height: 110px; object-fit: cover; width: 100%; opacity: 0.8; }
+        
+        .role-list { 
+            font-size: 0.72rem; color: #64748b; list-style: none; 
+            padding: 0; margin: 10px 0; text-align: left;
+        }
+        .role-list li { margin-bottom: 5px; display: flex; align-items: flex-start; line-height: 1.2; }
+        .role-list li i { color: var(--accent-blue); margin-right: 8px; font-size: 0.6rem; margin-top: 4px; }
 
         /* Formación */
         .edu-container {
@@ -36,10 +44,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
         .edu-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; }
-        .edu-list li { 
-            width: 50%; padding: 8px 15px; position: relative; 
-            font-weight: 500; color: #4a5568;
-        }
+        .edu-list li { width: 50%; padding: 8px 15px; font-weight: 500; color: #4a5568; font-size: 0.95rem; }
         .edu-list li::before { content: "•"; color: var(--accent-blue); font-weight: bold; display: inline-block; width: 1em; margin-left: -1em; }
 
         .section-title { font-weight: 800; color: var(--primary-blue); margin-bottom: 25px; position: relative; display: inline-block; }
@@ -52,9 +57,9 @@
             border-radius: 30px; text-decoration: none; font-weight: 600; 
             transition: 0.3s; display: inline-block; border: none;
         }
-        .btn-custom:hover { background: var(--accent-blue); color: white; transform: translateY(-2px); }
+        .btn-custom:hover { background: var(--accent-blue); color: white; }
         
-        .btn-small { font-size: 0.75rem; padding: 5px 15px; border-radius: 20px; }
+        .btn-small { font-size: 0.7rem; padding: 5px 12px; border-radius: 20px; width: 100%; display: block; text-align: center; margin-top: auto; }
     </style>
 </head>
 <body>
@@ -62,7 +67,7 @@
 <header class="hero">
     <div class="container text-center text-md-start">
         <div class="row align-items-center">
-            <div class="col-md-3">
+            <div class="col-md-3 text-center">
                 <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img shadow animate__animated animate__zoomIn">
             </div>
             <div class="col-md-9 animate__animated animate__fadeInRight">
@@ -81,24 +86,45 @@
 <main class="container my-5">
     
     <section class="mb-5">
-        <h2 class="section-title">Proyectos Destacados</h2>
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-3 col-6">
-                <div class="project-card-mini">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400" class="project-img-mini" alt="IAM">
-                    <div class="p-3"><h6 class="small fw-bold mb-2">Trayectoria IAM</h6><a href="iam.html" class="btn-custom btn-small">Detalles</a></div>
+        <h2 class="section-title">Proyectos</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="project-card-mini p-3">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400" class="project-img-mini rounded mb-2" alt="Seguridad">
+                    <h6 class="fw-bold mb-1">IAM & Ciberseguridad</h6>
+                    <ul class="role-list">
+                        <li><i class="fas fa-check-circle"></i> Gestión de Identidades (IAM/GIA)</li>
+                        <li><i class="fas fa-check-circle"></i> Especialista Informático (Inglés)</li>
+                        <li><i class="fas fa-check-circle"></i> Administrador de Sistemas</li>
+                        <li><i class="fas fa-check-circle"></i> Operador de Sistemas ISP</li>
+                    </ul>
+                    <a href="iam.html" class="btn-custom btn-small">Ver Trayectoria</a>
                 </div>
             </div>
-            <div class="col-md-3 col-6">
-                <div class="project-card-mini">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-mini" alt="PWA">
-                    <div class="p-3"><h6 class="small fw-bold mb-2">Escritor Pro</h6><a href="https://ser-ayuda.github.io/diario" class="btn-custom btn-small">App</a></div>
+            <div class="col-md-4">
+                <div class="project-card-mini p-3">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400" class="project-img-mini rounded mb-2" alt="Dev">
+                    <h6 class="fw-bold mb-1">Desarrollo Software</h6>
+                    <ul class="role-list">
+                        <li><i class="fas fa-check-circle"></i> Desarrollador Full Stack</li>
+                        <li><i class="fas fa-check-circle"></i> Analista Programador</li>
+                        <li><i class="fas fa-check-circle"></i> Programador y Técnico</li>
+                        <li><i class="fas fa-check-circle"></i> Prácticas F.P.II. Inf. Gestión</li>
+                    </ul>
+                    <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn-custom btn-small">Ver Apps</a>
                 </div>
             </div>
-            <div class="col-md-3 col-6">
-                <div class="project-card-mini">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=400" class="project-img-mini" alt="Django">
-                    <div class="p-3"><h6 class="small fw-bold mb-2">Gestión Familiar</h6><a href="https://familia-calendario-demo.onrender.com/" class="btn-custom btn-small">Demo</a></div>
+            <div class="col-md-4">
+                <div class="project-card-mini p-3">
+                    <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?auto=format&fit=crop&w=400" class="project-img-mini rounded mb-2" alt="Gestión">
+                    <h6 class="fw-bold mb-1">Gestión & IT Support</h6>
+                    <ul class="role-list">
+                        <li><i class="fas fa-check-circle"></i> Responsable Informático</li>
+                        <li><i class="fas fa-check-circle"></i> Gestor Incidencias Técnicas</li>
+                        <li><i class="fas fa-check-circle"></i> Profesor de Informática</li>
+                        <li><i class="fas fa-check-circle"></i> Técnico de Administración IT</li>
+                    </ul>
+                    <a href="formacion.html" class="btn-custom btn-small">Otros Detalles</a>
                 </div>
             </div>
         </div>
@@ -134,7 +160,7 @@
 </main>
 
 <footer class="bg-white py-4 border-top text-center">
-    <p class="text-secondary small mb-0">© 2025 Jesús Contreras</p>
+    <p class="text-secondary small mb-0">© 2025 Jesús Contreras | Madrid, España</p>
 </footer>
 
 </body>
