@@ -3,123 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jesús Contreras | Analista & Desarrollador</title>
+    <title>Jesús Contreras | Portfolio IT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #0f172a;
             --accent: #38bdf8;
-            --bg-light: #f8fafc;
+            --dark-overlay: rgba(15, 23, 42, 0.85);
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: #334155; }
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #f8fafc; color: #334155; }
 
-        /* CABECERA TÉCNICA REFINADA */
-        .main-header {
-            background: #0f172a;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
-                linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            padding: 90px 0;
-            color: white;
+        /* CABECERA IMPACTO TOTAL */
+        .tech-hero {
             position: relative;
-            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920'); /* Imagen de ciberseguridad/tecnología */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+            color: white;
+            text-align: center;
             border-bottom: 5px solid var(--accent);
         }
 
-        .header-top-info {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent);
+        .tech-hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--dark-overlay);
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-name {
+            font-size: 1.2rem;
             font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 5px;
             margin-bottom: 20px;
             display: block;
         }
 
-        .hero-title {
-            font-size: 3rem;
+        .hero-headline {
+            font-size: 2.5rem;
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 25px;
+            line-height: 1.4;
+            max-width: 1000px;
+            margin: 0 auto 40px;
         }
 
-        .hero-title span {
-            color: #fff;
-            display: block;
-            font-size: 1.6rem;
-            font-weight: 400;
-            margin-top: 15px;
-            opacity: 0.9;
-            border-left: 3px solid var(--accent);
-            padding-left: 20px;
+        /* El texto al mismo nivel con separadores */
+        .hero-headline span {
+            display: inline-block;
+            white-space: nowrap;
         }
 
-        .contact-grid {
+        .tech-divider {
+            color: var(--accent);
+            margin: 0 15px;
+            font-weight: 300;
+        }
+
+        .hero-contact-bar {
             display: flex;
+            justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 40px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 30px;
         }
 
-        .contact-item { text-decoration: none; color: white; font-size: 0.9rem; transition: 0.3s; }
-        .contact-item:hover { color: var(--accent); }
-        .contact-item i { margin-right: 8px; color: var(--accent); }
-
-        .profile-img-header {
-            width: 100%;
-            max-width: 280px;
-            border-radius: 24px;
-            filter: grayscale(20%);
-            border: 2px solid rgba(255,255,255,0.1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        .hero-contact-bar a, .hero-contact-bar span {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        /* SECCIONES (Mantenidas como te gustaban) */
-        .section-title { font-weight: 800; color: var(--primary); margin: 60px 0 30px; display: flex; align-items: center; gap: 12px; }
-        .info-card { background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .hero-contact-bar i { color: var(--accent); }
+
+        /* SECCIONES POSTERIORES (Manteniendo tus datos intactos) */
+        .section-title { font-weight: 800; color: #0f172a; margin: 60px 0 30px; display: flex; align-items: center; gap: 12px; }
+        .info-card { background: white; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; list-style: none; padding: 0; }
-        .role-grid li { font-size: 0.95rem; padding: 12px 18px; background: #f1f5f9; border-radius: 10px; display: flex; align-items: center; font-weight: 500; border-left: 3px solid var(--accent); }
-        .btn-action { background: var(--primary); color: white; padding: 14px 35px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .role-grid li { font-size: 0.95rem; padding: 12px 18px; background: #f1f5f9; border-radius: 12px; display: flex; align-items: center; font-weight: 500; border-left: 4px solid var(--accent); }
+        .btn-action { background: #0f172a; color: white; padding: 15px 35px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; }
         .btn-action:hover { background: var(--accent); transform: translateY(-3px); }
-        .project-card { background-size: cover; background-position: center; border-radius: 20px; padding: 40px 30px; color: white; position: relative; overflow: hidden; height: 260px; display: flex; flex-direction: column; justify-content: flex-end; transition: 0.4s; border: none; }
-        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(0,0,0,0.9) 100%); z-index: 1; }
+        .project-card { background-size: cover; background-position: center; border-radius: 20px; padding: 40px 30px; color: white; position: relative; overflow: hidden; height: 280px; display: flex; flex-direction: column; justify-content: flex-end; transition: 0.4s; border: none; }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0) 100%); z-index: 1; }
         .project-content { position: relative; z-index: 2; }
     </style>
 </head>
 <body>
 
-<header class="main-header">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-8">
-                <span class="header-top-info">Sistemas & Seguridad Cloud</span>
-                <h1 class="hero-title">
-                    Analista y Desarrollador y Ciberseguridad y IA
-                    <span>Gestión de Identidades y Accesos Nube | Virtualización</span>
-                </h1>
-                
-                <div class="contact-grid">
-                    <span class="contact-item"><i class="fas fa-user-circle"></i> Jesús Contreras</span>
-                    <a href="mailto:jcm2222@hotmail.com" class="contact-item"><i class="fas fa-envelope"></i> jcm2222@hotmail.com</a>
-                    <a href="https://github.com/ser-ayuda" target="_blank" class="contact-item"><i class="fab fa-github"></i> ser-ayuda</a>
-                </div>
-            </div>
-            <div class="col-lg-4 d-none d-lg-block text-center">
-                <img src="img/perfil.jpg" alt="Jesús Contreras" class="profile-img-header">
-            </div>
+<header class="tech-hero">
+    <div class="container hero-container">
+        <span class="hero-name">Jesús Contreras</span>
+        <h1 class="hero-headline">
+            Analista y Desarrollador <span class="tech-divider">+</span> 
+            Ciberseguridad <span class="tech-divider">+</span> 
+            IA <span class="tech-divider">+</span> 
+            Gestión de Identidades y Accesos <span class="tech-divider">+</span> 
+            Nube <span class="tech-divider">+</span> 
+            Virtualización
+        </h1>
+        
+        <div class="hero-contact-bar">
+            <span><i class="fas fa-location-dot"></i> Madrid, España</span>
+            <a href="mailto:jcm2222@hotmail.com"><i class="fas fa-envelope"></i> jcm2222@hotmail.com</a>
+            <a href="https://github.com/ser-ayuda" target="_blank"><i class="fab fa-github"></i> ser-ayuda</a>
         </div>
     </div>
 </header>
 
 <main class="container my-5">
     <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-history"></i> Perfil Profesional</h2>
+        <h2 class="section-title"><i class="fas fa-id-badge"></i> Perfil Profesional</h2>
         <div class="info-card">
             <ul class="role-grid mb-4">
                 <li>Desarrollador Full Stack</li>
@@ -137,52 +142,30 @@
                 <li>Otros</li>
             </ul>
             <div class="text-center">
-                <a href="iam.html" class="btn-action">Ver Trayectoria Completa</a>
+                <a href="iam.html" class="btn-action">Consultar Trayectoria Completa</a>
             </div>
         </div>
     </section>
 
     <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-laptop-code"></i> Aplicaciones Activas</h2>
+        <h2 class="section-title"><i class="fas fa-rocket"></i> Proyectos Destacados</h2>
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800');">
                     <div class="project-content">
-                        <h4 class="fw-bold mb-2">Escritor Pro (PWA)</h4>
-                        <p class="small mb-3">App de dictado por voz y diarios personales.</p>
-                        <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-outline-light btn-sm">Lanzar Aplicación</a>
+                        <h4 class="fw-bold mb-1">Escritor Pro (PWA)</h4>
+                        <p class="small mb-3">Dictado inteligente y gestión de diarios.</p>
+                        <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Lanzar Aplicación</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800');">
                     <div class="project-content">
-                        <h4 class="fw-bold mb-2">Gestión Familiar (Django)</h4>
-                        <p class="small mb-3">Plataforma colaborativa de organización del hogar.</p>
-                        <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-outline-light btn-sm">Ver Demo Online</a>
+                        <h4 class="fw-bold mb-1">Gestión Familiar (Django)</h4>
+                        <p class="small mb-3">Backend sólido para organización colaborativa.</p>
+                        <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Ver Demo Online</a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="mb-5">
-        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación & Stack</h2>
-        <div class="info-card">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <div class="row g-3 mb-4">
-                        <div class="col-md-6 small"><i class="fas fa-check-circle text-info me-2"></i>SailPoint Technologies</div>
-                        <div class="col-md-6 small"><i class="fas fa-check-circle text-info me-2"></i>Learn.Microsoft</div>
-                        <div class="col-md-6 small"><i class="fas fa-check-circle text-info me-2"></i>AWS Certified</div>
-                        <div class="col-md-6 small"><i class="fas fa-check-circle text-info me-2"></i>CyberArk Security</div>
-                        <div class="col-md-6 small"><i class="fas fa-check-circle text-info me-2"></i>IBM Security</div>
-                        <div class="col-md-6 small"><i class="fas fa-check-circle text-info me-2"></i>Programación & BBDD</div>
-                    </div>
-                    <a href="formacion.html" class="text-primary fw-bold text-decoration-none">Ver Títulos Detallados →</a>
-                </div>
-                <div class="col-lg-5 text-center mt-4 mt-lg-0">
-                    <img src="img/tech-stack.png" alt="Stack" class="img-fluid rounded shadow-sm">
                 </div>
             </div>
         </div>
@@ -190,7 +173,7 @@
 </main>
 
 <footer class="py-5 text-center bg-white border-top">
-    <p class="text-muted small">© 2025 Jesús Contreras — Arquitectura IT & Seguridad</p>
+    <p class="text-muted small">© 2025 Jesús Contreras — Arquitectura IT & Desarrollo</p>
 </footer>
 
 </body>
