@@ -1,140 +1,209 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio – Trabajos realizados</title>
-  <meta name="description" content="Portfolio Proyectos, experiencia IAM/GIA, eventos, idiomas, formación y certificaciones.">
-  
-  <meta property="og:title" content="Portfolio IAM/GIA | SailPoint CyberArk">
-  <meta property="og:description" content="15+ años SailPoint IIQ, CyberArk, IBM ISIM. Proyectos Python/Django">
-  <meta property="og:image" content="https://github.com/ser-ayuda.png">
-  <meta property="og:url" content="https://ser-ayuda.github.io/portfolio/iam.html">
-  <meta property="og:type" content="website">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Trabajos realizados</title>
+  <meta name="description" content="Portfolio Proyectos, experiencia IAM/GIA, eventos, idiomas, formación y certificaciones.">
+  <!-- NUEVAS META OPENGRAPH para LinkedIn/InfoJobs -->
+  <meta property="og:title" content="Portfolio IAM/GIA | SailPoint CyberArk">
+  <meta property="og:description" content="15+ años SailPoint IIQ, CyberArk, IBM ISIM. Proyectos Python/Django">
+  <meta property="og:image" content="https://github.com/ser-ayuda.png"> <!-- Tu foto GitHub o logo -->
+  <meta property="og:url" content="https://ser-ayuda.github.io/portfolio/iam.html">
+  <meta property="og:type" content="website">
 
-  <style>
-    :root{
-      --bg: #0b1220;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.09);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.14);
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --line: rgba(255,255,255,.14);
 
-      --brand: #7c5cff;
-      --brand2:#2dd4bf;
-      --info: #60a5fa;
+      --brand: #7c5cff;
+      --brand2:#2dd4bf;
+      --info: #60a5fa;
 
-      --shadow: 0 20px 70px rgba(0,0,0,.45);
-      --radius: 18px;
-      --radius2: 14px;
-      --max: 1100px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    }
+      --shadow: 0 20px 70px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 14px;
+      --max: 1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
 
-    *{ box-sizing: border-box; }
-    html,body{ height:100%; scroll-behavior: smooth; }
-    body{
-      margin:0;
-      font-family: var(--sans);
-      color: var(--text);
-      background:
-        radial-gradient(1000px 800px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
-        radial-gradient(900px 700px at 85% 25%, rgba(45,212,191,.22), transparent 60%),
-        radial-gradient(1200px 900px at 50% 90%, rgba(96,165,250,.18), transparent 60%),
-        var(--bg);
-      line-height:1.55;
-      padding-top: 72px;
-    }
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1000px 800px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 700px at 85% 25%, rgba(45,212,191,.22), transparent 60%),
+        radial-gradient(1200px 900px at 50% 90%, rgba(96,165,250,.18), transparent 60%),
+        var(--bg);
+      line-height:1.55;
 
-    a{ color: #b9a9ff; text-decoration: none; }
-    a:hover{ text-decoration: underline; }
-    .container{ width:min(var(--max), calc(100% - 40px)); margin: 0 auto; }
-    
-    .pill{
-      display:inline-flex; align-items:center; gap:.55rem;
-      padding:.35rem .7rem; border:1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius: 999px;
-      font-size:.9rem; color: var(--muted);
-    }
-    .pill b{ color: var(--text); font-weight: 650; }
-    .kbd{ font-family: var(--mono); font-size:.85rem; padding:.1rem .35rem; border:1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,.22); }
+      /* Para que el header fijo no tape el contenido */
+      padding-top: 72px;
+    }
 
-    /* Header fijo */
-    header{
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 999;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(11,18,32,.78), rgba(11,18,32,.55));
-      border-bottom: 1px solid var(--line);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 14px 0;
-      gap: 14px;
-    }
-    .nav a{ color: var(--muted); font-weight: 600; }
-    .nav a:hover{ color: var(--text); text-decoration:none; }
-    .navlinks{ display:flex; flex-wrap:wrap; gap: 10px; justify-content:flex-end; }
-    .navlinks a{ padding:8px 10px; border-radius: 10px; }
-    .navlinks a:hover{ background: rgba(255,255,255,.05); }
+    a{ color: #b9a9ff; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .container{ width:min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .pill{
+      display:inline-flex; align-items:center; gap:.55rem;
+      padding:.35rem .7rem; border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: 999px;
+      font-size:.9rem; color: var(--muted);
+    }
+    .pill b{ color: var(--text); font-weight: 650; }
+    .kbd{ font-family: var(--mono); font-size:.85rem; padding:.1rem .35rem; border:1px solid var(--line); border-radius: 8px; background: rgba(0,0,0,.22); }
 
-    /* Hero */
-    .hero{ padding: 34px 0 22px; }
-    .heroCard{
-      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-    .title{ margin:0; font-size: clamp(1.45rem, 2.6vw, 2.1rem); letter-spacing: .2px; }
-    .subtitle{ margin: 8px 0 0; color: var(--muted); max-width: 70ch; }
+    /* Header fijo (links arriba siempre visibles) */
+    header{
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(11,18,32,.78), rgba(11,18,32,.55));
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight: 800; letter-spacing:.2px;
+    }
+    .logo{
+      width:36px; height:36px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: var(--shadow);
+    }
+    .nav a{ color: var(--muted); font-weight: 600; }
+    .nav a:hover{ color: var(--text); text-decoration:none; }
+    .navlinks{ display:flex; flex-wrap:wrap; gap: 10px; justify-content:flex-end; }
+    .navlinks a{ padding:8px 10px; border-radius: 10px; }
+    .navlinks a:hover{ background: rgba(255,255,255,.05); }
 
-    /* Sections */
-    section{ padding: 18px 0; }
-    .sectionTitle{ display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap; margin: 14px 0 10px; }
-    .sectionTitle h2{ margin:0; font-size: 1.25rem; letter-spacing:.2px; }
-    .divider{ height: 1px; background: var(--line); margin: 6px 0 16px; }
+    /* Hero */
+    .hero{ padding: 34px 0 22px; }
+    .heroCard{
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.05));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .heroTop{
+      display:flex; gap:14px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
+    }
+    .title{
+      margin:0;
+      font-size: clamp(1.45rem, 2.6vw, 2.1rem);
+      letter-spacing: .2px;
+    }
+    .subtitle{
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
 
-    /* Cards */
-    .cards{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    @media (max-width: 900px){ .cards{ grid-template-columns: 1fr; } }
-    
-    .card{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.22);
-      position: relative;
-      overflow: hidden;
-    }
-    .card::before{
-      content:"";
-      position:absolute; inset:-2px -2px auto -2px;
-      height: 6px;
-      background: linear-gradient(90deg, var(--brand), var(--brand2), var(--info));
-      opacity:.9;
-    }
+    .grid2{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
 
-    .badge{
-      display:inline-flex; align-items:center; gap:.45rem;
-      padding:.25rem .6rem; border-radius: 999px;
-      border:1px solid var(--line); background: rgba(0,0,0,.18);
-      color: var(--muted); font-size:.88rem; margin-bottom: 10px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding: .55rem .8rem; border-radius: 12px;
-      border: 1px solid var(--line); background: rgba(255,255,255,.05);
-      color: var(--text); font-weight: 650; text-decoration:none;
-    }
-    .btn.primary{ background: linear-gradient(135deg, rgba(124,92,255,.85), rgba(45,212,191,.55)); border-color: transparent; }
+    .panel{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius2);
+      padding: 16px;
+    }
+    .panel h3{ margin:0 0 10px; font-size:1.05rem; }
+    .panel ul{ margin: 0; padding-left: 18px; color: var(--muted); }
+    .panel li{ margin: 7px 0; }
+    .links a{ color: #d7cfff; }
 
+    /* Sections */
+    section{ padding: 18px 0; }
+    .sectionTitle{
+      display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+      margin: 14px 0 10px;
+    }
+    .sectionTitle h2{
+      margin:0; font-size: 1.25rem;
+      letter-spacing:.2px;
+    }
+    .divider{ height: 1px; background: var(--line); margin: 6px 0 16px; }
+
+    /* Cards */
+    .cards{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px){
+      .cards{ grid-template-columns: 1fr; }
+    }
+    .card{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px -2px auto -2px;
+      height: 6px;
+      background: linear-gradient(90deg, rgba(124,92,255,.8), rgba(45,212,191,.75), rgba(96,165,250,.75));
+      opacity:.9;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:.45rem;
+      padding:.25rem .6rem;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.18);
+      color: var(--muted);
+      font-size:.88rem;
+      margin-bottom: 10px;
+    }
+    .card h3{ margin: 6px 0 6px; font-size: 1.15rem; }
+    .card p{ margin: 8px 0; color: var(--muted); }
+    .card .cta{
+      display:flex; gap: 10px; flex-wrap:wrap;
+      margin-top: 12px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: .55rem .8rem;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight: 650;
+      text-decoration:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.08); text-decoration:none; }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.85), rgba(45,212,191,.55));
+      border-color: transparent;
+    }
     /* MEJORA DEL COMPONENTE DETAILS (LA FLECHA) */
     details {
       margin-top: 12px;
@@ -180,165 +249,589 @@
       margin-top: 4px;
     }
 
-    .detailsBody {
-      padding: 0 16px 16px;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      animation: fadeIn 0.4s ease-out;
-    }
+    details .detailsBody{ margin-top: 10px; color: var(--muted); }
+    details .detailsBody h4{ margin: 12px 0 6px; color: var(--text); font-size: 1rem; }
+    details .detailsBody ul{ margin: 0; padding-left: 18px; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    /* Timeline */
+    .timeline{
+      margin-top: 8px;
+      border-left: 2px solid var(--line);
+      padding-left: 14px;
+    }
+    .item{
+      position: relative;
+      padding: 12px 14px;
+      margin: 12px 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      background: rgba(255,255,255,.04);
+    }
+    .item::before{
+      content:"";
+      position:absolute;
+      left: -24px;
+      top: 18px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(124,92,255,.14);
+    }
+    .itemHead{
+      display:flex; align-items:flex-start; justify-content:space-between; gap: 10px; flex-wrap:wrap;
+    }
+    .role{ margin:0; font-weight: 800; }
+    .meta{
+      display:flex; gap: 8px; flex-wrap:wrap; justify-content:flex-end;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .meta .chip{
+      padding: .2rem .55rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.18);
+    }
+    .item ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    .item li{ margin: 7px 0; }
 
-    .detailsBody h4 { margin: 16px 0 8px; color: var(--text); font-size: 1rem; }
-    .detailsBody ul { margin: 0; padding-left: 18px; }
-
-    /* Timeline y resto de estilos */
-    .timeline{ border-left: 2px solid var(--line); padding-left: 14px; }
-    .item{
-      position: relative; padding: 12px 14px; margin: 12px 0;
-      border: 1px solid var(--line); border-radius: var(--radius2);
-      background: rgba(255,255,255,.04);
-    }
-    .item::before{
-      content:""; position:absolute; left: -24px; top: 18px;
-      width: 12px; height: 12px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-    }
-    .chip{ padding: .2rem .55rem; border-radius: 999px; border: 1px solid var(--line); background: rgba(0,0,0,.18); font-size: .85rem;}
-    .panel{ border: 1px solid var(--line); background: rgba(255,255,255,.04); border-radius: var(--radius2); padding: 16px; }
-
-    footer{ padding: 24px 0 44px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 24px; }
-    .footgrid{ display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap; align-items:center; }
-  </style>
+    footer{
+      padding: 24px 0 44px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      margin-top: 24px;
+    }
+    .footgrid{
+      display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+      align-items:center;
+    }
+  </style>
 </head>
 
 <body>
 <header>
-  <div class="container nav">
-     <a href="index.html" class="btn-back">&larr; VOLVER AL PORTFOLIO</a>
- 
-    <nav class="navlinks" aria-label="Navegación">
-      <a href="#proyectos">Proyectos</a>
-      <a href="#eventos">Eventos</a>
-      <a href="#experiencia">Experiencia</a>
-    </nav>
-  </div>
+  <div class="container nav">
+     <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i>&lt;- VOLVER AL PORTFOLIO</a>
+ 
+    <nav class="navlinks" aria-label="Navegación">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#experiencia">Experiencia</a>
+    </nav>
+  </div>
 </header>
 
 <main class="container">
-  <section class="hero" id="top">
-    <div class="heroCard">
-      <div class="sectionTitle">
-        <div>
-          <h1 class="title">Trayectoria Profesional</h1>
-          <p class="subtitle">
-            <b>+15 años </b>IAM/GIA  SailPoint IIQ • CyberArk • IBM ISIM • FIM/MIM • OIM<br>
-            Banca • Telecom • Consultoría | Desarrollo Java Python/Django/DevOps | Madrid 🇪🇸
-          </p>
-        </div>
-        <div class="pill">
-          <span>✅</span> <b>Actualizado</b> <span class="kbd">2026</span>
-        </div>
-      </div>      
-    </div>
-  </section>
+  <section class="hero" id="top">
+    <div class="heroCard">
+      <div class="heroTop">
+        <div>
+          <h1 class="title">Trayectoría:</h1>
+           <p class="subtitle">
+            <b>+15 años </b>IAM/GIA  SailPoint IIQ • CyberArk • IBM ISIM • FIM/MIM • OIM<br>
+            Banca • Telecom • Consultoría | Desarrollo Java Python/Django/DevOps | Madrid 🇪🇸<br>
+            Proyectos personales, experiencia IAM/GIA/PAM, eventos y certificaciones.
+          </p>
+        </div>
+        <div class="pill" title="Estado">
+          <span>✅</span> <b>Actualizado</b> <span class="kbd">2026</span>
+        </div>
+      </div>      
+    </div>
+  </section>
 
-  <section id="proyectos">
-    <div class="sectionTitle">
-      <h2>Proyectos</h2>
-      <span class="pill"><b>Open-source</b> + demos</span>
-    </div>
-    <div class="divider"></div>
+  <section id="proyectos">
+    <div class="sectionTitle">
+      <h2>Proyectos</h2>
+      <span class="pill"><b>Open-source</b> + demos</span>
+    </div>
+    <div class="divider"></div>
 
-    <div class="cards">
-      <article class="card">
-        <div class="badge">📝 App web móvil</div>
-        <h3>Escritor Pro</h3>
-        <p>Aplicación web para móviles para crear un diario de notas por dictado de voz. Mantiene los datos localmente para privacidad.</p>
-        <div class="cta" style="margin-top:15px; display:flex; gap:10px;">
-          <a class="btn primary" href="https://ser-ayuda.github.io/diario" target="_blank">Ver demo</a>
-          <a class="btn" href="https://github.com/ser-ayuda" target="_blank">GitHub</a>
-        </div>
-      </article>
+    <div class="cards">
+      <article class="card">
+        <div class="badge">📝 App web móvil</div>
+        <h3>Escritor Pro</h3>
+        <p>
+          Aplicación web pensada para móviles para crear un <b>diario de notas por dictado de voz</b>,
+          simple y eficaz. Mantiene los datos <b>localmente</b> para garantizar la privacidad.
+        </p>
+        <ul>
+          <li>Voz a texto</li>
+          <li>Categorías</li>
+          <li>Edición y exportación</li>
+        </ul>
+        <div class="cta">
+          <a class="btn primary" href="https://ser-ayuda.github.io/diario" target="_blank" rel="noreferrer">Ver demo (GitHub Pages)</a>
+          <a class="btn" href="https://github.com/ser-ayuda" target="_blank" rel="noreferrer">Ver GitHub</a>
+        </div>
+      </article>
 
-      <article class="card">
-        <div class="badge">🗓️ Full Stack • Ago. 2025</div>
-        <h3>Calendario familiar</h3>
-        <p>Calendario colaborativo centrado en la privacidad y la experiencia de usuario.</p>
-        <div class="cta" style="margin-top:15px; display:flex; gap:10px; margin-bottom:15px;">
-          <a class="btn primary" href="https://familia-calendario-demo.onrender.com/" target="_blank">Ver demo</a>
-          <a class="btn" href="https://github.com/ser-ayuda" target="_blank">Docs</a>
-        </div>
+      <article class="card">
+        <div class="badge">🗓️ Full Stack • Ago. 2025</div>
+        <h3>Calendario familiar (tareas y metas)</h3>
+        <p>
+          Calendario familiar colaborativo y reproducible, centrado en la <b>privacidad</b> de datos
+          y la experiencia de usuario.
+        </p>
+        <div class="cta">
+          <a class="btn primary" href="https://familia-calendario-demo.onrender.com/" target="_blank" rel="noreferrer">Ver demo (Render)</a>
+          <a class="btn" href="https://github.com/ser-ayuda" target="_blank" rel="noreferrer">Repositorio / docs</a>
+        </div>
 
-        <details>
+        <details>
           <summary>
             Stack y entrega (detalle completo)
             <span class="flecha-animada"></span>
           </summary>
-          <div class="detailsBody">
-            <h4>Backend & DB</h4>
-            <ul><li>Python, Django, Postgres (Prod), SQLite (Dev)</li></ul>
 
-            <h4>Frontend</h4>
-            <ul><li>JS Fetch, FullCalendar UI, Bootstrap</li></ul>
+          <div class="detailsBody">
+            <h4>Backend</h4>
+            <ul><li>Python + Django + DRF, Gunicorn, Whitenoise</li></ul>
 
-            <h4>DevOps & Tools</h4>
-            <ul><li>Docker, GitHub Actions, Render, Playwright (Capturas)</li></ul>
+            <h4>Base de datos</h4>
+            <ul>
+              <li>SQLite (dev)</li>
+              <li>Postgres (prod) + psycopg2 + dj-database-url</li>
+            </ul>
 
-            <h4>Metodología</h4>
-            <ul><li>Documentación Mermaid/PlantUML, IA Assisted Development</li></ul>
-          </div>
-        </details>
-      </article>
-    </div>
-  </section>
+            <h4>Frontend</h4>
+            <ul>
+              <li>Django templates + JavaScript (Fetch)</li>
+              <li>FullCalendar (UI)</li>
+              <li>Bootstrap / jQuery</li>
+            </ul>
 
-  <section id="experiencia">
-    <div class="sectionTitle">
-      <h2>Experiencia Profesional</h2>
-      <span class="pill">Trayectoria</span>
-    </div>
-    <div class="divider"></div>
+            <h4>Docs/Diagramas</h4>
+            <ul><li>Mermaid, PlantUML, mermaid-cli, plantuml.jar, pako (client)</li></ul>
 
-    <div class="timeline">
-      <article class="item">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <p class="role"><b>Gestión de Identidades y Accesos (GIA)</b></p>
-          <span class="chip">Actualidad</span>
-        </div>
-        <ul>
-          <li><b>IBM:</b> ISIM v6.0.2, ISVG IM v10, TDI/SDI</li>
-          <li><b>CyberArk (PAM):</b> PVWA, CPM, PSM, PTA</li>
-          <li>BBDD, Red Hat Linux, Bash, PowerShell</li>
-        </ul>
-      </article>
+            <h4>DevOps/CI</h4>
+            <ul>
+              <li>GitHub Actions</li>
+              <li>Docker builder</li>
+              <li>Render (hosting)</li>
+            </ul>
 
-      <article class="item">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-          <p class="role"><b>Crecimiento profesional</b></p>
-          <span class="chip">2024 - 2025</span>
-        </div>
-        <ul>
-          <li>SailPoint Identity Security Leader Credential</li>
-          <li>AWS CCP / AZ-900 / AZ-104</li>
-        </ul>
-      </article>
-      </div>
-  </section>
+            <h4>Scripts/Utilidades</h4>
+            <ul><li>Pillow, requests, PowerShell helpers</li></ul>
 
-  <footer>
-    <div class="footgrid">
-      <div>© <span id="year"></span> — Portfolio Profesional</div>
-      <div class="pill">Hecho con <b>HTML</b> + <b>CSS</b></div>
-    </div>
-  </footer>
+            <h4>Automatización y portfolio-ready</h4>
+            <ul>
+              <li>Automatización de capturas con Playwright</li>
+              <li>Fixtures anonimizados, comandos de seed, scripts de empaquetado y assets para RRSS</li>
+              <li>Release pública con ZIP limpio (sin BBDD privadas) + documentación paso a paso</li>
+            </ul>
+
+            <h4>Herramientas</h4>
+            <ul>
+              <li>Visual Studio Code</li>
+              <li>IA asistente: Copilot, Gemini Code Assist, ChatGPT, Perplexity</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <section id="eventos">
+    <div class="sectionTitle">
+      <h2>Participación en eventos</h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="panel">
+      <ul>
+        <li><b>IBM TechXchange Dev Day: AI and Automation Unpacked + Hackathon</b> — <a href="https://www.virtualbadge.io/certificate-validator?credential=49e96b6c-ef06-4ecb-86e1-c51ab73ab1a5" target="_blank" rel="noreferrer">Certificado / verificación</a></li>
+        <li><b>Code with Kiro Hackathon</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="sectionTitle">
+      <h2>Experiencia profesional</h2>
+      <span class="pill"><b>Años</b></span>
+    </div>
+    <div class="divider"></div>
+
+    <div class="timeline">
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Gestión de Identidades y Accesos (GIA)</p>
+          <div class="meta">
+            <span class="chip">2025</span>
+            <span class="chip">Sector banca</span>
+          </div>
+        </div>
+        <ul>
+          <li><b>Departamento:</b> Gestión de identidades (Infraestructuras)</li>
+          <li><b>IBM:</b> ISIM v6.0.2, ISVG IM v10, IBM Security Verify Governance Identity Manager v10, TDI/SDI</li>
+          <li>Health checking diario (plataformas, logs, servicios, servidores)</li>
+          <li>Altas/actualizaciones/bajas (cuentas, roles, grupos, políticas)</li>
+          <li>PKI</li>
+          <li>Adaptadores, agentes y monitorización</li>
+          <li><b>CyberArk (PAM):</b> PVWA, CPM, PSM, PTA (ciclo de vida, safes, licencias, informes)</li>
+          <li>LDAP, BBDD, Red Hat Linux, Bash, PowerShell</li>
+          <li>Jira + Service Desk/CAU</li>
+        </ul>
+      </article>
+      
+     <article class="item">
+        <div class="itemHead">
+          <p class="role">Crecimiento profesional — Madrid, España</p>
+          <div class="meta">
+            <span class="chip">2024 - 2025</span>
+          </div>
+        </div>
+        <ul>
+          <li>SailPoint Identity Security Leader Credential from SailPoint</li>
+          <li>Curso IFCD38 (22/2335, 400h, presencial)</li>
+          <li>AWS CCP / AZ-900 / AZ-104</li>
+          <li>Archivo mencionado: Sailpoint_Leader_Identity_Security.jpg</li>
+        </ul>
+      </article>
+      
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Gestión de Identidades y Accesos (GIA)</p>
+          <div class="meta"><span class="chip">2023 – 2024</span></div>
+        </div>
+        <ul>
+          <li>Microsoft FIM / MIM</li>
+          <li>Automatización con PowerShell</li>
+          <li>Seguridad y cumplimiento. CyberArk</li>
+          <li>Azure: monitorización apps y VMs (Linux/Windows)</li>
+          <li>Reporting/documentación y coordinación inter-equipos</li>
+          <li>AD, PKI, GPOs, roles</li>
+          <li>DCs, WSUS, SQL Server (parches, redes, certificados)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Gestión de Identidades y Accesos (IAM)</p>
+          <div class="meta"><span class="chip">2022</span></div>
+        </div>
+        <ul>
+          <li>SailPoint: IdentityIQ e IdentityNow</li>
+          <li>Parches/actualizaciones</li>
+          <li>CyberArk</li>
+          <li>Java, Angular, APIs. Postman</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Gestión de Identidades y Accesos (IAM)</p>
+          <div class="meta"><span class="chip">2020 – 2022</span></div>
+        </div>
+        <ul>
+          <li>SailPoint IdentityIQ (perfilado)</li>
+          <li>Python (pandas, Jupyter, Matplotlib, NumPy…)</li>
+          <li>SOX (Sarbanes‑Oxley 2002), evidencias y auditoría interna</li>
+          <li>CyberArk + nube (GCP/AWS…)</li>
+          <li>Django + Angular, Git, Jenkins/Bitbucket</li>
+          <li>ServiceNow</li>
+          <li>Excel + Data Studio + Talend (ETL)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Consultor (proyecto en Azure)</p>
+          <div class="meta"><span class="chip">2019 – 2020</span></div>
+        </div>
+        <ul>
+          <li>Oracle Identity Management (OIM) 11g → 12c</li>
+          <li>Conectores y políticas de acceso</li>
+          <li>RBAC: roles y perfiles</li>
+          <li>Manuales de instalación/configuración y documentación técnica</li>
+          <li>Seguridad y clústeres distribuidos</li>
+          <li>Red Hat (Linux), certificados SSL, conexiones seguras a BBDD/apps</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Analista / GIA</p>
+          <div class="meta"><span class="chip">2018 – 2019</span></div>
+        </div>
+        <ul>
+          <li>SailPoint IdentityIQ v7.1 / v7.2</li>
+          <li>Aprovisionamiento, políticas de acceso, workflows</li>
+          <li>SSO</li>
+          <li>LDAP, Active Directory, CyberArk</li>
+          <li>Automatización: Java, PowerShell, Python</li>
+          <li>Linux: Bash/Awk, Red Hat/CentOS</li>
+          <li>Oracle, MySQL; SCRUM; GIT; documentación</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Java</p>
+          <div class="meta"><span class="chip">2017 – 2018</span></div>
+        </div>
+        <ul>
+          <li>Aplicación perssa: adquisición/importación/masterización y conciliación</li>
+          <li>JAVA, SQL (Oracle/MySQL)</li>
+          <li>Eclipse Neon 3, Git, MySQL Workbench, Apache</li>
+          <li>Procesos core, backend, pruebas, logs y alertas</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Programador y Técnico</p>
+          <div class="meta"><span class="chip">2015 – 2017</span></div>
+        </div>
+        <ul>
+          <li>Java SE/EE, Servlets/JSP</li>
+          <li>PHP, jQuery, JavaScript</li>
+          <li>ODBC, WebServices, Swing</li>
+          <li>VirtualBox, TeamViewer, soporte remoto</li>
+          <li>SoftFIT (Gestión de Talleres Autofit): mantenimiento, actualizaciones, versiones</li>
+          <li>Compatibilización Windows 10</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Gestor de incidencias</p>
+          <div class="meta">
+            <span class="chip">2012 – 02/2015</span>
+          </div>
+        </div>
+        <ul>
+          <li>Gestión de incidencias, formularios, documentación</li>
+          <li>Conexiones de red, web de routers y configuraciones</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Analista/Programador</p>
+          <div class="meta"><span class="chip">2011</span></div>
+        </div>
+        <ul>
+          <li>TLM (conciliación), vistas e informes</li>
+          <li>Unix/awk, JAVA, SQL Oracle</li>
+          <li>Documentación y cambios continuos</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Responsable informático</p>
+          <div class="meta"><span class="chip">2011</span></div>
+        </div>
+        <ul>
+          <li>Access/MySQL, Java</li>
+          <li>Red Hat, Windows 2003</li>
+          <li>Virtualización, redes sociales, e‑commerce</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Admin sistemas (ES/PT)</p>
+          <div class="meta"><span class="chip">2010</span></div>
+        </div>
+        <ul>
+          <li>Windows 2003, Red Hat 8, Oracle</li>
+          <li>Centralita, Active Directory, videoconferencias</li>
+          <li>Backups, VBA, scripts, soporte remoto</li>
+          <li>Intermediación Inglés ↔ Español</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Activa (I.E.S. Ortega y Gasset) — Profesor informática</p>
+          <div class="meta"><span class="chip">2010</span></div>
+        </div>
+        <ul>
+          <li>Revista digital, blogs (Wordpress)</li>
+          <li>Diseño (Gimp), banners</li>
+          <li>Programación web (HTML, Java)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Especialista informático</p>
+          <div class="meta"><span class="chip">2007 – 2009</span></div>
+        </div>
+
+        <details>
+          <summary>Proyectos y tareas (detalle)</summary>
+          <div class="detailsBody">
+            <h4>Proyectos</h4>
+            <ul>
+              <li>Telefónica (CGP)</li>
+              <li>CSN – Consejo de Seguridad Nuclear</li>
+              <li>Kyocera: AS400, Vista, Windows 2000/2003</li>
+              <li>Instituto de Salud Carlos III</li>
+              <li>Aena – Centro de Gestión de Red</li>
+              <li>Centro de Demostraciones Telefónica: Movilforum 2008</li>
+              <li>Suiza de Reaseguros (Ibérica)</li>
+            </ul>
+
+            <h4>Tareas</h4>
+            <ul>
+              <li>Incidencias, routers/switches, scripts, firewalls/sondas, ofimática</li>
+              <li>Windows / Linux / Solaris. Monitorización de redes</li>
+              <li>Soporte informático, vídeo, formación, maquetación de manuales</li>
+              <li>Compatibilidad SO, backups, eliminación virus, instalación/configuración</li>
+              <li>Sun One, PKI. Control red y datos aeroportuarios</li>
+              <li>Movilforum 2008: smartphones, blackberrys, SIMs, GPRS/UMTS, 3G, HSDPA</li>
+              <li>LAN/Wi‑Fi a/b/g: Alcatel‑Lucent OmniAcces 4308 + APs OmniAcces AP70 + Enterasys N7/N3</li>
+              <li>ADSL/routers. Administración PCs/portátiles/UMPCs/PDAs, impresoras, escáneres</li>
+              <li>Administración/help desk, servidores, centralita, videoconferencia</li>
+              <li>Lotus Notes, documentación, intermediación Inglés ↔ Español</li>
+            </ul>
+          </div>
+        </details>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Técnico</p>
+          <div class="meta"><span class="chip">2006 – 2007</span></div>
+        </div>
+        <ul>
+          <li>Altas/bajas/modificación de equipos, usuarios, MACs, accesos intranet</li>
+          <li>Red, impresoras, aplicaciones, perfiles. Soporte remoto</li>
+          <li>Windows XP/2000/NT, Linux. Correo, DNS, antivirus, Exchange</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Técnico</p>
+          <div class="meta"><span class="chip">2005 – 2006</span></div>
+        </div>
+        <ul>
+          <li>Altas/bajas/modificación de equipos, usuarios, MACs, accesos intranet</li>
+          <li>Red, impresoras, aplicaciones, perfiles. Soporte remoto</li>
+          <li>Windows XP/2000/NT, Linux. Correo, DNS, antivirus, Exchange</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Royal Mail (Perth, UK) — Christmas Postal Worker</p>
+          <div class="meta"><span class="chip">2004</span></div>
+        </div>
+        <ul><li>Servicio postal. Comunicación, instrucciones, flexibilidad y trabajo en equipo</li></ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Técnico</p>
+          <div class="meta"><span class="chip">2003 – 2004</span></div>
+        </div>
+        <ul>
+          <li>Soporte in situ/telefónico</li>
+          <li>Migración Novell → NT</li>
+          <li>Supervisión de red (Tivoli)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Admin sistemas / ISP / Operador</p>
+          <div class="meta">
+            <span class="chip">2000 – 2002</span>
+          </div>
+        </div>
+        <ul>
+          <li>UNICABLE: HP‑Openview</li>
+          <li>AS/400, Windows NT Server, SUN Solaris, HP‑UX</li>
+          <li>LEGATO Networker. Backups diarios (AS/400, SAP, Oracle, NT, Internet)</li>
+          <li>ISP, IBM AS400 Client Access. LDAP, Radius</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Técnico‑Operador</p>
+          <div class="meta"><span class="chip">2000</span></div>
+        </div>
+        <ul>
+          <li>Administración seguridad/usuarios (claves, logins, perfiles, grupos)</li>
+          <li>Control procesos/servidores</li>
+          <li>Monitorización Patrol/Spectrum y manual (UNIX)</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Técnico</p>
+          <div class="meta"><span class="chip">2000</span></div>
+        </div>
+        <p style="margin:10px 0 0; color: var(--muted);">Detalle no especificado en el texto original más allá del rol/cliente.</p>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Telefónica Móviles — Técnico</p>
+          <div class="meta"><span class="chip">1999 – 2000</span></div>
+        </div>
+        <ul>
+          <li>Formación al cliente y mantenimiento de equipación</li>
+          <li>En tiendas Movistar por toda España</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Servicio militar — Opla de Informática</p>
+          <div class="meta"><span class="chip">1992 – 1993</span></div>
+        </div>
+        <ul><li>Camiones y ambulancias</li></ul>
+      </article>
+
+      <article class="item">
+        <div class="itemHead">
+          <p class="role">Prácticas F.P.II. Informática de Gestión — Ayuntamiento de Segovia</p>
+          <div class="meta"><span class="chip">1992</span></div>
+        </div>
+        <ul><li>Plusvalía y Recaudación</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="idiomas">
+    <div class="sectionTitle">
+      <h2>Idiomas</h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="panel">
+      <ul>
+        <li><b>Inglés (alto)</b>
+          <ul>
+            <li>English for Career Development (University of Pennsylvania) — 09/2022 – 10/2022</li>
+            <li>Inglés Gestión Comercial (CEEP) — 200h — 07/2007 – 09/2007</li>
+            <li>Inglés conversación — Business Line, S.A. — 02/2006 – 05/2006</li>
+            <li>Perth College (UK) — 09/2004 – 03/2005</li>
+            <li>ETCi (Universidad de Cambridge) — Butlins, Skegness (UK) — 04/2003 – 08/2003</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footgrid">
+      <div>© <span id="year"></span> — Proyectos</div>
+      <div class="pill">Hecho con <b>HTML</b> + <b>CSS</b> (sin frameworks)</div>
+    </div>
+  </footer>
 </main>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
