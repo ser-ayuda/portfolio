@@ -11,6 +11,7 @@
             --accent: #38bdf8;
             --dark-overlay: rgba(15, 23, 42, 0.9);
             --primary-dark: #0f172a;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         body { font-family: 'Inter', system-ui, sans-serif; background-color: #f8fafc; color: #334155; font-size: 0.95rem; }
 
@@ -19,104 +20,115 @@
             position: relative;
             background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1920');
             background-size: cover; background-position: center;
-            padding: 25px 0; color: white; border-bottom: 3px solid var(--accent);
+            padding: 40px 0; color: white; border-bottom: 3px solid var(--accent);
         }
         .tech-hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--dark-overlay); z-index: 1; }
         .hero-container { position: relative; z-index: 2; }
-        .hero-headline { font-size: 1.5rem; font-weight: 800; line-height: 1.3; max-width: 1100px; margin: 0 auto 15px; text-align: center; }
+        .hero-headline { font-size: 1.6rem; font-weight: 800; line-height: 1.4; max-width: 1000px; margin: 0 auto 15px; text-align: center; }
         .tech-divider { color: var(--accent); margin: 0 6px; opacity: 0.8; }
 
         /* SECCIONES */
-        .section-title { font-weight: 800; color: var(--primary-dark); margin: 25px 0 15px; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; }
-        .info-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .section-title { font-weight: 800; color: var(--primary-dark); margin: 35px 0 20px; font-size: 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .info-card { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 25px; box-shadow: var(--card-shadow); }
 
         /* PERFIL GRID */
-        .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 8px; list-style: none; padding: 0; margin-bottom: 15px; }
-        .role-grid li { font-size: 0.85rem; padding: 10px 14px; background: #f1f5f9; border-radius: 8px; font-weight: 500; border-left: 3px solid var(--accent); }
+        .role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; list-style: none; padding: 0; margin-bottom: 15px; }
+        .role-grid li { font-size: 0.85rem; padding: 12px 15px; background: #f1f5f9; border-radius: 8px; font-weight: 500; border-left: 4px solid var(--accent); transition: 0.3s; }
+        .role-grid li:hover { background: #e2e8f0; transform: translateX(5px); }
 
-        /* PROYECTOS */
-        .project-card { background-size: cover; background-position: center; border-radius: 12px; padding: 20px; color: white; position: relative; overflow: hidden; height: 180px; display: flex; flex-direction: column; justify-content: flex-end; border: none; margin-bottom: 10px; }
-        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.95) 0%, transparent 100%); z-index: 1; }
-        .project-content { position: relative; z-index: 2; }
-
-        /* ESTILO PARA LA IMAGEN DE FORMACIÓN GRANDE */
-        .stack-img-large { 
-            width: 100%; 
-            max-width: 500px; /* Aumentado */
-            height: auto; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-            transition: transform 0.3s ease;
+        /* PROYECTOS MODERNOS */
+        .project-card { 
+            background-size: cover; background-position: center; border-radius: 12px; 
+            padding: 25px; color: white; position: relative; overflow: hidden; 
+            height: 220px; display: flex; flex-direction: column; justify-content: flex-end; 
+            border: none; margin-bottom: 20px; transition: transform 0.3s ease;
         }
+        .project-card:hover { transform: translateY(-5px); }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 20%, rgba(15,23,42,0.2) 100%); z-index: 1; }
+        .project-content { position: relative; z-index: 2; }
+        
+        /* IA CARD ESPECÍFICA */
+        .ia-card { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid var(--accent); }
+        .tech-badge { background: rgba(56, 189, 248, 0.2); color: var(--accent); padding: 3px 10px; border-radius: 5px; font-size: 0.75rem; font-weight: 700; margin-right: 5px; }
+
+        .stack-img-large { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: 0.3s; }
         .stack-img-large:hover { transform: scale(1.02); }
 
         .cert-list { list-style: none; padding: 0; font-size: 0.9rem; }
-        .cert-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
-        .cert-list i { color: var(--accent); font-size: 1rem; }
+        .cert-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 12px; }
+        .cert-list i { color: var(--accent); width: 20px; text-align: center; }
 
-        .btn-action { background: var(--primary-dark); color: white; padding: 10px 25px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: inline-block; }
+        .btn-action { background: var(--primary-dark); color: white; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: inline-block; transition: 0.3s; border: 1px solid transparent; }
+        .btn-action:hover { background: #1e293b; color: var(--accent); border-color: var(--accent); }
     </style>
 </head>
 <body>
 
 <header class="tech-hero text-center">
     <div class="container hero-container">
-        <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 5px; display: block;">Jesús Contreras</span>
+        <span style="font-size: 0.9rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 10px; display: block;">Jesús Contreras</span>
         <h1 class="hero-headline">
             Analista y Desarrollador <span class="tech-divider">+</span> 
             Ciberseguridad <span class="tech-divider">+</span> 
             IA <span class="tech-divider">+</span> 
-            Gestión de Identidades y Accesos <span class="tech-divider">+</span> 
-            Nube <span class="tech-divider">+</span> 
+            IAM & PAM <span class="tech-divider">+</span> 
+            Cloud <span class="tech-divider">+</span> 
             Virtualización
         </h1>
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 0.85rem; color: rgba(255,255,255,0.8);">
+        <div class="d-flex justify-content-center gap-4 flex-wrap mt-3" style="font-size: 0.9rem; color: rgba(255,255,255,0.9);">
             <span><i class="fas fa-location-dot text-info"></i> Madrid, España</span>
             <span><i class="fas fa-envelope text-info"></i> jcm2222@hotmail.com</span>
-            <span><i class="fab fa-github text-info"></i> ser-ayuda</span>
+            <a href="https://github.com/ser-ayuda" target="_blank" class="text-white text-decoration-none"><i class="fab fa-github text-info"></i> ser-ayuda</a>
         </div>
     </div>
 </header>
 
 <main class="container">
     <section>
-        <h2 class="section-title"><i class="fas fa-id-badge"></i> Perfil Profesional</h2>
+        <h2 class="section-title"><i class="fas fa-user-gear"></i> Perfil Profesional</h2>
         <div class="info-card">
             <ul class="role-grid">
                 <li>Desarrollador Full Stack</li>
-                <li>Gestión de Identidades y Accesos (GIA/IAM | PAM)</li>
+                <li>Gestión de Identidades (IAM | PAM)</li>
                 <li>Analista Programador</li>
-                <li>Programador y Técnico</li>
-                <li>Gestor Incidencias Técnicas</li>
-                <li>Responsable Informático (Inglés)</li>
-                <li>Administrador de Sistemas (Inglés)</li>
-                <li>Profesor Informática</li>
-                <li>Especialista Informático (Inglés)</li>
+                <li>Gestor de Incidencias Críticas</li>
+                <li>Responsable Informático</li>
+                <li>Administrador de Sistemas</li>
+                <li>Especialista en Ciberseguridad</li>
                 <li>Admin de Sistemas ISP</li>
-                <li>Técnico Informático & Admin</li>
-                <li>Prácticas F.P.II. Informática</li>
             </ul>
-            <div class="text-center mt-3"><a href="trayectoria.html" class="btn-action">Ver Trayectoria</a></div>
+            <div class="text-center mt-4"><a href="trayectoria.html" class="btn-action">Explorar Trayectoria Profesional</a></div>
         </div>
     </section>
 
     <section>
-        <h2 class="section-title"><i class="fas fa-rocket"></i> Aplicaciones Activas & Demos (información en https://github.com/ser-ayuda)</h2>
-        <div class="proyecto">
-            <h3>⚖️ Consultor IA Soberana</h3>
-            <p><i>Privacidad y soberanía de datos aplicada a la gestión documental.</i></p>
-            <ul>
-                <li><strong>LLM:</strong> Llama 3.2 (Local via Ollama)</li>
-                <li><strong>OCR:</strong> EasyOCR + Poppler</li>
-                <li><strong>Database:</strong> ChromaDB</li>
-            </ul>
-            <a href="TU_LINK_DE_GITHUB">Ver Código en GitHub</a>
+        <h2 class="section-title"><i class="fas fa-laptop-code"></i> Proyectos Destacados & Demos</h2>
+        
+        <div class="info-card ia-card mb-4 text-white">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3 class="fw-bold mb-2" style="color: var(--accent);">⚖️ Consultor IA Soberana</h3>
+                    <p class="mb-3 opacity-75">Sistema RAG de privacidad extrema para el análisis documental sin salida a Internet. Procesamiento local de lenguaje natural y OCR avanzado.</p>
+                    <div class="mb-4">
+                        <span class="tech-badge">Llama 3.2</span>
+                        <span class="tech-badge">Ollama</span>
+                        <span class="tech-badge">ChromaDB</span>
+                        <span class="tech-badge">EasyOCR</span>
+                    </div>
+                    <a href="https://github.com/ser-ayuda" target="_blank" class="btn btn-info btn-sm fw-bold px-4">Código en GitHub <i class="fas fa-external-link-alt ms-1"></i></a>
+                </div>
+                <div class="col-md-4 d-none d-md-block text-center">
+                    <i class="fas fa-brain" style="font-size: 6rem; color: rgba(56, 189, 248, 0.1);"></i>
+                </div>
+            </div>
         </div>
+
         <div class="row g-3">
             <div class="col-md-6">
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800');">
                     <div class="project-content">
-                        <h4 class="fw-bold mb-1">Escritor Pro (PWA) Funcional, mas pensado para moviles</h4>
+                        <h4 class="fw-bold mb-1">Escritor Pro (PWA)</h4>
+                        <p class="small opacity-75">Optimizado para dispositivos móviles.</p>
                         <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Lanzar App</a>
                     </div>
                 </div>
@@ -124,7 +136,8 @@
             <div class="col-md-6">
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800');">
                     <div class="project-content">
-                        <h4 class="fw-bold mb-1">Gestión Familiar (Django) Demo (en capa gratuita de Render(Nube), ver como arranca)</h4>
+                        <h4 class="fw-bold mb-1">Gestión Familiar (Django)</h4>
+                        <p class="small opacity-75">Demo desplegada en Render (Cloud).</p>
                         <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Ver Demo</a>
                     </div>
                 </div>
@@ -141,20 +154,16 @@
                 </div>
                 <div class="col-lg-6 order-lg-1 mt-4 mt-lg-0">
                     <ul class="cert-list">
-                        <li><i class="fas fa-award"></i> SailPoint Technologies</li>
-                        <li><i class="fas fa-award"></i> Microsoft</li>
-                        <li><i class="fas fa-award"></i> CyberArk</li>
-                        <li><i class="fas fa-award"></i> AWS</li>
-                        <li><i class="fas fa-award"></i> IBM</li>
-                        <li><i class="fas fa-award"></i> GCP</li>
-                        <li><i class="fas fa-award"></i> Big Data & BBDD</li>
-                        <li><i class="fas fa-award"></i> Ciberseguridad</li>
-                        <li><i class="fas fa-award"></i> Desarrollo Web</li>
-                        <li><i class="fas fa-award"></i> Lenguajes de Programación</li>     
-                        <li><i class="fas fa-award"></i> ...</li> 
+                        <li><i class="fas fa-award"></i> SailPoint Technologies (IAM)</li>
+                        <li><i class="fas fa-award"></i> Microsoft Certified Professional</li>
+                        <li><i class="fas fa-award"></i> CyberArk (PAM Specialist)</li>
+                        <li><i class="fas fa-award"></i> AWS & Google Cloud Platform</li>
+                        <li><i class="fas fa-award"></i> Expert en Ciberseguridad & Big Data</li>
+                        <li><i class="fas fa-award"></i> Desarrollo Web Full Stack</li>
+                        <li><i class="fas fa-award"></i> Administración de Sistemas & Redes</li>
                     </ul>
                     <div class="mt-4">
-                        <a href="formacion.html" class="btn-action">Detalles de Certificaciones →</a>
+                        <a href="formacion.html" class="btn-action">Ver Todas las Certificaciones →</a>
                     </div>
                 </div>
             </div>
@@ -163,12 +172,8 @@
 </main>
 
 <footer class="py-4 text-center bg-white border-top">
-    <p class="text-muted small mb-0">© 2025 Jesús Contreras — Tecnología</p>
+    <p class="text-muted small mb-0">© 2025 Jesús Contreras — Innovación & Tecnología</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
