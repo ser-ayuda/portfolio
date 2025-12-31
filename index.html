@@ -44,12 +44,21 @@
             border: none; margin-bottom: 20px; transition: transform 0.3s ease;
         }
         .project-card:hover { transform: translateY(-5px); }
-        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 20%, rgba(15,23,42,0.2) 100%); z-index: 1; }
+        .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, rgba(15,23,42,0.95) 20%, transparent 100%); z-index: 1; }
         .project-content { position: relative; z-index: 2; }
         
         /* IA CARD ESPECÍFICA */
         .ia-card { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1px solid var(--accent); }
         .tech-badge { background: rgba(56, 189, 248, 0.2); color: var(--accent); padding: 3px 10px; border-radius: 5px; font-size: 0.75rem; font-weight: 700; margin-right: 5px; }
+
+        /* ESTILO CARRUSEL */
+        .carousel-item img {
+            border-radius: 8px;
+            max-height: 400px;
+            object-fit: contain;
+            background-color: rgba(0,0,0,0.2);
+        }
+        .carousel-control-prev, .carousel-control-next { width: 5%; }
 
         .stack-img-large { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: 0.3s; }
         .stack-img-large:hover { transform: scale(1.02); }
@@ -103,21 +112,63 @@
 
     <section>
         <h2 class="section-title"><i class="fas fa-laptop-code"></i> Proyectos Destacados & Demos</h2>        
+        
         <div class="info-card ia-card mb-4 text-white">
             <div class="row align-items-center">
-                <div class="col-md-8">
+                <div class="col-lg-7">
                     <h3 class="fw-bold mb-2" style="color: var(--accent);">⚖️ Consultor IA Soberana</h3>
-                    <p class="mb-3 opacity-75">Aplicación con IA. Sistema RAG de privacidad extrema para el análisis documental sin salida a Internet.(PDF  a Documento editable). Procesamiento local de lenguaje natural y OCR avanzado.</p>
+                    <p class="mb-3 opacity-75">Sistema RAG de privacidad extrema para análisis documental local (PDF a editable). Procesamiento local de lenguaje natural y OCR avanzado sin salida a Internet.</p>
                     <div class="mb-4">
                         <span class="tech-badge">Llama 3.2</span>
                         <span class="tech-badge">Ollama</span>
                         <span class="tech-badge">ChromaDB</span>
                         <span class="tech-badge">EasyOCR</span>
                         <span class="tech-badge">Python</span>
-                    </div>                    
+                    </div>
+                    <a href="https://github.com/ser-ayuda" target="_blank" class="btn btn-info btn-sm fw-bold px-4 mb-3">Código en GitHub <i class="fas fa-external-link-alt ms-1"></i></a>
                 </div>
-                <div class="col-md-4 d-none d-md-block text-center">
-                    <i class="fas fa-brain" style="font-size: 6rem; color: rgba(56, 189, 248, 0.1);"></i>
+                
+                <div class="col-lg-5">
+                    <div id="carouselIA" class="carousel slide shadow-lg" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselIA" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carouselIA" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselIA" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#carouselIA" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#carouselIA" data-bs-slide-to="4"></button>
+                            <button type="button" data-bs-target="#carouselIA" data-bs-slide-to="5"></button>
+                            <button type="button" data-bs-target="#carouselIA" data-bs-slide-to="6"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/IA_app_1.png" class="d-block w-100" alt="Pantalla principal IA y Configuración local">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/IA_app_2.png" class="d-block w-100" alt="Carga documento PDF">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/IA_app_3.png" class="d-block w-100" alt="Procesamiento OCR si es imagen o extraccion de texto directamente">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/IA_app_4.png" class="d-block w-100" alt="Paginación de texto y ventana para el Chat con la IA">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/IA_app_5.png" class="d-block w-100" alt="Chat interactivo">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/IA_app_6.png" class="d-block w-100" alt="Respuesta IA">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/IA_app_7.png" class="d-block w-100" alt="Análisis de contexto, con preguntas dificiles o en otro idioma">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIA" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselIA" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -126,9 +177,8 @@
             <div class="col-md-6">
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800');">
                     <div class="project-content">
-                        <a href="https://github.com/ser-ayuda" target="_blank" class="btn btn-info btn-sm fw-bold px-4">Código en GitHub <i class="fas fa-external-link-alt ms-1"></i></a>
                         <h4 class="fw-bold mb-1">Escritor Pro (PWA)</h4>
-                        <p class="small opacity-75">Optimizado para dispositivos móviles. De voz a texto en diario</p>
+                        <p class="small opacity-75">Voz a texto. Optimizado para móviles.</p>
                         <a href="https://ser-ayuda.github.io/diario" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Lanzar App</a>
                     </div>
                 </div>
@@ -137,7 +187,7 @@
                 <div class="project-card" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800');">
                     <div class="project-content">
                         <h4 class="fw-bold mb-1">Gestión Familiar (Django)</h4>
-                        <p class="small opacity-75">Demo desplegada en Render (Cloud en capa gratuita osea Nube, ver como arranca)</p>
+                        <p class="small opacity-75">Demo en Render (Nube).</p>
                         <a href="https://familia-calendario-demo.onrender.com/" target="_blank" class="btn btn-outline-light btn-sm fw-bold">Ver Demo</a>
                     </div>
                 </div>
@@ -175,7 +225,7 @@
     <p class="text-muted small mb-0">© 2025 Jesús Contreras — Innovación & Tecnología</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
-
-
