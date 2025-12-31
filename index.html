@@ -59,6 +59,21 @@
             background-color: rgba(0,0,0,0.2);
         }
         .carousel-control-prev, .carousel-control-next { width: 5%; }
+        .carousel-text-header {
+            background: var(--primary-dark);
+            color: var(--accent);
+            padding: 10px;
+            margin-bottom: 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        
+        .carousel-item img {
+            border-radius: 0 0 8px 8px !important; /* Redondea solo abajo */
+        }
 
         .stack-img-large { width: 100%; max-width: 500px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: 0.3s; }
         .stack-img-large:hover { transform: scale(1.02); }
@@ -141,46 +156,38 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="img/IA_app_1.PNG" class="d-block w-100" alt="Pantalla principal">
-                                <div class="carousel-caption d-block" style="background: rgba(15, 23, 42, 0.8); border-radius: 8px; bottom: 10px; padding: 10px;">
-                                    <p class="small mb-0">Pantalla principal IA y Configuración local</p>
-                                </div>
+                                <p class="carousel-text-header">Pantalla principal IA y Configuración local</p>
+                                <img src="img/IA_app_1.PNG" class="d-block w-100" alt="Pantalla 1">
                             </div>
+                        
                             <div class="carousel-item">
-                                <img src="img/IA_app_2.PNG" class="d-block w-100" alt="PDF">
-                                <div class="carousel-caption d-block" style="background: rgba(15, 23, 42, 0.8); border-radius: 8px; bottom: 10px; padding: 10px;">
-                                    <p class="small mb-0">Carga documento PDF</p>
-                                </div>
+                                <p class="carousel-text-header">Carga documento PDF</p>
+                                <img src="img/IA_app_2.PNG" class="d-block w-100" alt="Pantalla 2">
                             </div>
+                        
                             <div class="carousel-item">
-                                <img src="img/IA_app_3.PNG" class="d-block w-100" alt="OCR">
-                                <div class="carousel-caption d-block" style="background: rgba(15, 23, 42, 0.8); border-radius: 8px; bottom: 10px; padding: 10px;">
-                                    <p class="small mb-0">Procesamiento OCR y extracción de texto</p>
-                                </div>
+                                <p class="carousel-text-header">Procesamiento OCR y extracción de texto</p>
+                                <img src="img/IA_app_3.PNG" class="d-block w-100" alt="Pantalla 3">
                             </div>
+                        
                             <div class="carousel-item">
-                                <img src="img/IA_app_4.PNG" class="d-block w-100" alt="Chat">
-                                <div class="carousel-caption d-block" style="background: rgba(15, 23, 42, 0.8); border-radius: 8px; bottom: 10px; padding: 10px;">
-                                    <p class="small mb-0">Paginación de texto y ventana de Chat con IA</p>
-                                </div>
+                                <p class="carousel-text-header">Paginación de texto y ventana de Chat con IA</p>
+                                <img src="img/IA_app_4.PNG" class="d-block w-100" alt="Pantalla 4">
                             </div>
+                        
                             <div class="carousel-item">
-                                <img src="img/IA_app_5.PNG" class="d-block w-100" alt="Interacción">
-                                <div class="carousel-caption d-block" style="background: rgba(15, 23, 42, 0.8); border-radius: 8px; bottom: 10px; padding: 10px;">
-                                    <p class="small mb-0">Chat interactivo en tiempo real</p>
-                                </div>
+                                <p class="carousel-text-header">Chat interactivo en tiempo real</p>
+                                <img src="img/IA_app_5.PNG" class="d-block w-100" alt="Pantalla 5">
                             </div>
+                        
                             <div class="carousel-item">
-                                <img src="img/IA_app_6.PNG" class="d-block w-100" alt="Respuesta">
-                                <div class="carousel-caption d-block" style="background: rgba(15, 23, 42, 0.8); border-radius: 8px; bottom: 10px; padding: 10px;">
-                                    <p class="small mb-0">Respuesta generada por Llama 3.2</p>
-                                </div>
+                                <p class="carousel-text-header">Respuesta generada por Llama 3.2</p>
+                                <img src="img/IA_app_6.PNG" class="d-block w-100" alt="Pantalla 6">
                             </div>
+                        
                             <div class="carousel-item">
-                                <img src="img/IA_app_7.PNG" class="d-block w-100" alt="Contexto">
-                                <div class="carousel-caption d-block" style="background: rgba(15, 23, 42, 0.8); border-radius: 8px; bottom: 10px; padding: 10px;">
-                                    <p class="small mb-0">Análisis de contexto y preguntas complejas</p>
-                                </div>
+                                <p class="carousel-text-header">Análisis de contexto y preguntas complejas</p>
+                                <img src="img/IA_app_7.PNG" class="d-block w-100" alt="Pantalla 7">
                             </div>
                         </div>
                         
@@ -251,5 +258,6 @@
 
 </body>
 </html>
+
 
 
